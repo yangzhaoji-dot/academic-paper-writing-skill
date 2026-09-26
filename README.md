@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.9 user-facing execution surface remains compact, but substantial paper work is now multi-pass:
+The v0.10 user-facing execution surface remains compact, but substantial paper work is now multi-pass and convention-aware:
 
 ```text
 1. Understand
@@ -44,39 +44,49 @@ Original Idea
 -> Technical Mechanism
 ```
 
-Internally, full-paper work is no longer one large generation. v0.9 uses call-level role separation:
+Internally, full-paper work is no longer one large generation. v0.10 adds a frozen **Paper Convention Profile** alongside scientific and literature state:
 
-```text
-Research Sources
-   |\
-   | +--> 01 Scientific Audit ------> Scientific Spec
+\`\`\`text
+Research Sources                     Convention Sources
+   |\                                     |
+   | +--> 01 Scientific Audit              +--> Convention Mining
    |
-   +----> 02 Literature Audit ------> Citation Map
-                         \             /
-                          03 Paper Packaging
-                              |
-                        04 Formal Method
-                              |
-                        05 Paper Architecture
-                              |
-                       Frozen Paper Spec
-                              |
-                     Section Writer Calls
-                              |
-                       06 Independent Audit
-                              |
-                        Repair / Present
-```
+   +----> 02 Literature Audit
+                \            /                /
+                 +------ frozen state --------+
+                           |
+                     03 Paper Packaging
+                           |
+                     04 Formal Method
+                           |
+                     05 Paper Architecture
+                           |
+                    Frozen Paper Spec
+                           |
+                  Section Writer Calls
+                           |
+                    06 Independent Audit
+                           |
+                     Repair / Present
+\`\`\`
 
 The existing procedures remain the toolbox used inside these calls.
 
-Key v0.9 rules:
+Key v0.10 rules:
 
 - **One pass, one decision responsibility.** Scientific formalization, literature verification, packaging, writing, and review do not share one call by default.
-- **Frozen handoffs.** Scientific Spec, Citation Map, and Frozen Paper Spec are explicit interfaces between calls.
+- **Frozen handoffs.** Scientific Spec, Citation Map, Convention Profile, and Frozen Paper Spec are explicit interfaces between calls.
+- **Hard-vs-soft convention separation.** Official venue rules are hard constraints; layout/formula/information/reviewer patterns mined from real papers are soft priors with evidence and confidence.
 - **No silent downstream mutation.** A writer that discovers a missing equation or citation raises an issue to the owning pass instead of patching the scientific story locally.
 - **Fresh independent review.** The audit call judges the manuscript that exists and should not inherit the writer's private planning rationale.
 - **Targeted invalidation.** A changed upstream decision reruns only downstream outputs that depend on it.
+
+The convention layer captures four explicit prior families:
+
+- **Layout prior**: first-page density, section balance, Figure 1 role, table/figure prominence, appendix boundary.
+- **Formula prior**: notation, baseline-before-delta, exact-update visibility, correction terms, limiting cases, equation density.
+- **Information-presentation prior**: which scientific objects are best carried by prose, equation, figure, table, algorithm, or plot.
+- **Academic/reviewer prior**: closest-work comparison, compute/call fairness, uncertainty reporting, metric-definition order, contribution structure, and other strong but non-universal expectations.
 
 The previous calibration and synthesis mechanisms remain active inside the new execution model:
 
@@ -123,7 +133,8 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 19. **Separate incompatible reasoning jobs.** Do not ask one call to verify literature, formalize the baseline, package contributions, write prose, and approve its own result.
 20. **Freeze upstream decisions before writing.** Section writers consume Paper Spec; they do not redefine it.
 21. **Independent audit is issue-producing, not self-justifying.** Review from fresh context and route defects to their owning pass.
-22. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
+22. **Conventions are evidence-weighted priors, not laws.** Official venue rules may be hard; accepted-paper patterns and reviewer expectations remain soft and contextual.
+23. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
@@ -206,4 +217,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.9: multi-pass paper construction with frozen Scientific Spec / Citation Map / Paper Spec handoffs, independent formal-method and packaging passes, section-level calibration and Authorial Synthesis, independent manuscript audit, and venue-aware final calibration.
+MVP v0.10: multi-pass paper construction with frozen Scientific Spec / Citation Map / Convention Profile / Paper Spec handoffs, convention-aware formal exposition and architecture, section-level calibration and Authorial Synthesis, independent manuscript audit, and venue-aware final calibration.
