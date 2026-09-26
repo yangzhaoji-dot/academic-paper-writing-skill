@@ -116,7 +116,7 @@ For substantial work, use:
 - [Pass 03 — Paper Packaging](passes/03-paper-packaging.md)
 - [Pass 04 — Formal Method Builder](passes/04-formal-method.md)
 - [Pass 05 — Paper Architecture](passes/05-paper-architecture.md)
-- section writer calls consuming the Frozen Paper Spec;
+- [Section Writer calls](passes/section-writer.md) consuming the Frozen Paper Spec;
 - [Pass 06 — Independent Paper Audit](passes/06-independent-audit.md)
 
 Passes own decisions. Writers own prose. Reviewers own issues.
