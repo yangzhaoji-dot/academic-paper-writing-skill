@@ -4,7 +4,28 @@ The paper is constructed through four phases. Literature enters at explicit chec
 
 ## Phase I — Research understanding and scientific grounding
 
-### 1. Research State
+### 1. Research source coverage, Research State, and Technical State
+
+First inventory the available research sources by role:
+
+```text
+idea / claims
+method
+interfaces / action space
+state / transitions
+training objective / loss
+environment / data
+experiments
+implementation constraints
+limitations / open questions
+```
+
+Do not assume the README or main method note is complete. If a source is likely to define a central method object and has not been inspected, mark grounding incomplete.
+
+Then create two parallel states:
+
+- **Research State**: what was actually proposed, implemented, observed, measured, or left unresolved;
+- **Technical State**: what operational semantics must remain defined for the method to be well-formed.
 
 Create a factual substrate from the available material. Record:
 
@@ -17,6 +38,8 @@ Create a factual substrate from the available material. Record:
 - limitations and unresolved questions.
 
 Do not perform significance inflation here.
+
+Use [Technical grounding](procedures/technical-grounding.md) to preserve interfaces, special-token representations, state transitions, action semantics, optimization masks, sampling semantics, and protocol exceptions. Paper Core compression must not delete these from the author-side state.
 
 ### 2. Candidate problem construction and framing
 
@@ -163,9 +186,31 @@ A module answers a semantic function such as "expose the concrete ambiguity" or 
 
 Never assume one module equals one paragraph.
 
+### 10. Section Contract and prerequisite graph
+
+Before drafting a section, build a [Section Contract](procedures/section-contract.md) from:
+
+- Paper Core;
+- Claim Graph;
+- Technical State;
+- Experimental Obligations;
+- Reader Path;
+- concepts already established in previous sections.
+
+The contract records:
+
+- what the section must establish;
+- what must be defined before use;
+- what may be inherited;
+- what may safely move later or to appendix;
+- dependencies among technical objects;
+- claims the section must not make.
+
+A Method contract must explicitly cover decision/action spaces, representation, interfaces, state transitions, loss masks, sampling semantics, central variable meanings, and protocol exceptions whenever they are part of the method.
+
 ## Phase III — Writing with discourse grounding
 
-### 10. Semantic draft
+### 11. Semantic draft
 
 For each module, fill the required facts, claims, reasoning, and evidence.
 
@@ -177,7 +222,9 @@ WHY -> WHAT -> HOW
 
 Optimize for correctness, reader necessity, and completeness—not elegance.
 
-### 11. Discourse grounding
+Before discourse optimization, run the Section Contract gate. If a downstream equation, algorithm, or result depends on an undefined technical object, repair Technical State or Semantic Draft first.
+
+### 12. Discourse grounding
 
 When real relevant papers are available, use [Discourse grounding](procedures/discourse-grounding.md) to build section-specific Discourse References.
 
@@ -194,7 +241,7 @@ Do not copy wording or imitate a single paper's sentence sequence.
 
 Scientific literature evidence and discourse references remain separate state.
 
-### 12. Reader-facing discourse composition
+### 13. Reader-facing discourse composition
 
 Combine neighboring modules into a coherent local argument using the Reader Path as the direct guide and compatible Discourse References as positive priors.
 
@@ -209,7 +256,7 @@ Decide:
 
 The paper's own logic dominates. A reference pattern is used only when it fits the current scientific content.
 
-### 13. Natural-language realization
+### 14. Natural-language realization
 
 Produce natural academic prose under the selected discourse/style/author profile.
 
@@ -219,13 +266,13 @@ Naturalization may change sentence and paragraph boundaries but may not change f
 
 ## Phase IV — Venue-aware presentation
 
-### 14. Resolve target venue and year
+### 15. Resolve target venue and year
 
 Load a verified [Venue Profile](../schemas/venue-profile.md) using **conference + year**.
 
 Hard requirements must come from official target-year instructions or templates. If the target year is not yet official, mark it as unverified and use the latest verified profile only for provisional planning.
 
-### 15. Information architecture and page allocation
+### 16. Information architecture and page allocation
 
 Use [Venue-aware presentation](procedures/venue-presentation.md) to decide:
 
@@ -238,7 +285,9 @@ Use [Venue-aware presentation](procedures/venue-presentation.md) to decide:
 
 The page limit should constrain presentation, not scientific truth. Do not weaken or inflate claims to fit the template.
 
-### 16. Template realization and rendered-PDF review
+Before moving content to appendix, re-run the relevant Section Contracts. Technical prerequisites default to the main paper unless they are already established elsewhere or can be compressed without breaking a dependency.
+
+### 17. Template realization and rendered-PDF review
 
 Use the official target-year template whenever available.
 
@@ -258,7 +307,7 @@ A source-level LaTeX check is not sufficient.
 
 ## Phase V — Review
 
-### 17. Global review
+### 18. Global review
 
 Check:
 
@@ -283,6 +332,9 @@ Repair the earliest failing layer and rerun only downstream steps affected by th
 ## Repair examples
 
 ```text
+unread core technical source / incomplete operational definition
+-> Research Source Coverage / Technical State
+
 wrong fact
 -> Research State
 
@@ -303,6 +355,9 @@ baseline/metric does not test the intended claim
 
 argument is correct but hard to follow
 -> Reader Path
+
+technical variable / interface / token / transition used before definition
+-> Technical State / Section Contract
 
 method component appears unmotivated
 -> Semantic Draft WHY/WHAT/HOW
