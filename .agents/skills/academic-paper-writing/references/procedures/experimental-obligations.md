@@ -48,3 +48,17 @@ Several claims may share one experiment, and one claim may require several oblig
 Use the [Experimental Obligation schema](../../schemas/experimental-obligation.md).
 
 These obligations are constraints on later experiment design, not predictions of positive results.
+
+## Literature grounding after obligation derivation
+
+After deriving the obligations from the claims themselves, use [Literature grounding](literature-grounding.md) to identify concrete baselines, metrics, benchmark precedents, compute/call matching rules, and evaluation protocols.
+
+Keep the order:
+
+```text
+claim
+-> logical obligation
+-> literature-supported operationalization
+```
+
+Do not reverse it by copying a prior paper's experiment table and treating those experiments as sufficient for our claims.
