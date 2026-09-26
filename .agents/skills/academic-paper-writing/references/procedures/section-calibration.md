@@ -22,7 +22,8 @@ Use, as needed:
 - Section Contract;
 - prior sections;
 - section-matched Discourse References;
-- section-matched real-paper references.
+- section-matched real-paper references;
+- section-relevant Convention Profile priors.
 
 ## 1. Completeness
 
@@ -130,7 +131,23 @@ Examples:
 
 Do not create a visual solely because the section "needs a figure."
 
-## 5. Discourse calibration
+## 5. Convention calibration
+
+Use the Convention Profile to check whether the section violates strong presentation expectations that would increase reviewer effort.
+
+Examples:
+
+- Method introduces a new estimator before the baseline object is recoverable;
+- an exact update is deferred even though the method claim depends on it;
+- a method-specific metric first appears in a result table;
+- a table repeats prose instead of carrying a distinct semantic role;
+- the main comparison receives less visual weight than a diagnostic ablation.
+
+Hard rules come only from official venue sources.
+
+Soft conventions may be overridden by paper-specific needs. Record justified deviations instead of forcing conformity.
+
+## 6. Discourse calibration
 
 Use 3–8 relevant papers when available.
 
