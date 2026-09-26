@@ -47,7 +47,7 @@ The user-facing workflow remains:
 4. **Write Sections** — plan each section, satisfy technical prerequisites, calibrate information resolution and representation responsibilities, draft semantically, synthesize the internal structure into an author-shaped exposition, and realize reader-facing discourse.
 5. **Present** — resolve venue/year, use the official template when available, allocate evidence/visual hierarchy, typeset, review the rendered PDF, and calibrate the final manuscript against nearby real papers.
 
-The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md). In multi-pass mode, persist the three key handoffs:
+The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md). In multi-pass mode, persist the key handoffs:
 
 - [Scientific Spec](schemas/scientific-spec.md);
 - [Citation Map](schemas/citation-map.md);
@@ -78,6 +78,7 @@ The stable high-value states are usually:
 - Research State;
 - Technical State;
 - Literature state when external positioning matters;
+- Convention Profile when venue / paper-type presentation priors matter;
 - Paper Core;
 - Section Contracts for technically dense sections;
 - Paper / Presentation state for iterative full-paper work.
