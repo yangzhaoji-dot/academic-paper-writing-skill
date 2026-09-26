@@ -9,6 +9,7 @@ Default sequence:
 \`\`\`text
 01 Scientific Audit
 02 Literature & Citation Audit
+Convention Mining (parallel)
 03 Paper Packaging
 04 Formal Method
 05 Paper Architecture
@@ -19,7 +20,7 @@ Default sequence:
 -> Present / Render / Final Manuscript Calibration
 \`\`\`
 
-Pass 01 and 02 may run independently.
+Pass 01, Pass 02, and Convention Mining may run independently. Convention Mining owns presentation conventions only and may not redefine scientific content.
 
 A pass owns its output state. Downstream passes may raise issues but may not silently rewrite frozen upstream decisions.
 
