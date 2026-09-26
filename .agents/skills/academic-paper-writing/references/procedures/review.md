@@ -2,6 +2,26 @@
 
 Goal: locate the earliest layer responsible for a defect while evaluating scientific integrity, literature grounding, reader effort, and discourse quality.
 
+## Pass 0 — source coverage and technical completeness
+
+Before reviewing prose, verify:
+
+- all method-defining research sources were inspected;
+- interface / action-space documents were not omitted;
+- loss / optimization specifications were inspected;
+- environment and training-protocol notes that affect method semantics were inspected;
+- Technical State contains the operational meaning of every central variable, interface, transition, mask, and protocol exception used in the paper.
+
+Flag:
+
+- equations whose variables have no operational definition;
+- tool / Harness names without state and USE/NO semantics;
+- special tokens or structured actions used without representation rules;
+- a generic protocol description that silently erases a real exception;
+- branch or sampling rules that conflate where decisions exist with where extra samples are collected.
+
+If this pass fails, stop surface review and repair Research Source Coverage or Technical State.
+
 ## Pass 1 — factual integrity
 
 Check every concrete technical and empirical statement against the Research State.
@@ -66,7 +86,19 @@ Flag:
 - a claim whose falsifying outcome was never defined;
 - a selected baseline that does not actually represent the competing explanation it is supposed to test.
 
-## Pass 6 — reader effort
+## Pass 6 — Section Contract and prerequisite integrity
+
+For each section:
+
+- all `must_establish` items are covered;
+- all downstream-used definitions are covered or legitimately inherited;
+- dependency edges do not point to missing prerequisites;
+- appendix moves do not contain the only definition of a central technical object;
+- section compression has not removed interface, action, state-transition, or mask semantics required to interpret the method.
+
+If a technically necessary definition is missing, repair Technical State, Section Contract, Module Plan, or Semantic Draft before rewriting prose.
+
+## Pass 7 — reader effort
 
 For each paragraph, ask:
 
@@ -80,7 +112,7 @@ For each paragraph, ask:
 
 If the scientific logic is correct but reader effort is high, repair the Reader Path before polishing sentences.
 
-## Pass 7 — narrative continuity
+## Pass 8 — narrative continuity
 
 Ask for each paragraph:
 
@@ -90,7 +122,7 @@ Ask for each paragraph:
 
 Remove paragraphs that merely sound academic but do not advance the narrative.
 
-## Pass 8 — discourse-reference integrity
+## Pass 9 — discourse-reference integrity
 
 When real-paper discourse references were used, check:
 
@@ -103,11 +135,11 @@ When real-paper discourse references were used, check:
 
 A smoother draft is not an improvement if it becomes derivative.
 
-## Pass 9 — semantic repetition
+## Pass 10 — semantic repetition
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 10 — venue and presentation integrity
+## Pass 11 — venue and presentation integrity
 
 Check:
 
@@ -129,7 +161,7 @@ Flag:
 - page overflow repaired by deleting limitations or controls;
 - stale conference rules.
 
-## Pass 11 — naturalness
+## Pass 12 — naturalness
 
 Inspect:
 
@@ -147,6 +179,9 @@ Repair the earliest failing representation, then regenerate only downstream cont
 
 Typical routing:
 
+- unread method-defining source -> Research Source Coverage;
+- missing operational definition / interface / token / transition -> Technical State;
+- missing section prerequisite -> Section Contract / Module Plan;
 - wrong fact -> Research State;
 - unsupported literature / novelty -> Literature Map;
 - artificial problem -> Framing;
