@@ -27,7 +27,11 @@ Research Sources
    |\
    | +--> Pass 1: Scientific Audit --------+
    |                                       |
-   +----> Pass 2: Literature Audit --------+--> Pass 3: Paper Packaging
+   +----> Pass 2: Literature Audit --------+
+                                            +--> Pass 3: Paper Packaging
+Convention Sources
+   |
+   +----> Parallel Pass: Convention Mining ---------+
                                                     |
                                                     +--> Pass 4: Formal Method
                                                     |
@@ -46,11 +50,11 @@ Research Sources
                                                 Final Manuscript Calibration
 \`\`\`
 
-Pass 1 and Pass 2 may run independently when source access allows.
+Pass 1, Pass 2, and Convention Mining may run independently when source access allows.
 
-Pass 3 requires their current outputs.
+Pass 3 requires the current scientific and literature outputs. Convention Mining may already inform packaging presentation choices, but it may not define the scientific thesis or novelty boundary.
 
-Pass 4 and Pass 5 consume the packaging decision but have different responsibilities: Pass 4 owns mathematical completeness; Pass 5 owns manuscript information architecture.
+Pass 4 and Pass 5 consume the packaging decision but have different responsibilities: Pass 4 owns mathematical completeness; Pass 5 owns manuscript information architecture. Both may consume the Convention Profile for exposition and presentation priors only.
 
 The Frozen Paper Spec is assembled only after Pass 1–5 are coherent enough to write from.
 
