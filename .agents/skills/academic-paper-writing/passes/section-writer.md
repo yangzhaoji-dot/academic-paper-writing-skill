@@ -24,9 +24,12 @@ Provide only what the section needs:
 - section contract / architecture entry;
 - required equations / metrics / visuals;
 - section-matched Discourse References;
+- the section-relevant subset of the Convention Profile;
 - finalized previous-section prose when continuity requires it.
 
 Do not provide unnecessary upstream planning rationale.
+
+Convention priors influence representation and exposition only. They do not authorize the writer to change scientific content.
 
 ## Writer may decide
 
