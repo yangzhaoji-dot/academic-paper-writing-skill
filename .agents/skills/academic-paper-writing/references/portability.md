@@ -19,7 +19,7 @@ If retrieval is unavailable, continue with supplied material and mark literature
 
 ## ChatGPT
 
-Treat Research State, Literature Map, Claim Graph, Paper Core, Reader Path, Discourse References, and Module Plan as logical state carried by the conversation unless the environment offers persistent files and persistence is useful.
+Treat Research State, Technical State, Section Contracts, Literature Map, Claim Graph, Paper Core, Reader Path, Discourse References, and Module Plan as logical state carried by the conversation unless the environment offers persistent files and persistence is useful.
 
 When web or document retrieval is available, use it at the literature checkpoints. Keep source identity attached to extracted scientific facts. For discourse grounding, abstract section-level and rhetorical patterns rather than storing long source passages.
 
@@ -34,6 +34,8 @@ For long iterative projects, Codex may persist working state under `.paper-writi
 ```text
 .paper-writing/
   research-state.md
+  technical-state.md
+  section-contracts.md
   literature-map.md
   claims.md
   paper-core.md
