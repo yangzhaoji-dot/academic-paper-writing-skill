@@ -172,7 +172,7 @@ The current paper's own dependencies dominate.
 
 ## Exit condition
 
-A section is ready for final discourse realization only when it is:
+A section is ready for Authorial Synthesis only when it is:
 
 - **complete** — no missing prerequisite;
 - **selective** — no unnecessary early detail;
@@ -180,3 +180,5 @@ A section is ready for final discourse realization only when it is:
 - **calibrated** — its information density and reveal order are plausible relative to strong real papers.
 
 Do not expose this checklist in the finished paper.
+
+After this gate, use [Authorial synthesis](authorial-synthesis.md) to ensure the calibrated internal structure does not leak directly into headings, terminology, experiment narration, or transitions.
