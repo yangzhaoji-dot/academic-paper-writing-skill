@@ -98,7 +98,27 @@ For each section:
 
 If a technically necessary definition is missing, repair Technical State, Section Contract, Module Plan, or Semantic Draft before rewriting prose.
 
-## Pass 7 — reader effort
+## Pass 7 — section calibration
+
+For each substantial section, check:
+
+- information required now is not deferred;
+- later-section detail is not introduced prematurely;
+- one primary representation carries each important concept;
+- prose/table/figure/equation responsibilities are not mechanically duplicated;
+- visual obligations exist only where they reduce reader effort or expose structure;
+- section density and reveal order remain plausible relative to several nearby real papers.
+
+Flag:
+
+- an Introduction that explains the full training schedule;
+- a Method that defines the same Harness semantics in prose, table, and figure;
+- an Experiments section where decisive and diagnostic results receive equal visual weight;
+- a figure that adds no information beyond adjacent prose.
+
+If this pass fails, repair Section Calibration or Representation Allocation before sentence-level rewriting.
+
+## Pass 8 — reader effort
 
 For each paragraph, ask:
 
@@ -112,7 +132,7 @@ For each paragraph, ask:
 
 If the scientific logic is correct but reader effort is high, repair the Reader Path before polishing sentences.
 
-## Pass 8 — narrative continuity
+## Pass 9 — narrative continuity
 
 Ask for each paragraph:
 
@@ -122,7 +142,7 @@ Ask for each paragraph:
 
 Remove paragraphs that merely sound academic but do not advance the narrative.
 
-## Pass 9 — discourse-reference integrity
+## Pass 10 — discourse-reference integrity
 
 When real-paper discourse references were used, check:
 
@@ -135,11 +155,11 @@ When real-paper discourse references were used, check:
 
 A smoother draft is not an improvement if it becomes derivative.
 
-## Pass 10 — semantic repetition
+## Pass 11 — semantic repetition
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 11 — venue and presentation integrity
+## Pass 12 — venue and presentation integrity
 
 Check:
 
@@ -161,7 +181,27 @@ Flag:
 - page overflow repaired by deleting limitations or controls;
 - stale conference rules.
 
-## Pass 12 — naturalness
+## Pass 13 — final manuscript calibration
+
+After rendering the complete paper, compare it with 3–5 nearby real papers using [Final manuscript calibration](manuscript-calibration.md).
+
+Check:
+
+- first-page density and Figure 1 role;
+- Introduction time to the concrete problem;
+- Method overview-figure / equation / prose balance;
+- experiment visual hierarchy;
+- float placement;
+- table readability;
+- subsection fragmentation;
+- appendix boundary;
+- whole-paper continuity.
+
+Repair only deviations that plausibly increase reader cost or weaken presentation. Do not force conformity to one reference paper.
+
+If the official target-year template is not actually used, the manuscript remains `preview_only`.
+
+## Pass 14 — naturalness
 
 Inspect:
 
@@ -189,10 +229,13 @@ Typical routing:
 - untested claim -> Experimental Obligations;
 - weak baseline/metric grounding -> Experiment Literature Grounding;
 - hard-to-follow explanation -> Reader Path;
+- overfull / prematurely detailed section -> Section Calibration;
+- redundant prose/table/figure explanation -> Representation Allocation;
 - missing method motivation -> Semantic Draft;
 - derivative or generic paragraph flow -> Discourse Reference / Discourse Composition;
 - venue violation -> Venue Profile / official template;
 - poor page allocation -> Presentation Plan;
 - unreadable figure/table -> Visual or Table Design;
 - local rendered-layout defect -> Typesetting;
+- whole-paper density / visual hierarchy mismatch -> Final Manuscript Calibration;
 - awkward language only -> Naturalization.
