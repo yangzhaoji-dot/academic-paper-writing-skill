@@ -132,7 +132,22 @@ For each paragraph, ask:
 
 If the scientific logic is correct but reader effort is high, repair the Reader Path before polishing sentences.
 
-## Pass 9 — narrative continuity
+## Pass 9 — authorial synthesis
+
+Check whether the manuscript surface is still mirroring internal planning structure.
+
+Flag:
+
+- workflow commentary such as "the decisive experiment", "the primary result", "to test our claim", or "we separate the evaluation into" when the science can state the setup or observation directly;
+- one subsection per internal mechanism or schema node;
+- repeated near-synonyms for one concept (`gate`, `routing decision`, `mode`, `semantic route`) without a real technical distinction;
+- contribution bullets that describe evaluation design rather than research contribution;
+- experiment prose that announces claim/evidence structure instead of moving from comparison to observation to interpretation;
+- long abstract passages with no concrete state, trajectory, example, mathematical object, or comparison for the reader to follow.
+
+If the science is complete but the paper reads like an explanation of its own construction process, repair [Authorial synthesis](authorial-synthesis.md) before discourse or sentence-level rewriting.
+
+## Pass 10 — narrative continuity
 
 Ask for each paragraph:
 
@@ -142,7 +157,7 @@ Ask for each paragraph:
 
 Remove paragraphs that merely sound academic but do not advance the narrative.
 
-## Pass 10 — discourse-reference integrity
+## Pass 11 — discourse-reference integrity
 
 When real-paper discourse references were used, check:
 
@@ -155,11 +170,11 @@ When real-paper discourse references were used, check:
 
 A smoother draft is not an improvement if it becomes derivative.
 
-## Pass 11 — semantic repetition
+## Pass 12 — semantic repetition
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 12 — venue and presentation integrity
+## Pass 13 — venue and presentation integrity
 
 Check:
 
@@ -181,7 +196,7 @@ Flag:
 - page overflow repaired by deleting limitations or controls;
 - stale conference rules.
 
-## Pass 13 — final manuscript calibration
+## Pass 14 — final manuscript calibration
 
 After rendering the complete paper, compare it with 3–5 nearby real papers using [Final manuscript calibration](manuscript-calibration.md).
 
@@ -201,7 +216,7 @@ Repair only deviations that plausibly increase reader cost or weaken presentatio
 
 If the official target-year template is not actually used, the manuscript remains `preview_only`.
 
-## Pass 14 — naturalness
+## Pass 15 — naturalness
 
 Inspect:
 
@@ -231,6 +246,10 @@ Typical routing:
 - hard-to-follow explanation -> Reader Path;
 - overfull / prematurely detailed section -> Section Calibration;
 - redundant prose/table/figure explanation -> Representation Allocation;
+- workflow/scaffold leakage -> Authorial Synthesis;
+- over-fragmented subsection structure -> Authorial Synthesis;
+- terminology drift / synonym overload -> Authorial Synthesis;
+- missing concrete anchor in abstraction-heavy exposition -> Authorial Synthesis;
 - missing method motivation -> Semantic Draft;
 - derivative or generic paragraph flow -> Discourse Reference / Discourse Composition;
 - venue violation -> Venue Profile / official template;
