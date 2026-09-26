@@ -1,5 +1,7 @@
 # End-to-end workflow
 
+This file defines the scientific methodology. For substantial full-paper work, execute it through separate calls using [multi-pass execution](multi-pass-execution.md); do not interpret the numbered stages as one monolithic generation.
+
 The paper is constructed through five phases. Literature enters at explicit checkpoints rather than being treated as a late Related Work add-on.
 
 ## Phase I — Research understanding and scientific grounding
