@@ -12,6 +12,7 @@ Use:
 - rendered PDF;
 - verified Venue Profile;
 - Presentation Reference;
+- Convention Profile;
 - Section Contracts;
 - Paper Core;
 - 3–5 real reference papers from the same venue and, when possible, the same research family.
@@ -32,6 +33,8 @@ Manuscript reference
 \`\`\`
 
 Do not infer official venue rules from accepted papers. Hard constraints come only from the Venue Profile and official template.
+
+When a Convention Profile exists, treat it as the canonical summary of layout, formula-exposition, information-carrier, and reviewer-expectation priors. Use manuscript references to validate or refresh that profile rather than mining an independent second set of conventions.
 
 ## Reference selection
 
@@ -120,7 +123,22 @@ Inspect:
 - appendix transitions;
 - consistency of typography and numbering.
 
-## 3. Deviation logic
+## 3. Convention-prior calibration
+
+Check the rendered manuscript against the Convention Profile on:
+
+- first-page density and Figure 1 role;
+- section balance;
+- formula progression and equation density;
+- prominence of the exact method update;
+- information-carrier choices;
+- main-result hierarchy;
+- main-body / appendix boundary;
+- soft reviewer expectations such as matched compute/call budget and uncertainty reporting when applicable.
+
+A convention mismatch is not automatically a defect. Classify it as justified, acceptable, reader-cost increasing, or uncertain.
+
+## 4. Deviation logic
 
 Do not optimize toward an average paper mechanically.
 
@@ -141,7 +159,7 @@ Examples of clear repair candidates:
 - a main result table uses unreadably small text;
 - an official venue template is not actually used.
 
-## 4. Preview mode
+## 5. Preview mode
 
 Support two manuscript modes:
 
@@ -164,7 +182,7 @@ For \`real\`:
 - no synthetic markers;
 - every result must trace to verified experiment data.
 
-## 5. Official-template gate
+## 6. Official-template gate
 
 Before calling a manuscript venue-compliant:
 
@@ -183,7 +201,7 @@ presentation_status = preview_only
 
 Do not describe a manually approximated two-column layout as venue-compliant.
 
-## 6. Repair policy
+## 7. Repair policy
 
 Repair the smallest responsible layer:
 
