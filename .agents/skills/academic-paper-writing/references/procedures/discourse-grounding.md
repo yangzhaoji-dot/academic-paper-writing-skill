@@ -122,11 +122,33 @@ This lets equations participate in the argument instead of appearing after a pro
 
 Focus on:
 
-- research-question-first vs result-first organization;
-- how baselines and controls are motivated;
+- whether each subsection starts from a paper claim or empirical question rather than a table;
+- how the paper identifies the competing explanation that the comparison must eliminate;
+- whether sampling, compute, calls, data, and other causal confounds are explicitly matched when required;
+- how baselines and controls are motivated by the claim rather than by convention;
+- whether the reported metric directly measures the claimed effect;
 - separation of observation from interpretation;
 - qualification of negative or mixed results;
-- how ablations connect back to claims.
+- whether ablations change one intended factor at a time;
+- how training-dynamics plots, calibration metrics, efficiency measurements, or behavior diagnostics are used when the claim is not reducible to final accuracy;
+- how robustness or transfer experiments delimit claim scope rather than simply expand the benchmark count.
+
+A strong experiment discourse pattern is often:
+
+```text
+claim
+-> empirical question
+-> alternative explanation
+-> isolating comparison
+-> direct metric
+-> observed result
+-> interpretation
+-> scope / falsifier
+```
+
+The final paper may still use conventional headings such as "Main Results" or "Ablations", but those headings must not determine the scientific logic.
+
+Avoid table-first narration such as "Table 1 shows..." when the reader has not yet been told what question the table is meant to answer.
 
 ### Related Work
 
