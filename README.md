@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.8 execution surface remains intentionally compact:
+The v0.9 user-facing execution surface remains compact, but substantial paper work is now multi-pass:
 
 ```text
 1. Understand
@@ -44,7 +44,40 @@ Original Idea
 -> Technical Mechanism
 ```
 
-The v0.8 methodology keeps the five-phase execution lightweight while adding an authorial synthesis layer between semantic completeness and prose realization:
+Internally, full-paper work is no longer one large generation. v0.9 uses call-level role separation:
+
+```text
+Research Sources
+   |   | +--> 01 Scientific Audit ------> Scientific Spec
+   |
+   +----> 02 Literature Audit ------> Citation Map
+                       \              /
+                        03 Paper Packaging
+                              |
+                        04 Formal Method
+                              |
+                        05 Paper Architecture
+                              |
+                       Frozen Paper Spec
+                              |
+                     Section Writer Calls
+                              |
+                       06 Independent Audit
+                              |
+                        Repair / Present
+```
+
+The existing procedures remain the toolbox used inside these calls.
+
+Key v0.9 rules:
+
+- **One pass, one decision responsibility.** Scientific formalization, literature verification, packaging, writing, and review do not share one call by default.
+- **Frozen handoffs.** Scientific Spec, Citation Map, and Frozen Paper Spec are explicit interfaces between calls.
+- **No silent downstream mutation.** A writer that discovers a missing equation or citation raises an issue to the owning pass instead of patching the scientific story locally.
+- **Fresh independent review.** The audit call judges the manuscript that exists and should not inherit the writer's private planning rationale.
+- **Targeted invalidation.** A changed upstream decision reruns only downstream outputs that depend on it.
+
+The previous calibration and synthesis mechanisms remain active inside the new execution model:
 
 - **Authorial Synthesis**: internal claims, modules, obligations, and technical nodes are compressed into a smaller author-facing structure by removing workflow commentary, merging concepts/subsections, stabilizing terminology, and preserving concrete anchors.
 - **Section Calibration**: each section is checked for completeness, information resolution, representation redundancy, visual obligations, and discourse calibration.
@@ -86,7 +119,10 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 16. **Real-paper calibration is distributional, not imitation.** Compare against several papers and repair only clear reader-cost or presentation defects.
 17. **Internal structure is not manuscript structure.** Claim graphs, obligations, contracts, and modules may guide writing but should not appear as visible prose or one-to-one subsection structure.
 18. **Use a compact active vocabulary.** Do not multiply terms unless they encode distinct scientific objects.
-19. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
+19. **Separate incompatible reasoning jobs.** Do not ask one call to verify literature, formalize the baseline, package contributions, write prose, and approve its own result.
+20. **Freeze upstream decisions before writing.** Section writers consume Paper Spec; they do not redefine it.
+21. **Independent audit is issue-producing, not self-justifying.** Review from fresh context and route defects to their owning pass.
+22. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
@@ -169,4 +205,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.8: literature-grounded paper construction with Technical State, section-level completeness/selectivity calibration, Authorial Synthesis, discourse realization, venue-aware presentation, and final manuscript calibration against real papers.
+MVP v0.9: multi-pass paper construction with frozen Scientific Spec / Citation Map / Paper Spec handoffs, independent formal-method and packaging passes, section-level calibration and Authorial Synthesis, independent manuscript audit, and venue-aware final calibration.
