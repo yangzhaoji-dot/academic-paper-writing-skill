@@ -66,7 +66,9 @@ For each section, internally use only what is needed from:
 - Rhetorical Modules;
 - Section Contract;
 - dependency checks;
+- Section Calibration;
 - Semantic Draft;
+- Authorial Synthesis;
 - Discourse References;
 - discourse composition;
 - naturalization.
