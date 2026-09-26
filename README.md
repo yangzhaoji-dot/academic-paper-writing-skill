@@ -48,11 +48,12 @@ Internally, full-paper work is no longer one large generation. v0.9 uses call-le
 
 ```text
 Research Sources
-   |   | +--> 01 Scientific Audit ------> Scientific Spec
+   |\
+   | +--> 01 Scientific Audit ------> Scientific Spec
    |
    +----> 02 Literature Audit ------> Citation Map
-                       \              /
-                        03 Paper Packaging
+                         \             /
+                          03 Paper Packaging
                               |
                         04 Formal Method
                               |
