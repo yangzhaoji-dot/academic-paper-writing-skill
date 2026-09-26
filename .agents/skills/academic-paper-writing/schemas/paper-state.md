@@ -1,6 +1,26 @@
 # Schema: Paper State
 
 ```yaml
+execution_mode: narrow_single_call | multi_pass
+
+passes:
+  scientific_audit:
+    status: not_started | draft | frozen | blocked
+  literature_citation_audit:
+    status: not_started | draft | frozen | blocked
+  paper_packaging:
+    status: not_started | draft | frozen | blocked
+  formal_method:
+    status: not_started | draft | frozen | blocked
+  paper_architecture:
+    status: not_started | draft | frozen | blocked
+  independent_audit:
+    status: not_started | running | passed | blocked
+
+scientific_spec: {}
+citation_map: {}
+frozen_paper_spec: {}
+
 research_state: {}
 technical_state: {}
 source_coverage: []
@@ -69,6 +89,13 @@ sections:
       scaffold_to_remove: []
     discourse_plan:
     prose:
+cross_pass_issues:
+  - severity:
+    owner_pass:
+    description:
+    required_action:
+    invalidates: []
+
 review:
   source_coverage:
   technical_completeness:
