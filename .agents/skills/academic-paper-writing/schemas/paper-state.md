@@ -33,6 +33,17 @@ discourse_references:
   method: []
   experiments: []
   related_work: []
+venue:
+  profile: {}
+  presentation_reference: {}
+presentation:
+  page_budget: {}
+  main_figures: []
+  main_tables: []
+  main_equations: []
+  algorithms: []
+  appendix_moves: []
+  rendered_pdf_review: {}
 sections:
   introduction:
     modules: []
@@ -50,6 +61,8 @@ review:
   discourse_reference_integrity:
   narrative_continuity:
   repetition:
+  venue_compliance:
+  presentation_quality:
   naturalness:
 ```
 
