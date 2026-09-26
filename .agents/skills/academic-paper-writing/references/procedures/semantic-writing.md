@@ -48,7 +48,19 @@ HOW:
 Sample repeated suffixes within each route and center their returns by the route mean.
 ```
 
-Do not force WHY/WHAT/HOW into explicit headings in final prose. They are semantic checks.
+Do not force WHY/WHAT/HOW into explicit headings or a visible component-by-component cadence in final prose. They are semantic completeness checks.
+
+For mathematical Method sections, also record the **estimation or optimization question** that each equation answers. The preferred author-side chain is:
+
+```text
+unresolved question
+-> quantity needed to answer it
+-> definition / equation
+-> interpretation
+-> next unresolved question
+```
+
+An equation should not appear merely because the component has reached its HOW step. It should enter when the reader already understands why that mathematical object is needed.
 
 ## Semantic draft format
 
