@@ -32,6 +32,7 @@ def main() -> None:
 
     required = [
         "references/workflow.md",
+        "references/execution.md",
         "references/portability.md",
         "references/reader-first-principles.md",
         "references/procedures/grounding.md",
