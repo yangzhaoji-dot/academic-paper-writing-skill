@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.7 execution surface remains intentionally compact:
+The v0.8 execution surface remains intentionally compact:
 
 ```text
 1. Understand
@@ -20,6 +20,7 @@ The v0.7 execution surface remains intentionally compact:
    -> Section Planning
    -> Section Calibration
    -> Semantic Draft
+   -> Authorial Synthesis
    -> Discourse Realization
 
 5. Present
@@ -43,8 +44,9 @@ Original Idea
 -> Technical Mechanism
 ```
 
-The v0.7 methodology keeps the five-phase execution lightweight while adding two internal calibration checks:
+The v0.8 methodology keeps the five-phase execution lightweight while adding an authorial synthesis layer between semantic completeness and prose realization:
 
+- **Authorial Synthesis**: internal claims, modules, obligations, and technical nodes are compressed into a smaller author-facing structure by removing workflow commentary, merging concepts/subsections, stabilizing terminology, and preserving concrete anchors.
 - **Section Calibration**: each section is checked for completeness, information resolution, representation redundancy, visual obligations, and discourse calibration.
 - **Final Manuscript Calibration**: the rendered paper is compared against a small distribution of nearby real papers for narrative density, visual hierarchy, and section balance.
 - **Technical State**: method-defining tokens, interfaces, action/state semantics, loss masks, sampling rules, and protocol exceptions survive story compression.
@@ -82,7 +84,9 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 14. **Technical prerequisites are not implementation trivia.** If a central equation, algorithm, or result depends on an interface, token, transition, or state definition, that prerequisite must remain reader-visible.
 15. **Complete is not enough.** Sections must also be selective about when detail appears and calibrated against real-paper discourse.
 16. **Real-paper calibration is distributional, not imitation.** Compare against several papers and repair only clear reader-cost or presentation defects.
-17. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
+17. **Internal structure is not manuscript structure.** Claim graphs, obligations, contracts, and modules may guide writing but should not appear as visible prose or one-to-one subsection structure.
+18. **Use a compact active vocabulary.** Do not multiply terms unless they encode distinct scientific objects.
+19. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
@@ -165,4 +169,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.7: literature-grounded paper construction with Technical State, section-level completeness/selectivity calibration, discourse realization, venue-aware presentation, and final manuscript calibration against real papers.
+MVP v0.8: literature-grounded paper construction with Technical State, section-level completeness/selectivity calibration, Authorial Synthesis, discourse realization, venue-aware presentation, and final manuscript calibration against real papers.
