@@ -33,10 +33,11 @@ The five user-facing phases below remain a conceptual interface. They no longer 
 
 Purpose: establish what the research actually is and how it works.
 
-For substantial paper work, this phase is split across:
+For substantial paper work, this phase runs three parallel evidence-building streams:
 
 - **Pass 01 — Scientific Audit**;
-- **Pass 02 — Literature & Citation Audit**.
+- **Pass 02 — Literature & Citation Audit**;
+- **Convention Mining** for venue/paper-type presentation priors.
 
 Internally use, as needed:
 
@@ -91,7 +92,7 @@ Exit condition:
 
 Purpose: turn a **Frozen Paper Spec** into reader-facing sections.
 
-Before section writing, **Pass 05 — Paper Architecture** must give required scientific objects, equations, citations, visuals, and page budget a stable home.
+Before section writing, **Pass 05 — Paper Architecture** must give required scientific objects, equations, citations, visuals, and page budget a stable home using the frozen Convention Profile as a soft presentation prior.
 
 Section writers consume the frozen spec. They may propose issues but may not silently redefine the paper.
 
