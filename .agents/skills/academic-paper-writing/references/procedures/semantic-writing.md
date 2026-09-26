@@ -87,3 +87,24 @@ Transition target:
 ```
 
 Polished language is not required here. Correctness and reader necessity are more important than fluency.
+
+## Experiment subsections
+
+For a major experiment subsection, do not semantically draft from a table outward. Start from the linked Experimental Obligation.
+
+Record:
+
+```text
+Claim:
+Empirical question:
+Competing explanation:
+Comparison / control:
+Direct metric:
+Planned or observed result:
+Interpretation boundary:
+Falsifier / weakening result:
+```
+
+When results do not yet exist, keep "Planned or observed result" explicitly unresolved. Do not write placeholder success claims.
+
+In the finished section, these fields may compress into a few sentences. The internal representation exists to ensure that the experiment answers a paper question and that the interpretation does not exceed what the comparison isolates.
