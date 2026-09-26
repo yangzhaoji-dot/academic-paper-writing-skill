@@ -9,7 +9,9 @@ Use:
 - Paper Core;
 - Reader Path;
 - selected Narrative;
-- Claim Graph.
+- Claim Graph;
+- Technical State;
+- Section Contract when already available.
 
 The Reader Path should normally dominate local ordering. The Narrative retains the global argument, while modules provide reusable rhetorical functions.
 
@@ -23,6 +25,8 @@ The Reader Path should normally dominate local ordering. The Narrative retains t
 - Neighboring modules may be merged during discourse composition.
 - A module may be omitted when its information is already established and repeating it would add no new role.
 - Do not add a module merely to expose an internal framing label.
+- Do add or expand a module when the Section Contract contains a technical prerequisite that otherwise has no reader-visible home.
+- A compact prerequisite definition may share a module or paragraph with motivation, but it cannot be omitted because it is not itself a Paper Core claim.
 
 ## Introduction planning
 
@@ -46,3 +50,10 @@ But the final module selection should answer the Reader Path, not preserve templ
 For example, one concrete ambiguity may simultaneously realize context, consequence, and limitation. Do not split it into three paragraphs solely because three modules exist.
 
 The actual sequence should follow reader dependencies, not a fixed template.
+
+
+## Technical prerequisite coverage
+
+After module selection, verify that every `must_establish` and `must_define_before_use` item in the Section Contract maps to at least one module or to an explicitly inherited earlier definition.
+
+Do not treat module planning as complete while a central variable, interface, action semantic, transition, or protocol exception has no planned location.
