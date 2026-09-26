@@ -33,6 +33,7 @@ def main() -> None:
     required = [
         "references/workflow.md",
         "references/execution.md",
+        "references/multi-pass-execution.md",
         "references/portability.md",
         "references/reader-first-principles.md",
         "references/procedures/grounding.md",
@@ -53,6 +54,9 @@ def main() -> None:
         "references/procedures/semantic-writing.md",
         "references/procedures/naturalization.md",
         "references/procedures/review.md",
+        "schemas/scientific-spec.md",
+        "schemas/citation-map.md",
+        "schemas/paper-spec.md",
         "schemas/research-state.md",
         "schemas/technical-state.md",
         "schemas/section-contract.md",
@@ -67,6 +71,13 @@ def main() -> None:
         "schemas/presentation-reference.md",
         "schemas/module.md",
         "schemas/paper-state.md",
+        "passes/README.md",
+        "passes/01-scientific-audit.md",
+        "passes/02-literature-citation-audit.md",
+        "passes/03-paper-packaging.md",
+        "passes/04-formal-method.md",
+        "passes/05-paper-architecture.md",
+        "passes/06-independent-audit.md",
     ]
     for rel in required:
         if not (SKILL_ROOT / rel).exists():
