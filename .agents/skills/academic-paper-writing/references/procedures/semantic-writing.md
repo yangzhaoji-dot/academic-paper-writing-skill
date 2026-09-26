@@ -1,6 +1,19 @@
 # Procedure: Semantic writing
 
-Goal: fill each rhetorical module with correct semantic content before optimizing prose.
+Goal: fill each rhetorical module with correct semantic content while satisfying the Section Contract before optimizing prose.
+
+## Contract gate
+
+Before drafting, read the section's Section Contract and relevant Technical State.
+
+For every `must_establish` or `must_define_before_use` item:
+
+- identify where it will be established;
+- preserve the exact operational meaning;
+- mark it inherited only if an earlier section truly defined it;
+- do not defer a prerequisite merely to shorten the section.
+
+After the semantic draft, re-check the dependency graph. If a downstream object is used before its prerequisite is covered, the draft is blocked from discourse composition.
 
 ## For each module
 
@@ -10,6 +23,7 @@ Goal: fill each rhetorical module with correct semantic content before optimizin
 4. Make the reasoning relation explicit in the semantic draft: contrast, cause, limitation, consequence, mechanism, evidence, or qualification.
 5. Avoid restating a claim that has already been fully explained unless the new section gives it a different function.
 6. Preserve uncertainty and limitations.
+7. Preserve technical definitions, interface semantics, action grammar, state transitions, and optimization masks required by the Section Contract.
 
 ## Method components: WHY -> WHAT -> HOW
 
@@ -86,7 +100,9 @@ Transition target:
 - ...
 ```
 
-Polished language is not required here. Correctness and reader necessity are more important than fluency.
+Polished language is not required here. Correctness, technical completeness, and reader necessity are more important than fluency.
+
+A semantically elegant draft that omits a required technical prerequisite is incomplete, even if the Paper Core remains intact.
 
 ## Experiment subsections
 
