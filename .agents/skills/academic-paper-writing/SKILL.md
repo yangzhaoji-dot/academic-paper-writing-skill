@@ -33,27 +33,15 @@ Literature is a cross-cutting constraint rather than a late standalone stage. Wh
 
 ## Workflow
 
-Read [references/workflow.md](references/workflow.md) for the end-to-end process. The default order is:
+Use the lightweight [five-phase execution model](references/execution.md). The user-facing workflow is:
 
-1. Inventory research-source coverage and ground both Research State and Technical State.
-2. Construct a candidate paper-level problem and framing.
-3. Challenge that framing against relevant literature when retrieval is available.
-4. Build the Claim Graph and Claim–Literature Matrix.
-5. Extract the Paper Core and check its novelty boundary against the closest work.
-6. Derive logical experimental obligations, then ground baselines, metrics, and protocols in literature where useful.
-7. Select a global narrative.
-8. Convert the internal narrative into a Reader Path.
-9. Plan section modules.
-10. Build a Section Contract from the Paper Core, Technical State, claims, and reader prerequisites.
-11. Fill modules semantically and run the prerequisite/dependency gate.
-12. Extract section-matched Discourse References from several real papers when available.
-13. Compose reader-facing discourse across module boundaries using our Reader Path and compatible discourse patterns.
-14. Realize natural academic prose.
-15. Resolve the target venue/year and load a verified Venue Profile.
-16. Plan page allocation, figures, tables, equations, algorithms, and appendix moves while preserving technical prerequisites.
-17. Re-run Section Contracts before moving content to appendix.
-18. Realize the official template and review the rendered PDF.
-19. Review globally and repair only the failing layer.
+1. **Understand** — ground Research State and Technical State from complete source coverage.
+2. **Position** — use literature, framing, claims, and novelty checks to stabilize the Paper Core.
+3. **Design Evidence** — derive claim-driven experimental obligations and ground their operationalization in literature.
+4. **Write Sections** — plan each section, satisfy its technical prerequisites, draft semantically, and realize reader-facing discourse.
+5. **Present** — resolve venue/year, allocate page/visual budget, typeset, and review the rendered PDF.
+
+The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md), but its internal representations are not a mandatory serialization checklist. Use and persist only the state needed for the active task.
 
 For runtime-specific behavior, read [references/portability.md](references/portability.md).
 
@@ -67,6 +55,21 @@ The key rules are:
 - minimize the conceptual work required from the reader;
 - explain why a nontrivial method component is needed before describing what it is or how it works;
 - derive experiments from paper claims and competing explanations, not from a desire to accumulate benchmark numbers.
+
+## Execution principle
+
+Do not materialize every schema on every run. Framing, Claim Graph, Reader Path, modules, Experimental Obligations, Discourse References, and presentation objects are internal tools that should be created only when they prevent information loss or support a concrete decision.
+
+The stable high-value states are usually:
+
+- Research State;
+- Technical State;
+- Literature state when external positioning matters;
+- Paper Core;
+- Section Contracts for technically dense sections;
+- Paper / Presentation state for iterative full-paper work.
+
+Reuse stable state and recompute only when an upstream dependency changes.
 
 ## State model
 
