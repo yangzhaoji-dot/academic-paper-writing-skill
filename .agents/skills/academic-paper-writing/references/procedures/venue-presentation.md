@@ -37,6 +37,37 @@ If the target year's official instructions are not yet available:
 - do not claim that page limits, anonymity rules, appendix rules, or checklist requirements are final;
 - refresh the profile before submission or whenever the official call/template appears.
 
+## Paper mode
+
+Resolve one of:
+
+```text
+real
+synthetic_preview
+```
+
+For `synthetic_preview`, mark the document once with a cover notice or unobtrusive watermark and keep fabricated values in metadata. Do not scatter repeated red markers or synthetic warnings through normal paper prose and tables.
+
+For `real`, every result must trace to verified experiment data.
+
+## Official-template gate
+
+Before describing a manuscript as venue-compliant:
+
+1. resolve conference + year;
+2. verify official target-year instructions;
+3. use the official template/style when available;
+4. render the actual PDF;
+5. inspect the rendered output.
+
+If the official target-year template is unavailable or the manuscript uses a hand-built approximation:
+
+```text
+presentation_status = preview_only
+```
+
+A visually similar two-column layout is not venue compliance.
+
 ## Stage 1 — Content allocation
 
 Allocate the page budget from scientific importance, not equal section sizes.
@@ -75,6 +106,31 @@ Before finalizing page allocation:
 5. ensure interface semantics and protocol exceptions central to the method are not mislabeled as implementation detail.
 
 If page pressure conflicts with a prerequisite, compress or visualize the prerequisite rather than deleting it.
+
+## Evidence visual hierarchy
+
+Use Experimental Obligations to classify evidence:
+
+- **decisive** — directly tests the paper's central claim or excludes the strongest competing explanation;
+- **supporting** — isolates a component or mechanism;
+- **diagnostic** — explains behavior, failure modes, calibration, dynamics, or scope.
+
+Presentation should reflect this hierarchy.
+
+Typical mapping:
+
+```text
+decisive
+-> largest main table / main plot / strongest visual placement
+
+supporting
+-> secondary table or ablation figure
+
+diagnostic
+-> analysis plot, compact table, or appendix when non-essential
+```
+
+Do not give three small tables equal visual prominence when one experiment carries the paper's main attribution claim.
 
 ## Stage 2 — Visual / equation / table planning
 
@@ -206,6 +262,22 @@ When several recent papers from the target venue are available, use [Presentatio
 - how captions carry context.
 
 Do not imitate one paper's exact page design. Do not infer hard venue rules from accepted papers.
+
+## Final manuscript calibration
+
+After the full paper is rendered, run [Final manuscript calibration](manuscript-calibration.md).
+
+Use 3–5 nearby real papers to compare:
+
+- Introduction density and time to core problem;
+- Method compression, figure/equation balance, and subsection depth;
+- Experiment visual hierarchy and interpretation density;
+- first-page layout;
+- float placement;
+- appendix boundary;
+- whole-paper continuity.
+
+These are soft calibration signals. They never override official venue rules or the paper's own scientific dependencies.
 
 ## Output
 
