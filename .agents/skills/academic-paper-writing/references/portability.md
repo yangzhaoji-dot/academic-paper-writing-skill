@@ -1,10 +1,27 @@
 # Portability across runtimes
 
-The skill is intentionally instruction-first. Scripts are optional accelerators.
+The skill is intentionally instruction-first. Scripts and retrieval tools are optional accelerators.
+
+## Retrieval abstraction
+
+The methodology must not depend on one search provider.
+
+Conceptually, literature-dependent stages require an operation such as:
+
+```text
+retrieve_literature(query, constraints)
+-> verified source material
+```
+
+Different runtimes may implement this with web search, scholarly APIs, repository/browser tools, a local paper corpus, or user-supplied papers.
+
+If retrieval is unavailable, continue with supplied material and mark literature-dependent conclusions as unresolved. Never simulate a search by inventing citations or consensus.
 
 ## ChatGPT
 
-Treat Research State, Claim Graph, Narrative, and Module Plan as logical state carried by the conversation unless the environment offers persistent files and persistence is useful.
+Treat Research State, Literature Map, Claim Graph, Paper Core, Reader Path, Discourse References, and Module Plan as logical state carried by the conversation unless the environment offers persistent files and persistence is useful.
+
+When web or document retrieval is available, use it at the literature checkpoints. Keep source identity attached to extracted scientific facts. For discourse grounding, abstract section-level and rhetorical patterns rather than storing long source passages.
 
 A packaged skill may be uploaded where the ChatGPT product/workspace exposes Skill installation. Product availability and installation behavior can vary.
 
@@ -17,19 +34,31 @@ For long iterative projects, Codex may persist working state under `.paper-writi
 ```text
 .paper-writing/
   research-state.md
+  literature-map.md
   claims.md
+  paper-core.md
+  discourse-references.md
   narrative.md
   section-plan.md
 ```
 
 This persistence is optional. Do not create or rewrite these files unless doing so benefits the active repository workflow.
 
+Codex may use browser/search tools, local PDFs, bibliography files, or repository notes as retrieval backends. The core skill must not assume any one of them exists.
+
 ## API / agent sandbox
 
 The same logical state may be represented as JSON, Markdown, database records, or application state. The skill must not depend on one serialization.
+
+An API implementation may provide separate retrieval services for:
+
+- scientific literature evidence;
+- full-text / section text used for discourse abstraction.
+
+Keep these roles distinct even if the same paper is returned by both services.
 
 The API implementation may call stages separately, but stage separation must not create duplicated prompt logic. The canonical methodology remains in this skill directory.
 
 ## Portability rule
 
-Any critical instruction required to obtain a correct paper must be executable by a model that can only read text files. A script may automate checking or packaging, but the writing methodology must remain usable without executing code.
+Any critical instruction required to obtain a correct paper must be executable by a model that can only read text files. A script or external search service may automate checking, retrieval, or packaging, but the writing methodology must remain usable without executing code.
