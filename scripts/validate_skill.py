@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+from pathlib import Path
+import re
+import sys
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+SKILL_ROOT = REPO_ROOT / ".agents" / "skills" / "academic-paper-writing"
+SKILL_MD = SKILL_ROOT / "SKILL.md"
+
+
+def fail(message: str) -> None:
+    print(f"ERROR: {message}")
+    raise SystemExit(1)
+
+
+def main() -> None:
+    if not SKILL_MD.exists():
+        fail(f"missing {SKILL_MD}")
+
+    text = SKILL_MD.read_text(encoding="utf-8")
+    fm = re.match(r"\A---\n(.*?)\n---\n", text, re.S)
+    if not fm:
+        fail("SKILL.md must start with YAML front matter")
+
+    front = fm.group(1)
+    if not re.search(r"(?m)^name:\s*academic-paper-writing\s*$", front):
+        fail("front matter must contain name: academic-paper-writing")
+    if not re.search(r"(?m)^description:\s*\S.+$", front):
+        fail("front matter must contain a non-empty description")
+
+    required = [
+        "references/workflow.md",
+        "references/portability.md",
+        "references/procedures/grounding.md",
+        "references/procedures/framing.md",
+        "references/procedures/narrative.md",
+        "references/procedures/module-planning.md",
+        "references/procedures/semantic-writing.md",
+        "references/procedures/naturalization.md",
+        "references/procedures/review.md",
+        "schemas/research-state.md",
+        "schemas/claim.md",
+        "schemas/module.md",
+        "schemas/paper-state.md",
+    ]
+    for rel in required:
+        if not (SKILL_ROOT / rel).exists():
+            fail(f"missing required file: {rel}")
+
+    link_re = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
+    errors = []
+    for md in SKILL_ROOT.rglob("*.md"):
+        body = md.read_text(encoding="utf-8")
+        for target in link_re.findall(body):
+            target = target.strip()
+            if not target or target.startswith(("http://", "https://", "#", "mailto:")):
+                continue
+            target = target.split("#", 1)[0]
+            candidate = (md.parent / target).resolve()
+            try:
+                candidate.relative_to(SKILL_ROOT.resolve())
+            except ValueError:
+                errors.append(f"{md.relative_to(SKILL_ROOT)} -> link escapes skill root: {target}")
+                continue
+            if not candidate.exists():
+                errors.append(f"{md.relative_to(SKILL_ROOT)} -> missing link target: {target}")
+
+    if errors:
+        for e in errors:
+            print("ERROR:", e)
+        raise SystemExit(1)
+
+    print("Skill validation passed.")
+
+
+if __name__ == "__main__":
+    main()
