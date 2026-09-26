@@ -7,16 +7,19 @@ Goal: convert semantically correct modules into natural academic prose without c
 Use:
 
 - Reader Path;
-- Semantic Draft;
+- Authorial Synthesis output or synthesized semantic structure;
+- Semantic Draft as the factual backstop;
 - Paper Core and Claim Graph;
 - section-specific Discourse References when real-paper references are available;
 - default or user-derived style profile.
 
 Discourse References are positive communication priors, not source text. Read [Discourse grounding](discourse-grounding.md) before using real papers as writing references.
 
+Read [Authorial synthesis](authorial-synthesis.md) before discourse composition when the draft is structurally complex or shows workflow/scaffold leakage.
+
 ## Compose for the reader before polishing
 
-Use the Reader Path, not the internal schema, as the direct guide for prose.
+Use the synthesized author-facing structure and Reader Path, not the internal schema, as the direct guide for prose.
 
 Before sentence-level rewriting, decide:
 
