@@ -38,6 +38,8 @@ def main() -> None:
         "references/procedures/grounding.md",
         "references/procedures/technical-grounding.md",
         "references/procedures/section-contract.md",
+        "references/procedures/section-calibration.md",
+        "references/procedures/manuscript-calibration.md",
         "references/procedures/framing.md",
         "references/procedures/paper-core.md",
         "references/procedures/experimental-obligations.md",
