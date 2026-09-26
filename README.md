@@ -48,26 +48,26 @@ Internally, full-paper work is no longer one large generation. v0.10 adds a froz
 
 \`\`\`text
 Research Sources                     Convention Sources
-   |\                                     |
-   | +--> 01 Scientific Audit              +--> Convention Mining
+   |                                      |
+   +--> 01 Scientific Audit               +--> Convention Mining
    |
-   +----> 02 Literature Audit
-                \            /                /
-                 +------ frozen state --------+
-                           |
-                     03 Paper Packaging
-                           |
-                     04 Formal Method
-                           |
-                     05 Paper Architecture
-                           |
-                    Frozen Paper Spec
-                           |
-                  Section Writer Calls
-                           |
-                    06 Independent Audit
-                           |
-                     Repair / Present
+   +--> 02 Literature Audit
+          \          /                    /
+           +-------- frozen state --------+
+                         |
+                   03 Paper Packaging
+                         |
+                   04 Formal Method
+                         |
+                   05 Paper Architecture
+                         |
+                  Frozen Paper Spec
+                         |
+                Section Writer Calls
+                         |
+                  06 Independent Audit
+                         |
+                   Repair / Present
 \`\`\`
 
 The existing procedures remain the toolbox used inside these calls.
@@ -90,6 +90,7 @@ The convention layer captures four explicit prior families:
 
 The previous calibration and synthesis mechanisms remain active inside the new execution model:
 
+- **Paper Convention Profile**: separates official hard rules from evidence-weighted soft priors for layout, formulas, information carriers, and reviewer expectations.
 - **Authorial Synthesis**: internal claims, modules, obligations, and technical nodes are compressed into a smaller author-facing structure by removing workflow commentary, merging concepts/subsections, stabilizing terminology, and preserving concrete anchors.
 - **Section Calibration**: each section is checked for completeness, information resolution, representation redundancy, visual obligations, and discourse calibration.
 - **Final Manuscript Calibration**: the rendered paper is compared against a small distribution of nearby real papers for narrative density, visual hierarchy, and section balance.
