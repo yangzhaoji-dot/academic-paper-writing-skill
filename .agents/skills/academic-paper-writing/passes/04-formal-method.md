@@ -15,7 +15,20 @@ Use:
 - Scientific Spec;
 - Packaging Spec;
 - Technical State;
-- Citation Map for baseline attribution.
+- Citation Map for baseline attribution;
+- Convention Profile for formula-exposition priors only.
+
+## Convention boundary
+
+Use the Convention Profile only to check **exposition completeness**, for example whether a methods paper normally needs:
+
+- baseline formulation before the method delta;
+- variables defined before use;
+- the exact optimized update in the main body;
+- correction terms after forced / off-policy sampling;
+- limiting or degenerate cases when they clarify the method.
+
+Convention evidence may change **what must be explained visibly**, but it may not change the mathematical method itself.
 
 ## Required construction
 
