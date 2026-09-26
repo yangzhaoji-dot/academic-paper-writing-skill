@@ -7,6 +7,7 @@ status: draft | frozen | blocked
 
 scientific_spec_ref:
 citation_map_ref:
+convention_profile_ref:
 
 packaging:
   title:
@@ -36,6 +37,7 @@ formal_method:
   assumptions: []
 
 architecture:
+  convention_profile_applied:
   sections:
     - name:
       scientific_role:
@@ -70,6 +72,7 @@ writer_contract:
     - redefine baseline
     - change title/thesis silently
     - alter evidence status
+    - promote a soft convention to a scientific requirement
 
 open_issues: []
 \`\`\`
