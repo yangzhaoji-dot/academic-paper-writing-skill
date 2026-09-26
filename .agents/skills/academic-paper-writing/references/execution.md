@@ -89,10 +89,20 @@ where **Section Planning** internally resolves:
 - module/functions;
 - what can be inherited or deferred.
 
+**Authorial Synthesis** compresses the internal writing structure before prose realization:
+
+- remove workflow commentary that does not itself carry science;
+- merge internal concepts and subsections into reader-meaningful units;
+- stabilize a compact canonical vocabulary;
+- maintain a concrete anchor when it reduces abstraction cost.
+
 Exit condition:
 
 - Section Contract passes;
-- prose is technically complete and reader-facing.
+- the semantic draft is technically complete;
+- internal scaffolds no longer dictate visible section structure;
+- terminology is compact and stable;
+- prose is reader-facing rather than workflow-facing.
 
 ### 5. Present
 
