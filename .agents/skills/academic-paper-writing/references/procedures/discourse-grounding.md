@@ -184,12 +184,14 @@ Do not encode arbitrary numeric style targets unless they are genuinely useful. 
 
 During Reader-facing Discourse Composition:
 
-1. start from our Reader Path and Semantic Draft;
+1. start from the Authorial Synthesis output, Reader Path, and Semantic Draft;
 2. choose only discourse patterns compatible with our scientific content;
 3. combine patterns from multiple references rather than cloning one source;
 4. preserve our terminology and Paper Core;
 5. allow paragraph and sentence boundaries to change;
 6. prefer natural causal, contrastive, and prerequisite relations over explicit scaffold labels.
+
+Discourse references should refine an already synthesized authorial structure. They must not recreate internal workflow labels or force one visible subsection per planning concept.
 
 A discourse reference may influence organization and realization, but it may not:
 
