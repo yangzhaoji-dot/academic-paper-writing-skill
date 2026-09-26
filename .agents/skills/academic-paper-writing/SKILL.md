@@ -1,6 +1,6 @@
 ---
 name: academic-paper-writing
-description: Construct, draft, revise, or review academic research papers from research ideas, evidence, experiments, notes, and verified literature using explicit problem construction, literature challenge, claim framing, paper-core extraction, reader-path planning, rhetorical modules, literature-grounded discourse references, semantic drafting, natural-language realization, experimental obligations, and claim-evidence review. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
+description: Construct, draft, revise, typeset, or review academic research papers from research ideas, evidence, experiments, notes, verified literature, and venue requirements using explicit problem construction, literature challenge, claim framing, paper-core extraction, reader-path planning, rhetorical modules, literature-grounded discourse references, semantic drafting, natural-language realization, experimental obligations, venue-aware presentation planning, and claim-evidence review. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
 ---
 
 # Academic Paper Writing
@@ -24,7 +24,8 @@ Infer the narrowest mode that satisfies the request:
 - **Draft**: create semantic content and then reader-facing natural prose.
 - **Experiment**: derive experimental obligations from central claims before planning result tables or benchmark sweeps.
 - **Revise**: update an existing section while preserving verified claims, the Paper Core, and evidence.
-- **Review**: inspect claim strength, evidence coverage, cross-section story consistency, reader effort, repetition, and naturalness.
+- **Present**: resolve the target conference/year, allocate page budget, plan figures/tables/equations/appendix content, realize the official template, and review the rendered PDF.
+- **Review**: inspect claim strength, evidence coverage, cross-section story consistency, reader effort, repetition, venue compliance, presentation quality, and naturalness.
 
 Do not rerun earlier stages unnecessarily when a usable state already exists.
 
@@ -47,7 +48,10 @@ Read [references/workflow.md](references/workflow.md) for the end-to-end process
 11. Extract section-matched Discourse References from several real papers when available.
 12. Compose reader-facing discourse across module boundaries using our Reader Path and compatible discourse patterns.
 13. Realize natural academic prose.
-14. Review globally and repair only the failing layer.
+14. Resolve the target venue/year and load a verified Venue Profile.
+15. Plan page allocation, figures, tables, equations, algorithms, and appendix moves.
+16. Realize the official template and review the rendered PDF.
+17. Review globally and repair only the failing layer.
 
 For runtime-specific behavior, read [references/portability.md](references/portability.md).
 
@@ -74,6 +78,8 @@ Use the schemas in `schemas/` as logical representations, not mandatory serializ
 - [Experimental Obligation](schemas/experimental-obligation.md)
 - [Literature Map](schemas/literature-map.md)
 - [Discourse Reference](schemas/discourse-reference.md)
+- [Venue Profile](schemas/venue-profile.md)
+- [Presentation Reference](schemas/presentation-reference.md)
 - [Module](schemas/module.md)
 - [Paper State](schemas/paper-state.md)
 
@@ -89,6 +95,7 @@ Read only the procedure files needed for the current request:
 - [Experimental obligations](references/procedures/experimental-obligations.md)
 - [Literature grounding](references/procedures/literature-grounding.md)
 - [Discourse grounding](references/procedures/discourse-grounding.md)
+- [Venue-aware presentation](references/procedures/venue-presentation.md)
 - [Narrative planning](references/procedures/narrative.md)
 - [Reader Path](references/procedures/reader-path.md)
 - [Module planning](references/procedures/module-planning.md)
@@ -216,7 +223,8 @@ When review detects a problem, repair the earliest responsible layer:
 - high reader effort or exposed scaffolding -> Reader Path;
 - missing rhetorical function -> Module Plan;
 - missing reason for a method component -> Semantic Draft;
-- robotic or assembled prose -> Discourse Reference / Naturalization.
+- robotic or assembled prose -> Discourse Reference / Naturalization;
+- venue violation, poor page allocation, unreadable visual, or rendered-layout defect -> Venue Profile / Presentation Plan / Typesetting.
 
 Do not solve a semantic problem with surface rewriting alone.
 
