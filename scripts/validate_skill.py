@@ -78,6 +78,7 @@ def main() -> None:
         "passes/04-formal-method.md",
         "passes/05-paper-architecture.md",
         "passes/06-independent-audit.md",
+        "passes/section-writer.md",
     ]
     for rel in required:
         if not (SKILL_ROOT / rel).exists():
