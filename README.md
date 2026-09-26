@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.6 execution surface is intentionally compact:
+The v0.7 execution surface remains intentionally compact:
 
 ```text
 1. Understand
@@ -18,13 +18,15 @@ The v0.6 execution surface is intentionally compact:
 
 4. Write Sections
    -> Section Planning
+   -> Section Calibration
    -> Semantic Draft
    -> Discourse Realization
 
 5. Present
    -> Venue-aware Layout
-   -> LaTeX / PDF
+   -> Official Template / LaTeX / PDF
    -> Rendered Review
+   -> Final Manuscript Calibration
 ```
 
 The richer schemas remain available internally, but they are not five more user-visible stages. For example, Section Planning may internally use Reader Path, modules, a Section Contract, and dependency checks without serializing each one as a separate artifact.
@@ -41,8 +43,10 @@ Original Idea
 -> Technical Mechanism
 ```
 
-The v0.6 methodology keeps the five-phase execution lightweight while using technical-completeness gates internally:
+The v0.7 methodology keeps the five-phase execution lightweight while adding two internal calibration checks:
 
+- **Section Calibration**: each section is checked for completeness, information resolution, representation redundancy, visual obligations, and discourse calibration.
+- **Final Manuscript Calibration**: the rendered paper is compared against a small distribution of nearby real papers for narrative density, visual hierarchy, and section balance.
 - **Technical State**: method-defining tokens, interfaces, action/state semantics, loss masks, sampling rules, and protocol exceptions survive story compression.
 - **Section Contract**: every section declares what must be established, defined before use, inherited, or safely deferred.
 - **Paper Core**: every major section tells the same story at a different level of detail.
@@ -76,7 +80,9 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 12. **Venue rules are year-specific and official-source-first.** An older venue profile may guide planning but cannot define a later year's submission requirements.
 13. **Presentation follows scientific priority.** Page pressure should move or redesign information before it weakens claims, controls, or limitations.
 14. **Technical prerequisites are not implementation trivia.** If a central equation, algorithm, or result depends on an interface, token, transition, or state definition, that prerequisite must remain reader-visible.
-15. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
+15. **Complete is not enough.** Sections must also be selective about when detail appears and calibrated against real-paper discourse.
+16. **Real-paper calibration is distributional, not imitation.** Compare against several papers and repair only clear reader-cost or presentation defects.
+17. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
@@ -159,4 +165,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.6: literature-grounded paper construction with parallel Technical State, section-level prerequisite contracts, discourse realization, venue-aware presentation, and rendered-PDF review.
+MVP v0.7: literature-grounded paper construction with Technical State, section-level completeness/selectivity calibration, discourse realization, venue-aware presentation, and final manuscript calibration against real papers.
