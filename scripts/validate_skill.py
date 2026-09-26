@@ -40,6 +40,7 @@ def main() -> None:
         "references/procedures/experimental-obligations.md",
         "references/procedures/literature-grounding.md",
         "references/procedures/discourse-grounding.md",
+        "references/procedures/venue-presentation.md",
         "references/procedures/narrative.md",
         "references/procedures/reader-path.md",
         "references/procedures/module-planning.md",
@@ -54,6 +55,8 @@ def main() -> None:
         "schemas/experimental-obligation.md",
         "schemas/literature-map.md",
         "schemas/discourse-reference.md",
+        "schemas/venue-profile.md",
+        "schemas/presentation-reference.md",
         "schemas/module.md",
         "schemas/paper-state.md",
     ]
