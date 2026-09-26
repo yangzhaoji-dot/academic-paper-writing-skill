@@ -19,7 +19,16 @@ If retrieval is unavailable, continue with supplied material and mark literature
 
 ## ChatGPT
 
-Treat Research State, Technical State, Section Contracts, Literature Map, Claim Graph, Paper Core, Reader Path, Discourse References, and Module Plan as logical state carried by the conversation unless the environment offers persistent files and persistence is useful.
+For substantial paper work, treat multi-pass outputs as explicit handoff state:
+
+- Scientific Spec;
+- Citation Map;
+- Frozen Paper Spec;
+- cross-pass issues.
+
+Separate calls should reuse these frozen outputs rather than reconstructing them from prose history.
+
+For narrow tasks, Research State, Technical State, Section Contracts, Literature Map, Claim Graph, Paper Core, Reader Path, Discourse References, and Module Plan may remain logical conversation state unless persistence is useful.
 
 When web or document retrieval is available, use it at the literature checkpoints. Keep source identity attached to extracted scientific facts. For discourse grounding, abstract section-level and rhetorical patterns rather than storing long source passages.
 
@@ -33,6 +42,10 @@ For long iterative projects, Codex may persist working state under `.paper-writi
 
 ```text
 .paper-writing/
+  scientific-spec.md
+  citation-map.md
+  frozen-paper-spec.md
+  cross-pass-issues.md
   research-state.md
   technical-state.md
   section-contracts.md
@@ -59,7 +72,9 @@ An API implementation may provide separate retrieval services for:
 
 Keep these roles distinct even if the same paper is returned by both services.
 
-The API implementation may call stages separately, but stage separation must not create duplicated prompt logic. The canonical methodology remains in this skill directory.
+For substantial paper construction, API implementations should normally run the pass sequence as separate calls with serialized handoffs. A pass should receive only the frozen upstream state it needs plus source material relevant to its responsibility.
+
+Stage separation must not duplicate prompt logic. The canonical methodology and ownership rules remain in this skill directory.
 
 ## Venue/template portability
 
