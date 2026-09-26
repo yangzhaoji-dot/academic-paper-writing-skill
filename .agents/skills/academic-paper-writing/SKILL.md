@@ -1,6 +1,6 @@
 ---
 name: academic-paper-writing
-description: Construct, draft, revise, typeset, or review academic research papers from research ideas, evidence, experiments, notes, verified literature, and venue requirements using source-coverage checks, parallel Research and Technical States, section prerequisite contracts, explicit problem construction, literature challenge, claim framing, paper-core extraction, reader-path planning, rhetorical modules, section calibration, authorial synthesis, literature-grounded discourse references, semantic drafting, natural-language realization, experimental obligations, venue-aware presentation planning, and claim-evidence review. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
+description: Construct, draft, revise, typeset, or review academic research papers from research ideas, repositories, evidence, experiments, notes, verified literature, and venue requirements. For substantial full-paper work, use multi-pass orchestration with separate Scientific Audit, Literature & Citation Audit, Paper Packaging, Formal Method, Paper Architecture, section-writing, and Independent Audit calls connected by frozen Scientific Spec, Citation Map, and Paper Spec handoffs. For narrow edits, use the smallest relevant procedure directly. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
 ---
 
 # Academic Paper Writing
@@ -33,7 +33,13 @@ Literature is a cross-cutting constraint rather than a late standalone stage. Wh
 
 ## Workflow
 
-Use the lightweight [five-phase execution model](references/execution.md). The user-facing workflow is:
+Use [the execution model](references/execution.md).
+
+For substantial paper construction, restructuring, formalization, or submission-ready review, use [multi-pass execution](references/multi-pass-execution.md) and the pass definitions in [passes/README.md](passes/README.md). Do not collapse scientific audit, literature verification, packaging, formal method construction, writing, and independent review into one call.
+
+For narrow edits, use the smallest relevant procedure directly.
+
+The user-facing workflow remains:
 
 1. **Understand** — ground Research State and Technical State from complete source coverage.
 2. **Position** — use literature, framing, claims, and novelty checks to stabilize the Paper Core.
@@ -41,7 +47,13 @@ Use the lightweight [five-phase execution model](references/execution.md). The u
 4. **Write Sections** — plan each section, satisfy technical prerequisites, calibrate information resolution and representation responsibilities, draft semantically, synthesize the internal structure into an author-shaped exposition, and realize reader-facing discourse.
 5. **Present** — resolve venue/year, use the official template when available, allocate evidence/visual hierarchy, typeset, review the rendered PDF, and calibrate the final manuscript against nearby real papers.
 
-The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md), but its internal representations are not a mandatory serialization checklist. Use and persist only the state needed for the active task.
+The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md). In multi-pass mode, persist the three key handoffs:
+
+- [Scientific Spec](schemas/scientific-spec.md);
+- [Citation Map](schemas/citation-map.md);
+- [Frozen Paper Spec](schemas/paper-spec.md).
+
+Downstream calls may raise issues against frozen upstream state but may not silently rewrite it.
 
 For runtime-specific behavior, read [references/portability.md](references/portability.md).
 
@@ -75,6 +87,9 @@ Reuse stable state and recompute only when an upstream dependency changes.
 
 Use the schemas in `schemas/` as logical representations, not mandatory serialization formats:
 
+- [Scientific Spec](schemas/scientific-spec.md)
+- [Citation Map](schemas/citation-map.md)
+- [Frozen Paper Spec](schemas/paper-spec.md)
 - [Research State](schemas/research-state.md)
 - [Technical State](schemas/technical-state.md)
 - [Section Contract](schemas/section-contract.md)
@@ -91,6 +106,20 @@ Use the schemas in `schemas/` as logical representations, not mandatory serializ
 - [Paper State](schemas/paper-state.md)
 
 In chat-only environments, keep the state conceptually in conversation context. In repository workflows, it may be persisted if useful. Do not require a state file to perform the workflow.
+
+## Multi-pass selection
+
+For substantial work, use:
+
+- [Pass 01 — Scientific Audit](passes/01-scientific-audit.md)
+- [Pass 02 — Literature & Citation Audit](passes/02-literature-citation-audit.md)
+- [Pass 03 — Paper Packaging](passes/03-paper-packaging.md)
+- [Pass 04 — Formal Method Builder](passes/04-formal-method.md)
+- [Pass 05 — Paper Architecture](passes/05-paper-architecture.md)
+- section writer calls consuming the Frozen Paper Spec;
+- [Pass 06 — Independent Paper Audit](passes/06-independent-audit.md)
+
+Passes own decisions. Writers own prose. Reviewers own issues.
 
 ## Procedure selection
 
