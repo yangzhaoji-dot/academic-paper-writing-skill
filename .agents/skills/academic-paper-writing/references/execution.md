@@ -102,16 +102,22 @@ Internally use, as needed:
 
 - Venue Profile;
 - Presentation Reference;
+- manuscript reference set;
+- paper mode (`real` or `synthetic_preview`);
 - page allocation;
+- evidence visual hierarchy;
 - visual/table/equation planning;
 - appendix moves;
-- rendered-PDF review.
+- official-template gate;
+- rendered-PDF review;
+- Final Manuscript Calibration.
 
 Exit condition:
 
-- venue constraints are satisfied;
+- venue constraints are satisfied or the manuscript is explicitly marked `preview_only`;
 - technical prerequisites remain reader-visible;
-- rendered PDF passes visual review.
+- decisive evidence is visually prominent;
+- rendered PDF passes visual review and manuscript calibration.
 
 ## Minimal-state principle
 
