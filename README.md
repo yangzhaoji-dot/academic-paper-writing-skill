@@ -2,36 +2,32 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.6 pipeline is:
+The v0.6 execution surface is intentionally compact:
 
 ```text
-Research Sources
-  -> Source Coverage
-  -> Research State + Technical State
-  -> Candidate Framing
-       <-> Literature Challenge
-  -> Claim Graph
-       <-> Claim-Literature Matrix
-  -> Paper Core
-       <-> Novelty Boundary Check
-       |\
-       | -> Experimental Obligations
-       |       <-> Literature-grounded baselines / metrics / protocols
-       v
-     Narrative
-       -> Reader Path
-       -> Section / Rhetorical Modules
-       -> Section Contract + Dependency Check
-       -> Semantic Draft
-       +  Discourse References from real papers
-       -> Reader-facing Discourse Composition
-       -> Natural Language Realization
-       -> Venue Resolver (conference + year)
-       -> Page / Figure / Table / Equation Planning
-       -> Official Template Realization
-       -> Rendered PDF Review
-       -> Global Review
+1. Understand
+   -> Research State + Technical State
+
+2. Position
+   -> Literature / Framing / Claims
+   -> Paper Core
+
+3. Design Evidence
+   -> Experimental Obligations
+   -> Baselines / Metrics / Controls
+
+4. Write Sections
+   -> Section Planning
+   -> Semantic Draft
+   -> Discourse Realization
+
+5. Present
+   -> Venue-aware Layout
+   -> LaTeX / PDF
+   -> Rendered Review
 ```
+
+The richer schemas remain available internally, but they are not five more user-visible stages. For example, Section Planning may internally use Reader Path, modules, a Section Contract, and dependency checks without serializing each one as a separate artifact.
 
 The framing layer explicitly separates:
 
@@ -45,7 +41,7 @@ Original Idea
 -> Technical Mechanism
 ```
 
-The v0.6 pipeline adds technical-completeness gates to the literature-grounded, venue-aware paper-construction core:
+The v0.6 methodology keeps the five-phase execution lightweight while using technical-completeness gates internally:
 
 - **Technical State**: method-defining tokens, interfaces, action/state semantics, loss masks, sampling rules, and protocol exceptions survive story compression.
 - **Section Contract**: every section declares what must be established, defined before use, inherited, or safely deferred.
