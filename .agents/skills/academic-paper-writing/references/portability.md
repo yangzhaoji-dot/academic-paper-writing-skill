@@ -59,6 +59,21 @@ Keep these roles distinct even if the same paper is returned by both services.
 
 The API implementation may call stages separately, but stage separation must not create duplicated prompt logic. The canonical methodology remains in this skill directory.
 
+## Venue/template portability
+
+Venue presentation also uses an abstract resolver:
+
+```text
+resolve_venue(conference, year)
+-> verified Venue Profile + official template reference
+```
+
+A runtime may retrieve official instructions through web access, a local cached profile, or user-supplied venue files. The target year must be explicit.
+
+If the target-year profile is unavailable, the runtime may use the latest verified profile only for provisional planning and must mark the result as unverified. It must not silently substitute an older template for final submission.
+
+Rendered-PDF review may be performed by any runtime capable of compiling or viewing the document. If rendering is unavailable, report that the visual review remains pending rather than treating source validation as equivalent.
+
 ## Portability rule
 
 Any critical instruction required to obtain a correct paper must be executable by a model that can only read text files. A script or external search service may automate checking, retrieval, or packaging, but the writing methodology must remain usable without executing code.
