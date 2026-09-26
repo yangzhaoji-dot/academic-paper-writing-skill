@@ -191,3 +191,16 @@ Prefer a framing that satisfies all four:
 - it yields a coherent method and experimental story.
 
 Reject a framing if its significance depends mainly on unsupported universality, invented consensus, or relabeling the technical mechanism as a larger field-level problem.
+
+## Literature challenge
+
+When external retrieval or verified literature is available, the selected framing is still provisional until it has passed [Literature grounding](literature-grounding.md).
+
+Challenge the framing using neighboring terminology and closest work. A framing should be revised if literature shows that:
+
+- the research problem was already formulated more directly;
+- the key distinction is established under another name;
+- the claimed mismatch is already resolved by existing training or modeling;
+- the proposed method role is not meaningfully different from prior work.
+
+Do not equate "not found in the first search" with novelty. Preserve unresolved novelty questions explicitly.
