@@ -44,6 +44,9 @@ discourse_references:
 venue:
   profile: {}
   presentation_reference: {}
+paper_mode: real | synthetic_preview
+presentation_status: venue_compliant | preview_only | unresolved
+manuscript_reference_set: []
 presentation:
   page_budget: {}
   main_figures: []
@@ -51,7 +54,9 @@ presentation:
   main_equations: []
   algorithms: []
   appendix_moves: []
+  evidence_visual_hierarchy: {}
   rendered_pdf_review: {}
+  manuscript_calibration: {}
 sections:
   introduction:
     modules: []
@@ -69,6 +74,8 @@ review:
   claim_calibration:
   experimental_coverage:
   reader_effort:
+  information_resolution:
+  representation_redundancy:
   discourse_reference_integrity:
   narrative_continuity:
   repetition:
