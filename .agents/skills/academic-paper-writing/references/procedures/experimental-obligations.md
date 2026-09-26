@@ -43,6 +43,30 @@ Every major experiment should answer a research question, support a central clai
 
 Several claims may share one experiment, and one claim may require several obligations.
 
+## From obligation to empirical question
+
+Before drafting the Experiments section, convert each major obligation into a compact author-side experiment specification:
+
+```text
+claim being tested
+-> empirical question
+-> competing explanation
+-> controlled variable(s)
+-> independent variable
+-> direct metric
+-> secondary metric(s)
+-> result pattern that supports the claim
+-> result pattern that weakens or falsifies it
+```
+
+Not every field must appear explicitly in prose. The purpose is to make the experiment a causal test of a claim rather than a conventional benchmark row.
+
+Prefer a **single-factor intervention** when possible: change the mechanism whose effect is being tested while holding rollout data, compute, model, prompts, environment interactions, or other relevant factors fixed.
+
+For methods that alter rollout topology, branching, tool calls, retrieval calls, or external computation, matching those resources is part of the scientific control. Do not relegate this only to an efficiency appendix.
+
+A headline task score is insufficient evidence for a mechanism claim when a more direct metric exists.
+
 ## Output
 
 Use the [Experimental Obligation schema](../../schemas/experimental-obligation.md).
