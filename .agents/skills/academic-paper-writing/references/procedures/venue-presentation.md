@@ -43,10 +43,13 @@ Allocate the page budget from scientific importance, not equal section sizes.
 
 For each main-paper element, classify it as:
 
-- **core** — required to understand or evaluate the central claim;
+- **core claim** — required to understand or evaluate the central thesis;
+- **technical prerequisite** — required to interpret a central variable, interface, equation, algorithm, transition, or result;
 - **supporting** — useful but compressible;
 - **appendix candidate** — needed for reproducibility, derivation, extended evidence, or reviewer inspection but not for first-pass understanding;
 - **removable** — conventional or repetitive material with no unique role.
+
+Technical prerequisites default to the main paper. They may move only if the relevant Section Contract shows that the dependency has already been established elsewhere or can be compressed without loss of meaning.
 
 Do not solve page overflow by shrinking fonts, violating the template, or indiscriminately compressing figures.
 
@@ -54,12 +57,24 @@ Prefer this repair order:
 
 \`\`\`text
 remove repetition
--> move non-core detail to appendix
+-> move non-core, non-prerequisite detail to appendix
 -> redesign table / figure
 -> merge compatible exposition
 -> compress wording
 -> only then revisit section allocation
 \`\`\`
+
+## Prerequisite preservation gate
+
+Before finalizing page allocation:
+
+1. load the Section Contracts;
+2. inspect every proposed appendix move;
+3. reject any move that removes the only reader-visible definition of a downstream technical object;
+4. ensure main-paper equations can be interpreted from definitions that remain in the main paper;
+5. ensure interface semantics and protocol exceptions central to the method are not mislabeled as implementation detail.
+
+If page pressure conflicts with a prerequisite, compress or visualize the prerequisite rather than deleting it.
 
 ## Stage 2 — Visual / equation / table planning
 
