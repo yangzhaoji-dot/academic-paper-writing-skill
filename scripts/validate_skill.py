@@ -41,6 +41,7 @@ def main() -> None:
         "references/procedures/naturalization.md",
         "references/procedures/review.md",
         "schemas/research-state.md",
+        "schemas/framing.md",
         "schemas/claim.md",
         "schemas/module.md",
         "schemas/paper-state.md",

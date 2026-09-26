@@ -1,6 +1,6 @@
 ---
 name: academic-paper-writing
-description: Construct, draft, revise, or review academic research papers from research ideas, evidence, experiments, and notes using explicit claim framing, narrative planning, rhetorical modules, semantic drafting, natural-language realization, and claim-evidence review. Use for paper introductions, section planning, research framing, contribution positioning, prose naturalization, and full-paper consistency review; do not invent missing research facts or citations.
+description: Construct, draft, revise, or review academic research papers from research ideas, evidence, experiments, and notes using explicit problem construction, claim framing, narrative planning, rhetorical modules, semantic drafting, natural-language realization, and claim-evidence review. Use for paper introductions, section planning, research framing, contribution positioning, prose naturalization, and full-paper consistency review; do not invent missing research facts or citations.
 ---
 
 # Academic Paper Writing
@@ -18,7 +18,7 @@ Never introduce a factual result, comparison, citation, method component, datase
 Infer the narrowest mode that satisfies the request:
 
 - **Ground**: organize ideas, methods, experiments, literature notes, and limitations into a Research State.
-- **Frame**: derive defensible claims, gaps, significance, and candidate framings.
+- **Frame**: construct the broader research setting, structural change, mismatch, research problem, method role, and defensible claims.
 - **Plan**: choose a narrative and map it into section-level rhetorical modules.
 - **Draft**: create semantic content and then natural prose.
 - **Revise**: update an existing section while preserving verified claims and evidence.
@@ -31,13 +31,14 @@ Do not rerun earlier stages unnecessarily when a usable state already exists.
 Read [references/workflow.md](references/workflow.md) for the end-to-end process. The default order is:
 
 1. Ground the research.
-2. Build the Claim Graph and candidate framing.
-3. Select a global narrative.
-4. Plan section modules.
-5. Fill modules semantically.
-6. Compose discourse across module boundaries.
-7. Realize natural academic prose.
-8. Review globally and repair only the failing layer.
+2. Construct the paper-level problem and select a framing.
+3. Build the Claim Graph under that framing.
+4. Select a global narrative.
+5. Plan section modules.
+6. Fill modules semantically.
+7. Compose discourse across module boundaries.
+8. Realize natural academic prose.
+9. Review globally and repair only the failing layer.
 
 For runtime-specific behavior, read [references/portability.md](references/portability.md).
 
@@ -46,6 +47,7 @@ For runtime-specific behavior, read [references/portability.md](references/porta
 Use the schemas in `schemas/` as logical representations, not mandatory serialization formats:
 
 - [Research State](schemas/research-state.md)
+- [Framing](schemas/framing.md)
 - [Claim](schemas/claim.md)
 - [Module](schemas/module.md)
 - [Paper State](schemas/paper-state.md)
@@ -57,12 +59,41 @@ In chat-only environments, keep the state conceptually in conversation context. 
 Read only the procedure files needed for the current request:
 
 - [Research grounding](references/procedures/grounding.md)
-- [Claim framing](references/procedures/framing.md)
+- [Problem construction and claim framing](references/procedures/framing.md)
 - [Narrative planning](references/procedures/narrative.md)
 - [Module planning](references/procedures/module-planning.md)
 - [Semantic writing](references/procedures/semantic-writing.md)
 - [Naturalization](references/procedures/naturalization.md)
 - [Review](references/procedures/review.md)
+
+## Framing invariant
+
+Do not enlarge an idea by adding rhetorical importance. Enlarge it by identifying the broader setting in which the idea is structurally meaningful.
+
+The default framing path is:
+
+```text
+Original Idea
+-> Research Setting
+-> Structural Change
+-> Structural Mismatch
+-> Research Problem
+-> Method Role
+-> Technical Mechanism
+```
+
+This path is diagnostic, not mandatory. Skip a node if it cannot be supported. Do not invent a field merely to produce a grander story.
+
+A strong paper thesis often emerges from a compact relation such as:
+
+```text
+new system structure
+-> old training/modeling assumption no longer matches
+-> research problem
+-> method that restores alignment
+```
+
+The skill must distinguish this structural construction from a generic "importance" rewrite.
 
 ## Introduction MVP
 
@@ -97,7 +128,8 @@ Default prose guidance is in [styles/default-academic.md](styles/default-academi
 When review detects a problem, repair the earliest responsible layer:
 
 - factual error -> Research State;
-- overclaim -> Claim Graph;
+- artificial or inflated problem -> Framing;
+- overclaim -> Framing or Claim Graph;
 - weak logic -> Narrative;
 - missing function -> Module Plan;
 - incomplete argument -> Semantic Draft;

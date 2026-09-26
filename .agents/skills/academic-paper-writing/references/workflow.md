@@ -8,7 +8,7 @@ The paper is constructed through four phases.
 
 Create a factual substrate from the available material. Record:
 
-- problem and setting;
+- problem and setting already explicit in the research material;
 - original idea;
 - method and mechanism;
 - baselines and comparisons;
@@ -18,9 +18,50 @@ Create a factual substrate from the available material. Record:
 
 Do not perform significance inflation here.
 
-### 2. Claim Graph
+### 2. Problem construction and framing
 
-Transform the Research State into explicit claims. Every important claim receives:
+Starting from the narrow original idea, construct a paper-level research problem through the smallest defensible chain:
+
+```text
+Original Idea
+-> Research Setting
+-> Structural Change
+-> Structural Mismatch
+-> Research Problem
+-> Method Role
+-> Technical Mechanism
+```
+
+The key question is not merely "why is this important?" but:
+
+> In what broader research setting does this idea become structurally meaningful, and what changes in that setting make the old modeling, training, supervision, optimization, or evaluation structure incomplete?
+
+Typical structural changes include:
+
+- a new decision variable;
+- a new stage in the policy or system;
+- a new interface;
+- a new conditional dependency;
+- new external state or computation;
+- a new optimization object;
+- a new source of heterogeneity.
+
+Typical mismatches include:
+
+- policy structure vs. credit structure;
+- system structure vs. optimization structure;
+- decision structure vs. supervision structure;
+- architecture vs. training objective;
+- capability vs. interface;
+- state structure vs. representation.
+
+Do not force a mismatch framing when the work is better described as a direct empirical discovery, new capability, systems contribution, or straightforward method improvement.
+
+The selected framing must record what is factual, what is interpretation, and what remains a broader implication.
+
+### 3. Claim Graph
+
+After selecting a framing, transform the Research State and framing into explicit claims. Every important claim receives:
 
 - a claim type;
 - evidence or support;
@@ -30,25 +71,28 @@ Transform the Research State into explicit claims. Every important claim receive
 
 Distinguish direct findings from interpretations and broader implications.
 
+Claims should formalize the selected problem construction rather than silently widening it.
+
 ## Phase II — Paper construction
-
-### 3. Framing
-
-Generate a small number of candidate framings, such as:
-
-- technical;
-- methodological;
-- problem/limitation;
-- principle/conceptual;
-- broader implication.
-
-A framing changes emphasis, not underlying facts.
 
 ### 4. Narrative
 
-Choose the story logic that makes the claims cohere. The narrative is a sequence of argumentative moves, not prose.
+Choose the story logic that makes the selected framing and claims cohere. The narrative is a sequence of argumentative moves, not prose.
 
-Examples:
+A structural-mismatch framing often yields:
+
+```text
+research setting
+-> structural change
+-> mismatch
+-> consequence
+-> research problem
+-> method role
+-> technical mechanism
+-> evidence
+```
+
+Other valid examples include:
 
 - existing paradigm -> hidden limitation -> consequence -> insight -> method -> evidence;
 - existing formulation -> missing variable -> new principle -> operationalization -> evidence;
@@ -80,6 +124,8 @@ Produce natural academic prose under a style/author profile. Avoid formulaic LLM
 
 Check:
 
+- factual grounding of the research setting and structural claims;
+- whether the mismatch is real rather than rhetorically manufactured;
 - claim-evidence alignment;
 - claim strength;
 - semantic repetition;

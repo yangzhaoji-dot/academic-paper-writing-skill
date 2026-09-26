@@ -6,7 +6,8 @@ The core pipeline is:
 
 ```text
 Research State
-  -> Claim & Framing
+  -> Problem Construction / Framing
+  -> Claim Graph
   -> Global Narrative
   -> Section / Rhetorical Modules
   -> Semantic Draft
@@ -14,6 +15,20 @@ Research State
   -> Natural Language Realization
   -> Global Review
 ```
+
+The framing layer explicitly separates:
+
+```text
+Original Idea
+-> Research Setting
+-> Structural Change
+-> Structural Mismatch
+-> Research Problem
+-> Method Role
+-> Technical Mechanism
+```
+
+This turns "expand the significance of the idea" into a constrained research-problem construction task rather than rhetorical inflation.
 
 The repository is designed around one source of truth:
 
@@ -26,15 +41,16 @@ That directory contains the actual Skill. The rest of the repository provides pa
 ## Design principles
 
 1. **Ground before writing.** Research facts, results, and limitations are separated from presentation.
-2. **Claims are typed and evidence-linked.** A broader implication must not silently become a demonstrated result.
-3. **Narrative is planned before prose.** The system first decides what story the paper tells.
-4. **Modules are rhetorical functions, not paragraphs.** Multiple modules may be merged into one paragraph and one module may span multiple paragraphs.
-5. **Semantic drafting and naturalization are separate.** The naturalizer may reorganize prose but may not invent facts or strengthen claims.
-6. **The core workflow is runtime-independent.** Scripts are optional enhancements, not prerequisites.
+2. **Construct the problem structurally.** Broader framing comes from identifying the setting, changed decision/system structure, and any real mismatch—not from promotional language.
+3. **Claims are typed and evidence-linked.** A broader implication must not silently become a demonstrated result.
+4. **Narrative is planned before prose.** The system first decides what story the paper tells.
+5. **Modules are rhetorical functions, not paragraphs.** Multiple modules may be merged into one paragraph and one module may span multiple paragraphs.
+6. **Semantic drafting and naturalization are separate.** The naturalizer may reorganize prose but may not invent facts or strengthen claims.
+7. **The core workflow is runtime-independent.** Scripts are optional enhancements, not prerequisites.
 
 ## Current MVP
 
-The first release fully specifies the pipeline for **Introduction writing**. The same state, claim, narrative, and realization layers are intended to extend to Method, Experiments, Related Work, and Conclusion.
+The first release fully specifies the pipeline for **Introduction writing**. The same state, framing, claim, narrative, and realization layers are intended to extend to Method, Experiments, Related Work, and Conclusion.
 
 Included Introduction modules:
 
@@ -115,4 +131,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.1: architecture and Introduction pipeline.
+MVP v0.2: Introduction pipeline with explicit research-problem construction.
