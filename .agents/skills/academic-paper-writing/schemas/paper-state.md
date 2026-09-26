@@ -8,6 +8,8 @@ passes:
     status: not_started | draft | frozen | blocked
   literature_citation_audit:
     status: not_started | draft | frozen | blocked
+  convention_mining:
+    status: not_started | draft | frozen | blocked
   paper_packaging:
     status: not_started | draft | frozen | blocked
   formal_method:
@@ -19,6 +21,7 @@ passes:
 
 scientific_spec: {}
 citation_map: {}
+convention_profile: {}
 frozen_paper_spec: {}
 
 research_state: {}
@@ -117,6 +120,7 @@ review:
   repetition:
   venue_compliance:
   presentation_quality:
+  convention_alignment:
   naturalness:
 ```
 
