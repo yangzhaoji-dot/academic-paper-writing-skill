@@ -38,7 +38,7 @@ Use the lightweight [five-phase execution model](references/execution.md). The u
 1. **Understand** — ground Research State and Technical State from complete source coverage.
 2. **Position** — use literature, framing, claims, and novelty checks to stabilize the Paper Core.
 3. **Design Evidence** — derive claim-driven experimental obligations and ground their operationalization in literature.
-4. **Write Sections** — plan each section, satisfy technical prerequisites, calibrate information resolution and representation responsibilities against real papers, draft semantically, and realize reader-facing discourse.
+4. **Write Sections** — plan each section, satisfy technical prerequisites, calibrate information resolution and representation responsibilities, draft semantically, synthesize the internal structure into an author-shaped exposition, and realize reader-facing discourse.
 5. **Present** — resolve venue/year, use the official template when available, allocate evidence/visual hierarchy, typeset, review the rendered PDF, and calibrate the final manuscript against nearby real papers.
 
 The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md), but its internal representations are not a mandatory serialization checklist. Use and persist only the state needed for the active task.
@@ -100,6 +100,7 @@ Read only the procedure files needed for the current request:
 - [Technical grounding](references/procedures/technical-grounding.md)
 - [Section Contract and prerequisite check](references/procedures/section-contract.md)
 - [Section calibration](references/procedures/section-calibration.md)
+- [Authorial synthesis](references/procedures/authorial-synthesis.md)
 - [Final manuscript calibration](references/procedures/manuscript-calibration.md)
 - [Problem construction and claim framing](references/procedures/framing.md)
 - [Paper Core](references/procedures/paper-core.md)
@@ -257,7 +258,8 @@ When review detects a problem, repair the earliest responsible layer:
 - missing reason for a method component -> Semantic Draft;
 - overfull / under-resolved section -> Section Calibration;
 - redundant prose/table/figure explanation -> Representation Allocation;
-- robotic or assembled prose -> Discourse Reference / Naturalization;
+- workflow leakage, concept fragmentation, terminology overload, or missing concrete anchor -> Authorial Synthesis;
+- robotic or assembled prose after synthesis -> Discourse Reference / Naturalization;
 - venue violation, poor page allocation, unreadable visual, or rendered-layout defect -> Venue Profile / Presentation Plan / Typesetting;
 - whole-paper density, hierarchy, or page-distribution mismatch -> Final Manuscript Calibration.
 
