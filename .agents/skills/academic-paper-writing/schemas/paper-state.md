@@ -12,8 +12,18 @@ framing:
   technical_mechanism:
   paper_thesis:
 claims: []
+paper_core:
+  concrete_problem:
+  key_distinction:
+  thesis:
+  method_role:
+  technical_mechanism:
+  evidence_needed: []
+  non_claims: []
+experimental_obligations: []
 selected_framing:
 narrative:
+reader_path:
 sections:
   introduction:
     modules: []
@@ -22,7 +32,10 @@ sections:
 review:
   factual_integrity:
   framing_validity:
+  paper_core_consistency:
   claim_calibration:
+  experimental_coverage:
+  reader_effort:
   narrative_continuity:
   repetition:
   naturalness:

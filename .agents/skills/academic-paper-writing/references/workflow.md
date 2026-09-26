@@ -1,6 +1,6 @@
 # End-to-end workflow
 
-The paper is constructed through four phases.
+The paper is constructed through four phases. The phases separate research truth, paper-level reasoning, reader-facing explanation, and final review.
 
 ## Phase I — Research understanding
 
@@ -36,28 +36,7 @@ The key question is not merely "why is this important?" but:
 
 > In what broader research setting does this idea become structurally meaningful, and what changes in that setting make the old modeling, training, supervision, optimization, or evaluation structure incomplete?
 
-Typical structural changes include:
-
-- a new decision variable;
-- a new stage in the policy or system;
-- a new interface;
-- a new conditional dependency;
-- new external state or computation;
-- a new optimization object;
-- a new source of heterogeneity.
-
-Typical mismatches include:
-
-- policy structure vs. credit structure;
-- system structure vs. optimization structure;
-- decision structure vs. supervision structure;
-- architecture vs. training objective;
-- capability vs. interface;
-- state structure vs. representation.
-
 Do not force a mismatch framing when the work is better described as a direct empirical discovery, new capability, systems contribution, or straightforward method improvement.
-
-The selected framing must record what is factual, what is interpretation, and what remains a broader implication.
 
 ### 3. Claim Graph
 
@@ -71,68 +50,148 @@ After selecting a framing, transform the Research State and framing into explici
 
 Distinguish direct findings from interpretations and broader implications.
 
-Claims should formalize the selected problem construction rather than silently widening it.
+### 4. Paper Core
+
+Compress the selected framing and central claims into a stable Paper Core:
+
+```text
+concrete problem
++ key distinction
++ thesis
++ method role
++ one-line mechanism
++ evidence needed
++ non-claims
+```
+
+This is the story invariant for the paper.
+
+The abstract, introduction, method, experiments, and conclusion should express this same core at different levels of resolution rather than inventing section-local motivations.
+
+### 5. Experimental obligations
+
+For every central claim, derive the minimum evidence a skeptical reader would require.
+
+Record:
+
+- direct supporting observation;
+- plausible alternative explanation;
+- matched control or ablation;
+- direct metric;
+- strongest competing baseline;
+- falsifying or weakening result.
+
+This branch can proceed in parallel with prose planning once the Paper Core and Claim Graph are stable.
 
 ## Phase II — Paper construction
 
-### 4. Narrative
+### 6. Narrative
 
-Choose the story logic that makes the selected framing and claims cohere. The narrative is a sequence of argumentative moves, not prose.
+Choose the reveal order that makes the Paper Core persuasive and coherent. The Narrative is an author-side argumentative spine, not prose.
 
-A structural-mismatch framing often yields:
+Examples include:
+
+- concrete difficulty -> hidden distinction -> research problem -> method;
+- existing formulation -> missing variable -> principle -> operationalization;
+- observation -> inadequate explanation -> hypothesis -> method -> verification.
+
+### 7. Reader Path
+
+Convert the internal narrative into the shortest sequence of concepts the reader needs.
+
+A typical Reader Path is:
 
 ```text
-research setting
--> structural change
--> mismatch
--> consequence
--> research problem
--> method role
--> technical mechanism
--> evidence
+easy entry point
+-> first new idea
+-> concrete difficulty
+-> key distinction
+-> missing capability
+-> solution requirement
+-> method entry
 ```
 
-Other valid examples include:
+Compress or omit internal framing nodes whenever the reader can infer them from a concrete example, causal statement, or comparison.
 
-- existing paradigm -> hidden limitation -> consequence -> insight -> method -> evidence;
-- existing formulation -> missing variable -> new principle -> operationalization -> evidence;
-- observation -> inadequacy of current explanation -> hypothesis -> method -> verification.
+Do not expose planning labels merely because they exist internally.
 
-### 5. Section and module plan
+### 8. Section and module plan
 
-Map the narrative into paper sections, then into rhetorical modules. A module answers a semantic function such as "establish the existing paradigm" or "state the core insight".
+Map the Reader Path and Narrative into paper sections, then into rhetorical modules.
+
+A module answers a semantic function such as "expose the concrete ambiguity" or "state the method intuition". It is not a paragraph boundary.
 
 Never assume one module equals one paragraph.
 
 ## Phase III — Writing
 
-### 6. Semantic draft
+### 9. Semantic draft
 
-For each module, fill the required facts, claims, reasoning, and evidence. Optimize for semantic correctness and completeness, not elegance.
+For each module, fill the required facts, claims, reasoning, and evidence.
 
-### 7. Discourse composition
+For every nontrivial method component, establish:
 
-Combine neighboring modules into a coherent local argument. Resolve ordering, references, information density, and transition structure.
+```text
+WHY -> WHAT -> HOW
+```
 
-### 8. Natural-language realization
+Optimize for correctness, reader necessity, and completeness—not elegance.
 
-Produce natural academic prose under a style/author profile. Avoid formulaic LLM phrasing and excessive explicit transitions.
+### 10. Reader-facing discourse composition
+
+Combine neighboring modules into a coherent local argument using the Reader Path as the direct guide.
+
+Hide internal scaffolding. Compress abstract framing into concrete scientific statements when possible. Decide where examples, definitions, equations, and terminology are actually needed.
+
+### 11. Natural-language realization
+
+Produce natural academic prose under a style/author profile.
+
+The target is technical writing that reads as authored rather than assembled.
+
+Naturalization may change sentence and paragraph boundaries but may not change facts, claim strength, or the Paper Core.
 
 ## Phase IV — Review
 
-### 9. Global review
+### 12. Global review
 
 Check:
 
 - factual grounding of the research setting and structural claims;
-- whether the mismatch is real rather than rhetorically manufactured;
-- claim-evidence alignment;
-- claim strength;
+- whether the framing problem is real rather than rhetorically manufactured;
+- claim-evidence alignment and scope;
+- Paper Core consistency across sections;
+- whether experiments discharge the central claims' obligations;
+- reader effort and prerequisite order;
 - semantic repetition;
 - narrative continuity;
 - terminology consistency;
-- section purpose;
 - naturalness;
 - limitation visibility.
 
 Repair the earliest failing layer and rerun only downstream steps affected by that repair.
+
+## Repair examples
+
+```text
+wrong fact
+-> Research State
+
+inflated problem
+-> Framing
+
+sections tell different stories
+-> Paper Core
+
+claim lacks decisive experiment
+-> Experimental Obligations
+
+argument is correct but hard to follow
+-> Reader Path
+
+method component appears unmotivated
+-> Semantic Draft WHY/WHAT/HOW
+
+prose sounds assembled
+-> Naturalization
+```

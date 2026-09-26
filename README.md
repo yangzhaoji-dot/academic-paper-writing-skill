@@ -2,18 +2,23 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The core pipeline is:
+The v0.3 pipeline is:
 
 ```text
 Research State
   -> Problem Construction / Framing
   -> Claim Graph
-  -> Global Narrative
-  -> Section / Rhetorical Modules
-  -> Semantic Draft
-  -> Discourse Composition
-  -> Natural Language Realization
-  -> Global Review
+  -> Paper Core
+       |\
+       | -> Experimental Obligations
+       v
+     Narrative
+       -> Reader Path
+       -> Section / Rhetorical Modules
+       -> Semantic Draft
+       -> Reader-facing Discourse
+       -> Natural Language Realization
+       -> Global Review
 ```
 
 The framing layer explicitly separates:
@@ -28,29 +33,34 @@ Original Idea
 -> Technical Mechanism
 ```
 
-This turns "expand the significance of the idea" into a constrained research-problem construction task rather than rhetorical inflation.
+The v0.3 reader-facing layer adds three controls:
 
-The repository is designed around one source of truth:
+- **Paper Core**: every major section tells the same story at a different level of detail.
+- **Reader Path**: internal framing is compressed into the shortest conceptual path a reader needs.
+- **Experimental Obligations**: central claims determine the evidence, controls, metrics, baselines, and falsifiers required from experiments.
 
-```text
-.agents/skills/academic-paper-writing/
-```
+Method writing additionally follows a semantic **WHY -> WHAT -> HOW** check before prose realization.
 
-That directory contains the actual Skill. The rest of the repository provides packaging, validation, examples, and repository-level guidance.
+## Reader-first inspiration
+
+The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-for-writing-an-AI-ML-paper](https://github.com/wmd3i/Some-tips-for-writing-an-AI-ML-paper): keep a consistent story across sections, reduce reader/reviewer effort, explain why before mechanics, and align experiments with claims. This repository operationalizes those principles as explicit intermediate representations rather than copying the source wording.
 
 ## Design principles
 
 1. **Ground before writing.** Research facts, results, and limitations are separated from presentation.
 2. **Construct the problem structurally.** Broader framing comes from identifying the setting, changed decision/system structure, and any real mismatch—not from promotional language.
-3. **Claims are typed and evidence-linked.** A broader implication must not silently become a demonstrated result.
-4. **Narrative is planned before prose.** The system first decides what story the paper tells.
-5. **Modules are rhetorical functions, not paragraphs.** Multiple modules may be merged into one paragraph and one module may span multiple paragraphs.
-6. **Semantic drafting and naturalization are separate.** The naturalizer may reorganize prose but may not invent facts or strengthen claims.
-7. **The core workflow is runtime-independent.** Scripts are optional enhancements, not prerequisites.
+3. **Keep one Paper Core.** Abstract, Introduction, Method, Experiments, and Conclusion must remain views of the same research story.
+4. **Optimize for the reader.** Internal planning schemas must not leak mechanically into final prose.
+5. **Claims are typed and evidence-linked.** A broader implication must not silently become a demonstrated result.
+6. **Claims create experimental obligations.** Experiments should test the thesis and eliminate competing explanations.
+7. **Explain why before what/how.** Method components should be motivated by an unresolved need before their mechanics are presented.
+8. **Modules are rhetorical functions, not paragraphs.**
+9. **Semantic drafting and naturalization are separate.** The naturalizer may reorganize prose but may not invent facts or strengthen claims.
+10. **The core workflow is runtime-independent.** Scripts are optional enhancements, not prerequisites.
 
 ## Current MVP
 
-The first release fully specifies the pipeline for **Introduction writing**. The same state, framing, claim, narrative, and realization layers are intended to extend to Method, Experiments, Related Work, and Conclusion.
+The current release focuses on **Introduction construction and paper-level story formation**, while also defining the bridge from claims to experiment design. The same state, framing, core, reader-path, and realization layers are intended to extend to Method, Experiments, Related Work, Abstract, and Conclusion.
 
 Included Introduction modules:
 
@@ -77,7 +87,7 @@ This repository stores the skill in the repo-local Codex convention:
 .agents/skills/academic-paper-writing/SKILL.md
 ```
 
-When this repository is the active workspace, ask Codex to use the `academic-paper-writing` skill for paper framing, drafting, revising, or reviewing.
+When this repository is the active workspace, ask Codex to use the `academic-paper-writing` skill for paper framing, drafting, revising, experiment-story alignment, or reviewing.
 
 To use the skill in another repository, copy the directory:
 
@@ -98,8 +108,6 @@ Output:
 ```text
 dist/academic-paper-writing.zip
 ```
-
-The zip is structured for surfaces that accept an uploaded Skill bundle. Product availability and installation UI can differ by ChatGPT account/workspace.
 
 ## Validate
 
@@ -131,4 +139,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.2: Introduction pipeline with explicit research-problem construction.
+MVP v0.3: reader-first paper construction, one-core-story consistency, and claim-driven experimental obligations.
