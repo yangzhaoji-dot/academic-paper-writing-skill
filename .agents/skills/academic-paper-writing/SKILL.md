@@ -17,7 +17,7 @@ Never introduce a factual result, comparison, citation, method component, datase
 
 Infer the narrowest mode that satisfies the request:
 
-- **Ground**: organize ideas, methods, experiments, literature notes, and limitations into a Research State.
+- **Ground**: inventory research sources, organize factual research content into a Research State, and preserve method-defining operational semantics in a parallel Technical State.
 - **Frame**: construct the broader research setting, structural change, mismatch, research problem, method role, and defensible claims.
 - **Core**: compress the selected framing and claims into one stable Paper Core that every major section must express at an appropriate level of detail.
 - **Plan**: choose a narrative, derive the shortest Reader Path, and map it into section-level rhetorical modules.
@@ -35,7 +35,7 @@ Literature is a cross-cutting constraint rather than a late standalone stage. Wh
 
 Read [references/workflow.md](references/workflow.md) for the end-to-end process. The default order is:
 
-1. Ground the research.
+1. Inventory research-source coverage and ground both Research State and Technical State.
 2. Construct a candidate paper-level problem and framing.
 3. Challenge that framing against relevant literature when retrieval is available.
 4. Build the Claim Graph and Claim–Literature Matrix.
@@ -44,14 +44,16 @@ Read [references/workflow.md](references/workflow.md) for the end-to-end process
 7. Select a global narrative.
 8. Convert the internal narrative into a Reader Path.
 9. Plan section modules.
-10. Fill modules semantically.
-11. Extract section-matched Discourse References from several real papers when available.
-12. Compose reader-facing discourse across module boundaries using our Reader Path and compatible discourse patterns.
-13. Realize natural academic prose.
-14. Resolve the target venue/year and load a verified Venue Profile.
-15. Plan page allocation, figures, tables, equations, algorithms, and appendix moves.
-16. Realize the official template and review the rendered PDF.
-17. Review globally and repair only the failing layer.
+10. Build a Section Contract from the Paper Core, Technical State, claims, and reader prerequisites.
+11. Fill modules semantically and run the prerequisite/dependency gate.
+12. Extract section-matched Discourse References from several real papers when available.
+13. Compose reader-facing discourse across module boundaries using our Reader Path and compatible discourse patterns.
+14. Realize natural academic prose.
+15. Resolve the target venue/year and load a verified Venue Profile.
+16. Plan page allocation, figures, tables, equations, algorithms, and appendix moves while preserving technical prerequisites.
+17. Re-run Section Contracts before moving content to appendix.
+18. Realize the official template and review the rendered PDF.
+19. Review globally and repair only the failing layer.
 
 For runtime-specific behavior, read [references/portability.md](references/portability.md).
 
@@ -71,6 +73,8 @@ The key rules are:
 Use the schemas in `schemas/` as logical representations, not mandatory serialization formats:
 
 - [Research State](schemas/research-state.md)
+- [Technical State](schemas/technical-state.md)
+- [Section Contract](schemas/section-contract.md)
 - [Framing](schemas/framing.md)
 - [Claim](schemas/claim.md)
 - [Paper Core](schemas/paper-core.md)
@@ -90,6 +94,8 @@ In chat-only environments, keep the state conceptually in conversation context. 
 Read only the procedure files needed for the current request:
 
 - [Research grounding](references/procedures/grounding.md)
+- [Technical grounding](references/procedures/technical-grounding.md)
+- [Section Contract and prerequisite check](references/procedures/section-contract.md)
 - [Problem construction and claim framing](references/procedures/framing.md)
 - [Paper Core](references/procedures/paper-core.md)
 - [Experimental obligations](references/procedures/experimental-obligations.md)
@@ -120,6 +126,25 @@ Original Idea
 ```
 
 This path is diagnostic, not mandatory. Skip a node if it cannot be supported. Do not invent a field merely to produce a grander story.
+
+## Technical completeness invariant
+
+The Paper Core is intentionally compressed and must not be used as the sole source for Method or presentation planning.
+
+Maintain a parallel Technical State for method-defining semantics such as:
+
+- decision and action spaces;
+- special-token or structured-action representations;
+- interface and state semantics;
+- transition rules;
+- loss masks and gradient regions;
+- sampling / branching semantics;
+- protocol exceptions;
+- dependencies among technical objects.
+
+Before drafting any section, create a Section Contract that specifies what the reader must understand and which prerequisites must be defined before downstream equations, algorithms, or results appear.
+
+A section may not proceed to discourse composition while required technical prerequisites are missing.
 
 ## Paper Core invariant
 
@@ -213,6 +238,7 @@ Default prose guidance is in [styles/default-academic.md](styles/default-academi
 
 When review detects a problem, repair the earliest responsible layer:
 
+- missing research source or incomplete method definition -> Research Source Coverage / Technical State;
 - factual error -> Research State;
 - unsupported literature statement, novelty claim, or baseline convention -> Literature Map;
 - artificial or inflated problem -> Framing;
@@ -222,6 +248,7 @@ When review detects a problem, repair the earliest responsible layer:
 - weak reveal order -> Narrative;
 - high reader effort or exposed scaffolding -> Reader Path;
 - missing rhetorical function -> Module Plan;
+- missing definition, interface, action semantics, or prerequisite -> Technical State / Section Contract;
 - missing reason for a method component -> Semantic Draft;
 - robotic or assembled prose -> Discourse Reference / Naturalization;
 - venue violation, poor page allocation, unreadable visual, or rendered-layout defect -> Venue Profile / Presentation Plan / Typesetting.
