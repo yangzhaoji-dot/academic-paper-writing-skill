@@ -1,0 +1,118 @@
+# Pass 05 — Paper Architecture
+
+## Responsibility
+
+Map the frozen science, packaging, formal method, evidence obligations, real-paper references, and venue rules into a complete manuscript architecture.
+
+This is the first pass allowed to assign page budget.
+
+It does **not** remove required scientific objects merely to fit a page target.
+
+## Inputs
+
+Use:
+
+- Scientific Spec;
+- Citation Map;
+- Packaging Spec;
+- Formal Method;
+- Experimental Obligations;
+- venue profile;
+- 3–5 nearby real manuscript references when useful.
+
+## Architecture decisions
+
+### 1. Section structure
+
+Choose the minimum structure that gives required scientific objects a natural home.
+
+For a methods paper, explicitly consider whether readers need:
+
+- Preliminaries;
+- Problem Formulation;
+- Method;
+- Experiments;
+- Discussion / Limitations;
+- Conclusion.
+
+Do not omit Preliminaries simply because the proposed method can be described informally.
+
+### 2. Required-content placement
+
+Every required equation, definition, citation group, metric, contribution, and assumption must have a section location.
+
+No required object may remain "implicitly known."
+
+### 3. Section contracts
+
+For each section record:
+
+- scientific role;
+- must include;
+- may defer;
+- equations;
+- citations;
+- visuals;
+- page target.
+
+### 4. Visual architecture
+
+Plan visuals by scientific responsibility:
+
+- Figure 1 -> paper-level insight;
+- method overview -> mechanism / credit map;
+- main table -> central evidence;
+- diagnostics -> secondary evidence.
+
+Do not make sampling mechanics the visual center if the contribution is a credit estimator.
+
+### 5. Experiment hierarchy
+
+Separate:
+
+- end-to-end method comparisons;
+- controlled same-data / same-rollout estimator comparisons;
+- mechanism ablations;
+- diagnostic metrics;
+- robustness / scope.
+
+Baseline naming must follow Citation Map distinctions.
+
+### 6. Page budget
+
+Only after required content is placed, assign page targets.
+
+Do not optimize a methods paper toward an arbitrary short preview if the venue permits more room and the missing content affects reviewer judgment.
+
+### 7. Appendix boundary
+
+Move reproducibility detail, extended derivations, prompts, adapters, and secondary sweeps only after confirming the main paper retains what is necessary to evaluate the claim.
+
+## Real-paper calibration
+
+Use several papers to check whether the architecture is plausible, not to copy one outline.
+
+Ask:
+
+- where do nearby methods papers establish their baseline formulation?
+- how much main-body space is allocated to the core method?
+- where are metric definitions placed?
+- how prominent is the main result?
+- which technical details remain in the main body?
+
+## Exit criteria
+
+The architecture is ready to freeze when:
+
+- every required scientific object has a location;
+- the paper thesis is visible across sections;
+- the central method has enough main-body space;
+- experiments have a clear evidence hierarchy;
+- page budget follows scientific need;
+- appendix moves do not break reviewer understanding.
+
+## Output
+
+Assemble the [Frozen Paper Spec](../schemas/paper-spec.md) from Pass 1–5 outputs.
+
+Set \`status: frozen\` only when cross-pass contradictions are resolved.
