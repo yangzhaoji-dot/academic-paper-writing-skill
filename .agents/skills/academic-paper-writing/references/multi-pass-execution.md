@@ -22,33 +22,34 @@ Do not ask one call to simultaneously:
 
 ## Default orchestration
 
-\`\`\`text
-Research Sources
-   |\
-   | +--> Pass 1: Scientific Audit --------+
-   |                                       |
-   +----> Pass 2: Literature Audit --------+
-                                            +--> Pass 3: Paper Packaging
-Convention Sources
+```text
+Research Sources                     Convention Sources
+   |\                                     |
+   | +--> Pass 1: Scientific Audit         +--> Convention Mining
    |
-   +----> Parallel Pass: Convention Mining ---------+
-                                                    |
-                                                    +--> Pass 4: Formal Method
-                                                    |
-                                                    +--> Pass 5: Paper Architecture
-                                                               |
-                                                        Frozen Paper Spec
-                                                               |
-                                                     Section Writer Calls
-                                                               |
-                                                   Pass 6: Independent Audit
-                                                               |
-                                                        Targeted Repair
-                                                               |
-                                                       Typeset / Render
-                                                               |
-                                                Final Manuscript Calibration
-\`\`\`
+   +----> Pass 2: Literature Audit
+                \            /                /
+                 \          /                /
+                  +------ shared frozen state ------+
+                                                   |
+                                         Pass 3: Paper Packaging
+                                                   |
+                                         Pass 4: Formal Method
+                                                   |
+                                         Pass 5: Paper Architecture
+                                                   |
+                                            Frozen Paper Spec
+                                                   |
+                                         Section Writer Calls
+                                                   |
+                                       Pass 6: Independent Audit
+                                                   |
+                                            Targeted Repair
+                                                   |
+                                           Typeset / Render
+                                                   |
+                                     Final Manuscript Calibration
+```
 
 Pass 1, Pass 2, and Convention Mining may run independently when source access allows.
 
