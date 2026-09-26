@@ -2,21 +2,26 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.3 pipeline is:
+The v0.4 pipeline is:
 
 ```text
 Research State
-  -> Problem Construction / Framing
+  -> Candidate Framing
+       <-> Literature Challenge
   -> Claim Graph
+       <-> Claim-Literature Matrix
   -> Paper Core
+       <-> Novelty Boundary Check
        |\
        | -> Experimental Obligations
+       |       <-> Literature-grounded baselines / metrics / protocols
        v
      Narrative
        -> Reader Path
        -> Section / Rhetorical Modules
        -> Semantic Draft
-       -> Reader-facing Discourse
+       +  Discourse References from real papers
+       -> Reader-facing Discourse Composition
        -> Natural Language Realization
        -> Global Review
 ```
@@ -33,11 +38,13 @@ Original Idea
 -> Technical Mechanism
 ```
 
-The v0.3 reader-facing layer adds three controls:
+The v0.4 pipeline adds five controls around the existing paper-construction core:
 
 - **Paper Core**: every major section tells the same story at a different level of detail.
 - **Reader Path**: internal framing is compressed into the shortest conceptual path a reader needs.
 - **Experimental Obligations**: central claims determine the evidence, controls, metrics, baselines, and falsifiers required from experiments.
+- **Literature Grounding**: external work challenges framing, constrains novelty claims, and grounds baselines/metrics/protocols.
+- **Discourse Grounding**: real papers provide section-specific rhetorical patterns for composition without donating scientific claims or copied wording.
 
 Method writing additionally follows a semantic **WHY -> WHAT -> HOW** check before prose realization.
 
@@ -55,12 +62,14 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 6. **Claims create experimental obligations.** Experiments should test the thesis and eliminate competing explanations.
 7. **Explain why before what/how.** Method components should be motivated by an unresolved need before their mechanics are presented.
 8. **Modules are rhetorical functions, not paragraphs.**
-9. **Semantic drafting and naturalization are separate.** The naturalizer may reorganize prose but may not invent facts or strengthen claims.
-10. **The core workflow is runtime-independent.** Scripts are optional enhancements, not prerequisites.
+9. **Scientific literature evidence and writing references are separate.** A paper may inform both, but the two evidence roles must never be conflated.
+10. **Learn discourse, not wording.** Real papers may provide abstract section/paragraph/sentence moves; distinctive phrases and close sentence skeletons must not be transferred.
+11. **Semantic drafting, discourse composition, and naturalization are separate.** Surface realization may reorganize prose but may not invent facts or strengthen claims.
+12. **The core workflow is runtime-independent.** Retrieval and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
-The current release focuses on **Introduction construction and paper-level story formation**, while also defining the bridge from claims to experiment design. The same state, framing, core, reader-path, and realization layers are intended to extend to Method, Experiments, Related Work, Abstract, and Conclusion.
+The current release focuses on **Introduction construction and paper-level story formation**, with literature-grounded framing/novelty/experiment checks and literature-grounded discourse composition. The same state, framing, core, reader-path, literature, and realization layers are intended to extend to Method, Experiments, Related Work, Abstract, and Conclusion.
 
 Included Introduction modules:
 
@@ -139,4 +148,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.3: reader-first paper construction, one-core-story consistency, and claim-driven experimental obligations.
+MVP v0.4: literature-grounded paper construction and discourse realization, while preserving one-core-story consistency and claim-driven experimental obligations.
