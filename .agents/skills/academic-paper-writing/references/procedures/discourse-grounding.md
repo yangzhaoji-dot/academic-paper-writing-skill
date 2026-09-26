@@ -96,11 +96,27 @@ Focus on:
 
 Focus on:
 
-- WHY -> WHAT -> HOW order;
+- the unresolved estimation, optimization, or modeling question before each mechanism;
 - definition placement;
-- equation introduction;
+- how the paper creates a need for a mathematical object before defining it;
+- equation introduction and immediate interpretation;
+- whether equations answer reader-visible questions rather than merely documenting components;
 - dependency between components;
-- transitions between intuition and formalization.
+- transitions between intuition and formalization;
+- edge cases or limiting cases used to motivate objective design.
+
+Treat WHY -> WHAT -> HOW as an internal semantic check, not a mandatory visible ordering. A stronger Method discourse pattern is often:
+
+```text
+question / ambiguity
+-> required quantity
+-> definition or equation
+-> what the equation measures
+-> remaining ambiguity
+-> next quantity
+```
+
+This lets equations participate in the argument instead of appearing after a prose description of each component.
 
 ### Experiments
 
