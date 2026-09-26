@@ -217,9 +217,48 @@ The target is technical writing that reads as authored rather than assembled.
 
 Naturalization may change sentence and paragraph boundaries but may not change facts, claim strength, citations, limitations, or the Paper Core.
 
-## Phase IV — Review
+## Phase IV — Venue-aware presentation
 
-### 14. Global review
+### 14. Resolve target venue and year
+
+Load a verified [Venue Profile](../schemas/venue-profile.md) using **conference + year**.
+
+Hard requirements must come from official target-year instructions or templates. If the target year is not yet official, mark it as unverified and use the latest verified profile only for provisional planning.
+
+### 15. Information architecture and page allocation
+
+Use [Venue-aware presentation](procedures/venue-presentation.md) to decide:
+
+- page budget by section;
+- which concepts require figures;
+- which comparisons belong in tables;
+- which equations must stay in the main paper;
+- whether pseudocode reduces ambiguity;
+- what can move to appendix without damaging first-pass understanding.
+
+The page limit should constrain presentation, not scientific truth. Do not weaken or inflate claims to fit the template.
+
+### 16. Template realization and rendered-PDF review
+
+Use the official target-year template whenever available.
+
+After rendering, inspect the PDF itself for:
+
+- first-page density;
+- figure/table legibility;
+- equation breaks;
+- page balance;
+- captions;
+- section prominence;
+- overfull/underfull areas;
+- whether the method and main evidence are visually buried;
+- mandatory venue elements.
+
+A source-level LaTeX check is not sufficient.
+
+## Phase V — Review
+
+### 17. Global review
 
 Check:
 
@@ -273,4 +312,16 @@ paragraph flow is generic or assembled
 
 sentence-level awkwardness only
 -> Naturalization
+
+venue rule violation
+-> Venue Profile / official template
+
+main paper overcrowded
+-> Content Allocation / Appendix Plan
+
+figure or table unreadable
+-> Visual / Table Design
+
+bad rendered page break
+-> Local Typesetting
 ```
