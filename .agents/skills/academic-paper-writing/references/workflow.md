@@ -186,7 +186,7 @@ A module answers a semantic function such as "expose the concrete ambiguity" or 
 
 Never assume one module equals one paragraph.
 
-### 10. Section Contract and prerequisite graph
+### 10. Section Contract, information resolution, and prerequisite graph
 
 Before drafting a section, build a [Section Contract](procedures/section-contract.md) from:
 
@@ -202,9 +202,13 @@ The contract records:
 - what the section must establish;
 - what must be defined before use;
 - what may be inherited;
+- what must be explained now versus previewed or deferred;
+- which representation should primarily carry each important concept;
 - what may safely move later or to appendix;
 - dependencies among technical objects;
 - claims the section must not make.
+
+Run [Section calibration](procedures/section-calibration.md) for substantial sections to check completeness, information resolution, representation redundancy, visual obligations, and real-paper discourse calibration.
 
 A Method contract must explicitly cover decision/action spaces, representation, interfaces, state transitions, loss masks, sampling semantics, central variable meanings, and protocol exceptions whenever they are part of the method.
 
@@ -287,7 +291,7 @@ The page limit should constrain presentation, not scientific truth. Do not weake
 
 Before moving content to appendix, re-run the relevant Section Contracts. Technical prerequisites default to the main paper unless they are already established elsewhere or can be compressed without breaking a dependency.
 
-### 17. Template realization and rendered-PDF review
+### 17. Template realization, rendered-PDF review, and manuscript calibration
 
 Use the official target-year template whenever available.
 
@@ -304,6 +308,10 @@ After rendering, inspect the PDF itself for:
 - mandatory venue elements.
 
 A source-level LaTeX check is not sufficient.
+
+If the paper is a synthetic workflow preview, mark it once at the document level rather than contaminating every table and paragraph with mock-data warnings.
+
+After rendering, run [Final manuscript calibration](procedures/manuscript-calibration.md) against 3–5 nearby real papers. Compare whole-manuscript narrative density, visual hierarchy, float behavior, section balance, and appendix boundary.
 
 ## Phase V — Review
 
