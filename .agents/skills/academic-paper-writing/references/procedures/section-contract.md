@@ -42,6 +42,30 @@ Unsupported, premature, or out-of-scope conclusions.
 
 Concepts already defined earlier and safe to reuse without full re-explanation.
 
+### Information resolution
+
+For section-relevant information, classify the required resolution:
+
+- **must explain now** — required for this section's reader task;
+- **preview only** — useful orientation, but detailed explanation belongs later;
+- **defer to later section** — needed in the main paper, but not yet;
+- **defer to appendix** — not required for first-pass understanding/evaluation;
+- **omit from main paper** — true but unnecessary for the paper argument.
+
+This prevents a technically complete section from becoming overfull.
+
+### Representation responsibility
+
+For important facts or concepts, identify a primary carrier when useful:
+
+- prose;
+- figure;
+- table;
+- equation;
+- algorithm.
+
+Secondary mentions should add interpretation rather than duplicate the primary carrier.
+
 ### May defer
 
 Details that can move later or to appendix without breaking understanding or evaluation.
@@ -91,6 +115,18 @@ For Experiments, ensure:
 - direct metrics are identified;
 - compute / interaction matching is explicit when causally necessary;
 - interpretation and falsifier remain within the comparison's scope.
+
+## Calibration hook
+
+After the contract is built, run [Section calibration](section-calibration.md) when the section is substantial enough to benefit from real-paper comparison or representation planning.
+
+Section calibration checks:
+
+- completeness;
+- information resolution;
+- representation redundancy;
+- visual obligations;
+- discourse calibration against real papers.
 
 ## Contract gate
 
