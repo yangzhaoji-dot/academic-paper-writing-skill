@@ -46,7 +46,7 @@ Original Idea
 
 Internally, full-paper work is no longer one large generation. v0.10 adds a frozen **Paper Convention Profile** alongside scientific and literature state:
 
-\`\`\`text
+```text
 Research Sources                     Convention Sources
    |                                      |
    +--> 01 Scientific Audit               +--> Convention Mining
@@ -68,7 +68,7 @@ Research Sources                     Convention Sources
                   06 Independent Audit
                          |
                    Repair / Present
-\`\`\`
+```
 
 The existing procedures remain the toolbox used inside these calls.
 
