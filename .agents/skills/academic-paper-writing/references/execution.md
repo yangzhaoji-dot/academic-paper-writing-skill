@@ -1,14 +1,42 @@
 # Execution model
 
-Goal: keep the methodology rich while making execution lightweight.
+Goal: keep the methodology rich while separating incompatible reasoning jobs across calls.
 
-The skill has many internal representations, but they are **not** a mandatory checklist of serialized artifacts. Use the minimum internal state needed for the active task.
+The skill has many internal representations, but they are **not** a mandatory checklist of serialized artifacts. Use the minimum state needed for the active task.
+
+## Execution mode selection
+
+Use **single-call narrow execution** for local tasks such as:
+
+- rewriting one paragraph;
+- fixing wording;
+- checking one equation;
+- updating one citation;
+- revising one already-stable subsection.
+
+Use **multi-pass execution** by default for:
+
+- constructing a paper from a research repository;
+- full-paper drafting;
+- major restructuring;
+- contribution / packaging decisions;
+- method formalization;
+- submission-ready review.
+
+For multi-pass work, read [multi-pass execution](multi-pass-execution.md) and the pass definitions under `../passes/`.
+
+The five user-facing phases below remain a conceptual interface. They no longer imply that one model call should execute all internal stages.
 
 ## Five execution phases
 
 ### 1. Understand
 
 Purpose: establish what the research actually is and how it works.
+
+For substantial paper work, this phase is split across:
+
+- **Pass 01 — Scientific Audit**;
+- **Pass 02 — Literature & Citation Audit**.
 
 Internally use, as needed:
 
@@ -25,6 +53,8 @@ Exit condition:
 ### 2. Position
 
 Purpose: decide what the paper is about and where it sits relative to prior work.
+
+For substantial paper work, **Pass 03 — Paper Packaging** owns the title direction, thesis, contribution structure, canonical terminology, and paper-level visual/equation message.
 
 Internally use, as needed:
 
@@ -45,6 +75,8 @@ Exit condition:
 
 Purpose: determine what evidence the claims require.
 
+Experimental Obligations remain the logical evidence layer. Mathematical completeness is separately owned by **Pass 04 — Formal Method Builder**.
+
 Internally use, as needed:
 
 - Experimental Obligations;
@@ -57,7 +89,11 @@ Exit condition:
 
 ### 4. Write Sections
 
-Purpose: turn the stable scientific state into reader-facing sections.
+Purpose: turn a **Frozen Paper Spec** into reader-facing sections.
+
+Before section writing, **Pass 05 — Paper Architecture** must give required scientific objects, equations, citations, visuals, and page budget a stable home.
+
+Section writers consume the frozen spec. They may propose issues but may not silently redefine the paper.
 
 For each section, internally use only what is needed from:
 
@@ -112,6 +148,8 @@ Exit condition:
 ### 5. Present
 
 Purpose: fit the paper to a venue without changing scientific meaning.
+
+Before final presentation, **Pass 06 — Independent Paper Audit** reviews the drafted manuscript from a fresh context. Blocking issues are routed back to the owning upstream pass before final typesetting.
 
 Internally use, as needed:
 
