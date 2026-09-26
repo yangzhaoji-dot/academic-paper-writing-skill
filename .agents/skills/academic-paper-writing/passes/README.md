@@ -13,7 +13,7 @@ Default sequence:
 04 Formal Method
 05 Paper Architecture
 -> Frozen Paper Spec
--> Section Writer calls
+-> Section Writer calls using section-writer.md
 06 Independent Audit
 -> targeted repair
 -> Present / Render / Final Manuscript Calibration
