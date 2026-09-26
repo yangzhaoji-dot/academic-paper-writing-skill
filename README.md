@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.4 pipeline is:
+The v0.5 pipeline is:
 
 ```text
 Research State
@@ -23,6 +23,10 @@ Research State
        +  Discourse References from real papers
        -> Reader-facing Discourse Composition
        -> Natural Language Realization
+       -> Venue Resolver (conference + year)
+       -> Page / Figure / Table / Equation Planning
+       -> Official Template Realization
+       -> Rendered PDF Review
        -> Global Review
 ```
 
@@ -38,13 +42,16 @@ Original Idea
 -> Technical Mechanism
 ```
 
-The v0.4 pipeline adds five controls around the existing paper-construction core:
+The v0.5 pipeline adds venue-aware presentation to the literature-grounded paper-construction core:
 
 - **Paper Core**: every major section tells the same story at a different level of detail.
 - **Reader Path**: internal framing is compressed into the shortest conceptual path a reader needs.
 - **Experimental Obligations**: central claims determine the evidence, controls, metrics, baselines, and falsifiers required from experiments.
 - **Literature Grounding**: external work challenges framing, constrains novelty claims, and grounds baselines/metrics/protocols.
 - **Discourse Grounding**: real papers provide section-specific rhetorical patterns for composition without donating scientific claims or copied wording.
+- **Venue Profile**: official conference + year rules define hard submission constraints.
+- **Presentation Reference**: recent papers provide soft layout tendencies without being treated as official rules.
+- **Rendered PDF Review**: page-level defects are inspected after typesetting, not inferred from LaTeX source alone.
 
 Method writing additionally follows a semantic **WHY -> WHAT -> HOW** check before prose realization.
 
@@ -65,7 +72,9 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 9. **Scientific literature evidence and writing references are separate.** A paper may inform both, but the two evidence roles must never be conflated.
 10. **Learn discourse, not wording.** Real papers may provide abstract section/paragraph/sentence moves; distinctive phrases and close sentence skeletons must not be transferred.
 11. **Semantic drafting, discourse composition, and naturalization are separate.** Surface realization may reorganize prose but may not invent facts or strengthen claims.
-12. **The core workflow is runtime-independent.** Retrieval and scripts are optional backends, not prerequisites.
+12. **Venue rules are year-specific and official-source-first.** An older venue profile may guide planning but cannot define a later year's submission requirements.
+13. **Presentation follows scientific priority.** Page pressure should move or redesign information before it weakens claims, controls, or limitations.
+14. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
@@ -148,4 +157,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.4: literature-grounded paper construction and discourse realization, while preserving one-core-story consistency and claim-driven experimental obligations.
+MVP v0.5: literature-grounded paper construction, discourse realization, and venue-aware presentation with rendered-PDF review.
