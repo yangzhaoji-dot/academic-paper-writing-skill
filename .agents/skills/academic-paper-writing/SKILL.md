@@ -35,7 +35,7 @@ Literature is a cross-cutting constraint rather than a late standalone stage. Wh
 
 Use [the execution model](references/execution.md).
 
-For substantial paper construction, restructuring, formalization, or submission-ready review, use [multi-pass execution](references/multi-pass-execution.md) and the pass definitions in [passes/README.md](passes/README.md). Do not collapse scientific audit, literature verification, packaging, formal method construction, writing, and independent review into one call.
+For substantial paper construction, restructuring, formalization, or submission-ready review, use [multi-pass execution](references/multi-pass-execution.md) and the pass definitions in [passes/README.md](passes/README.md). Run [Convention Mining](passes/convention-mining.md) in parallel with scientific and literature grounding when venue/paper-type presentation conventions matter. Do not collapse scientific audit, literature verification, packaging, formal method construction, writing, and independent review into one call.
 
 For narrow edits, use the smallest relevant procedure directly.
 
@@ -51,6 +51,7 @@ The detailed end-to-end methodology remains in [references/workflow.md](referenc
 
 - [Scientific Spec](schemas/scientific-spec.md);
 - [Citation Map](schemas/citation-map.md);
+- [Convention Profile](schemas/convention-profile.md);
 - [Frozen Paper Spec](schemas/paper-spec.md).
 
 Downstream calls may raise issues against frozen upstream state but may not silently rewrite it.
@@ -89,6 +90,7 @@ Use the schemas in `schemas/` as logical representations, not mandatory serializ
 
 - [Scientific Spec](schemas/scientific-spec.md)
 - [Citation Map](schemas/citation-map.md)
+- [Convention Profile](schemas/convention-profile.md)
 - [Frozen Paper Spec](schemas/paper-spec.md)
 - [Research State](schemas/research-state.md)
 - [Technical State](schemas/technical-state.md)
@@ -113,6 +115,7 @@ For substantial work, use:
 
 - [Pass 01 — Scientific Audit](passes/01-scientific-audit.md)
 - [Pass 02 — Literature & Citation Audit](passes/02-literature-citation-audit.md)
+- [Convention Mining](passes/convention-mining.md)
 - [Pass 03 — Paper Packaging](passes/03-paper-packaging.md)
 - [Pass 04 — Formal Method Builder](passes/04-formal-method.md)
 - [Pass 05 — Paper Architecture](passes/05-paper-architecture.md)
