@@ -228,7 +228,20 @@ Optimize for correctness, reader necessity, and completeness—not elegance.
 
 Before discourse optimization, run the Section Contract gate. If a downstream equation, algorithm, or result depends on an undefined technical object, repair Technical State or Semantic Draft first.
 
-### 12. Discourse grounding
+### 12. Authorial synthesis
+
+Before paragraph-level discourse composition, run [Authorial synthesis](procedures/authorial-synthesis.md).
+
+Compress the author-side planning structure by:
+
+- removing workflow commentary from the visible argument;
+- merging internal nodes that belong to one reader-facing idea;
+- choosing canonical terms and suppressing unnecessary synonyms;
+- preserving a concrete anchor where it makes abstract distinctions easier to follow.
+
+This step may simplify visible headings and terminology but may not remove Section Contract prerequisites, alter claim scope, or erase protocol exceptions.
+
+### 13. Discourse grounding
 
 When real relevant papers are available, use [Discourse grounding](procedures/discourse-grounding.md) to build section-specific Discourse References.
 
@@ -245,7 +258,7 @@ Do not copy wording or imitate a single paper's sentence sequence.
 
 Scientific literature evidence and discourse references remain separate state.
 
-### 13. Reader-facing discourse composition
+### 14. Reader-facing discourse composition
 
 Combine neighboring modules into a coherent local argument using the Reader Path as the direct guide and compatible Discourse References as positive priors.
 
@@ -260,7 +273,7 @@ Decide:
 
 The paper's own logic dominates. A reference pattern is used only when it fits the current scientific content.
 
-### 14. Natural-language realization
+### 15. Natural-language realization
 
 Produce natural academic prose under the selected discourse/style/author profile.
 
@@ -270,13 +283,13 @@ Naturalization may change sentence and paragraph boundaries but may not change f
 
 ## Phase IV — Venue-aware presentation
 
-### 15. Resolve target venue and year
+### 16. Resolve target venue and year
 
 Load a verified [Venue Profile](../schemas/venue-profile.md) using **conference + year**.
 
 Hard requirements must come from official target-year instructions or templates. If the target year is not yet official, mark it as unverified and use the latest verified profile only for provisional planning.
 
-### 16. Information architecture and page allocation
+### 17. Information architecture and page allocation
 
 Use [Venue-aware presentation](procedures/venue-presentation.md) to decide:
 
@@ -291,7 +304,7 @@ The page limit should constrain presentation, not scientific truth. Do not weake
 
 Before moving content to appendix, re-run the relevant Section Contracts. Technical prerequisites default to the main paper unless they are already established elsewhere or can be compressed without breaking a dependency.
 
-### 17. Template realization, rendered-PDF review, and manuscript calibration
+### 18. Template realization, rendered-PDF review, and manuscript calibration
 
 Use the official target-year template whenever available.
 
@@ -315,7 +328,7 @@ After rendering, run [Final manuscript calibration](procedures/manuscript-calibr
 
 ## Phase V — Review
 
-### 18. Global review
+### 19. Global review
 
 Check:
 
