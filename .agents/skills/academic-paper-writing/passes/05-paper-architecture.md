@@ -17,8 +17,25 @@ Use:
 - Packaging Spec;
 - Formal Method;
 - Experimental Obligations;
+- Convention Profile;
 - venue profile;
 - 3–5 nearby real manuscript references when useful.
+
+## Convention use
+
+Apply hard venue rules as constraints.
+
+Apply soft Convention Profile priors as **calibration**, not law. In particular use them to assess:
+
+- section balance;
+- where baseline / preliminaries normally become necessary;
+- Figure 1 role;
+- method-equation density;
+- table / figure prominence;
+- main-body / appendix boundary;
+- reviewer expectations around fairness, uncertainty, and closest-work comparison.
+
+If the current paper has a scientifically justified reason to deviate, preserve the deviation and record it.
 
 ## Architecture decisions
 
@@ -89,6 +106,10 @@ Do not optimize a methods paper toward an arbitrary short preview if the venue p
 Move reproducibility detail, extended derivations, prompts, adapters, and secondary sweeps only after confirming the main paper retains what is necessary to evaluate the claim.
 
 ## Real-paper calibration
+
+Prefer the already-mined Convention Profile when available. Do not independently rediscover a second incompatible set of conventions inside this pass.
+
+
 
 Use several papers to check whether the architecture is plausible, not to copy one outline.
 
