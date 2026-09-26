@@ -1,6 +1,6 @@
 # End-to-end workflow
 
-The paper is constructed through four phases. Literature enters at explicit checkpoints rather than being treated as a late Related Work add-on.
+The paper is constructed through five phases. Literature enters at explicit checkpoints rather than being treated as a late Related Work add-on.
 
 ## Phase I — Research understanding and scientific grounding
 
