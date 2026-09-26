@@ -84,7 +84,7 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 
 ## Current MVP
 
-The current release focuses on **Introduction construction and paper-level story formation**, with literature-grounded framing/novelty/experiment checks and literature-grounded discourse composition. The same state, framing, core, reader-path, literature, and realization layers are intended to extend to Method, Experiments, Related Work, Abstract, and Conclusion.
+The current release covers paper-level framing plus **Introduction, Method, experiment planning, technical-completeness checking, discourse realization, and venue-aware presentation**. Related Work, Abstract, Conclusion, and additional section-specific modules can reuse the same Research State, Technical State, Section Contract, literature, discourse, and presentation layers.
 
 Included Introduction modules:
 
