@@ -2,6 +2,8 @@
 
 ```yaml
 research_state: {}
+technical_state: {}
+source_coverage: []
 literature:
   map: {}
   claim_literature_matrix: []
@@ -28,6 +30,12 @@ experiment_literature_grounding: []
 selected_framing:
 narrative:
 reader_path:
+section_contracts:
+  introduction: {}
+  method: {}
+  experiments: {}
+  related_work: {}
+  conclusion: {}
 discourse_references:
   introduction: []
   method: []
@@ -51,6 +59,9 @@ sections:
     discourse_plan:
     prose:
 review:
+  source_coverage:
+  technical_completeness:
+  prerequisite_integrity:
   factual_integrity:
   literature_integrity:
   framing_validity:
