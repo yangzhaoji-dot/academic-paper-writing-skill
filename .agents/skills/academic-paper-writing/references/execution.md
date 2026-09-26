@@ -79,8 +79,11 @@ A practical section execution is:
 
 \`\`\`text
 Section Planning
+-> Section Calibration
 -> Semantic Draft
+-> Authorial Synthesis
 -> Discourse Realization
+-> Naturalization
 \`\`\`
 
 where **Section Planning** internally resolves:
