@@ -1,6 +1,6 @@
 # Procedure: Global review
 
-Goal: locate the earliest layer responsible for a defect while evaluating both scientific integrity and reader effort.
+Goal: locate the earliest layer responsible for a defect while evaluating scientific integrity, literature grounding, reader effort, and discourse quality.
 
 ## Pass 1 — factual integrity
 
@@ -13,18 +13,33 @@ Flag:
 - unsupported dataset or baseline properties;
 - fabricated citations or literature consensus.
 
-## Pass 2 — framing and claim calibration
+## Pass 2 — literature and novelty integrity
+
+Check every literature-dependent statement against the Literature Map or verified source.
+
+Flag:
+
+- "prior work" claims with no source;
+- novelty stated from search absence alone;
+- a prior technique relabeled as our novelty;
+- a difference from closest work that is not concretely evidenced;
+- a baseline, metric, or protocol justified by convention when no such precedent was verified;
+- scientific support inferred from a paper used only as a discourse reference.
+
+If this pass fails, repair the Literature Map, Claim–Literature Matrix, or claim scope before rewriting prose.
+
+## Pass 3 — framing and claim calibration
 
 Check whether:
 
-- the research setting and structural problem are defensible;
+- the research setting and structural problem remain defensible after literature challenge;
 - a mismatch has been manufactured only for narrative convenience;
 - each sentence preserves the claim type and scope;
 - broader implications remain broader implications;
 - correlations are not rewritten as mechanisms;
 - results on one setting are not generalized without support.
 
-## Pass 3 — Paper Core consistency
+## Pass 4 — Paper Core consistency
 
 Check the abstract, introduction, method, experiments, and conclusion against the same Paper Core.
 
@@ -34,10 +49,11 @@ Ask:
 - Does the method solve the problem the introduction actually motivates?
 - Do the experiments test the thesis rather than a nearby easier claim?
 - Does the conclusion stay within the evidence-supported scope?
+- Is the stated contribution consistent with the verified novelty boundary?
 
 If a section requires a different core story to make sense, repair the Paper Core, framing, or section plan.
 
-## Pass 4 — experimental obligations
+## Pass 5 — experimental obligations
 
 For every central claim, check whether the available or planned experiments discharge the corresponding obligations.
 
@@ -47,9 +63,10 @@ Flag:
 - extra compute, samples, or tool calls that could explain the result;
 - missing controls for a plausible alternative explanation;
 - a claimed component with no ablation or matched comparison;
-- a claim whose falsifying outcome was never defined.
+- a claim whose falsifying outcome was never defined;
+- a selected baseline that does not actually represent the competing explanation it is supposed to test.
 
-## Pass 5 — reader effort
+## Pass 6 — reader effort
 
 For each paragraph, ask:
 
@@ -63,7 +80,7 @@ For each paragraph, ask:
 
 If the scientific logic is correct but reader effort is high, repair the Reader Path before polishing sentences.
 
-## Pass 6 — narrative continuity
+## Pass 7 — narrative continuity
 
 Ask for each paragraph:
 
@@ -73,11 +90,24 @@ Ask for each paragraph:
 
 Remove paragraphs that merely sound academic but do not advance the narrative.
 
-## Pass 7 — semantic repetition
+## Pass 8 — discourse-reference integrity
+
+When real-paper discourse references were used, check:
+
+- patterns were abstracted rather than copied;
+- several references were combined when possible;
+- no distinctive phrase or close sentence skeleton was transferred;
+- the paragraph sequence does not mirror one source mechanically;
+- a reference pattern did not import another paper's problem statement or scientific claim;
+- our Reader Path still determines the argument.
+
+A smoother draft is not an improvement if it becomes derivative.
+
+## Pass 9 — semantic repetition
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 8 — naturalness
+## Pass 10 — naturalness
 
 Inspect:
 
@@ -96,9 +126,12 @@ Repair the earliest failing representation, then regenerate only downstream cont
 Typical routing:
 
 - wrong fact -> Research State;
+- unsupported literature / novelty -> Literature Map;
 - artificial problem -> Framing;
 - inconsistent paper story -> Paper Core;
 - untested claim -> Experimental Obligations;
+- weak baseline/metric grounding -> Experiment Literature Grounding;
 - hard-to-follow explanation -> Reader Path;
 - missing method motivation -> Semantic Draft;
+- derivative or generic paragraph flow -> Discourse Reference / Discourse Composition;
 - awkward language only -> Naturalization.
