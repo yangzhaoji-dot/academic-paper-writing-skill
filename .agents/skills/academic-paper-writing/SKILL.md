@@ -1,6 +1,6 @@
 ---
 name: academic-paper-writing
-description: Construct, draft, revise, or review academic research papers from research ideas, evidence, experiments, and notes using explicit problem construction, claim framing, paper-core extraction, reader-path planning, rhetorical modules, semantic drafting, natural-language realization, experimental obligations, and claim-evidence review. Use for paper introductions, section planning, research framing, contribution positioning, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
+description: Construct, draft, revise, or review academic research papers from research ideas, evidence, experiments, notes, and verified literature using explicit problem construction, literature challenge, claim framing, paper-core extraction, reader-path planning, rhetorical modules, literature-grounded discourse references, semantic drafting, natural-language realization, experimental obligations, and claim-evidence review. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
 ---
 
 # Academic Paper Writing
@@ -28,22 +28,26 @@ Infer the narrowest mode that satisfies the request:
 
 Do not rerun earlier stages unnecessarily when a usable state already exists.
 
+Literature is a cross-cutting constraint rather than a late standalone stage. When retrieval is available and the task depends on external positioning, use literature at three checkpoints: challenge the framing, constrain claim/novelty boundaries, and ground experiment conventions. Real papers may also provide discourse references for writing, but discourse evidence must remain separate from scientific evidence.
+
 ## Workflow
 
 Read [references/workflow.md](references/workflow.md) for the end-to-end process. The default order is:
 
 1. Ground the research.
-2. Construct the paper-level problem and select a framing.
-3. Build the Claim Graph under that framing.
-4. Extract the Paper Core.
-5. Derive experimental obligations from central claims.
-6. Select a global narrative.
-7. Convert the internal narrative into a Reader Path.
-8. Plan section modules.
-9. Fill modules semantically.
-10. Compose reader-facing discourse across module boundaries.
-11. Realize natural academic prose.
-12. Review globally and repair only the failing layer.
+2. Construct a candidate paper-level problem and framing.
+3. Challenge that framing against relevant literature when retrieval is available.
+4. Build the Claim Graph and Claim–Literature Matrix.
+5. Extract the Paper Core and check its novelty boundary against the closest work.
+6. Derive logical experimental obligations, then ground baselines, metrics, and protocols in literature where useful.
+7. Select a global narrative.
+8. Convert the internal narrative into a Reader Path.
+9. Plan section modules.
+10. Fill modules semantically.
+11. Extract section-matched Discourse References from several real papers when available.
+12. Compose reader-facing discourse across module boundaries using our Reader Path and compatible discourse patterns.
+13. Realize natural academic prose.
+14. Review globally and repair only the failing layer.
 
 For runtime-specific behavior, read [references/portability.md](references/portability.md).
 
@@ -68,6 +72,8 @@ Use the schemas in `schemas/` as logical representations, not mandatory serializ
 - [Paper Core](schemas/paper-core.md)
 - [Reader Path](schemas/reader-path.md)
 - [Experimental Obligation](schemas/experimental-obligation.md)
+- [Literature Map](schemas/literature-map.md)
+- [Discourse Reference](schemas/discourse-reference.md)
 - [Module](schemas/module.md)
 - [Paper State](schemas/paper-state.md)
 
@@ -81,6 +87,8 @@ Read only the procedure files needed for the current request:
 - [Problem construction and claim framing](references/procedures/framing.md)
 - [Paper Core](references/procedures/paper-core.md)
 - [Experimental obligations](references/procedures/experimental-obligations.md)
+- [Literature grounding](references/procedures/literature-grounding.md)
+- [Discourse grounding](references/procedures/discourse-grounding.md)
 - [Narrative planning](references/procedures/narrative.md)
 - [Reader Path](references/procedures/reader-path.md)
 - [Module planning](references/procedures/module-planning.md)
@@ -170,7 +178,9 @@ Major experiments should discharge one or more explicit obligations.
 
 ## Natural-language constraint
 
-Naturalization is a **semantics-preserving, scaffold-hiding transformation**. It may:
+Naturalization is a **semantics-preserving, scaffold-hiding transformation**. When verified real-paper references are available, first abstract their section-specific discourse behavior using [Discourse grounding](references/procedures/discourse-grounding.md). Use those abstractions as positive communication priors; never closely paraphrase or imitate one source.
+
+It may:
 
 - merge or split sentences and paragraphs;
 - reorder local material when the logic remains intact;
@@ -197,6 +207,7 @@ Default prose guidance is in [styles/default-academic.md](styles/default-academi
 When review detects a problem, repair the earliest responsible layer:
 
 - factual error -> Research State;
+- unsupported literature statement, novelty claim, or baseline convention -> Literature Map;
 - artificial or inflated problem -> Framing;
 - unstable or inconsistent story -> Paper Core;
 - overclaim -> Framing or Claim Graph;
@@ -205,7 +216,7 @@ When review detects a problem, repair the earliest responsible layer:
 - high reader effort or exposed scaffolding -> Reader Path;
 - missing rhetorical function -> Module Plan;
 - missing reason for a method component -> Semantic Draft;
-- robotic or assembled prose -> Naturalization.
+- robotic or assembled prose -> Discourse Reference / Naturalization.
 
 Do not solve a semantic problem with surface rewriting alone.
 
