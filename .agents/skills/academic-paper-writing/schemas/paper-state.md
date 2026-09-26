@@ -61,6 +61,12 @@ sections:
   introduction:
     modules: []
     semantic_draft:
+    authorial_synthesis:
+      surface_outline: []
+      canonical_terms: []
+      concrete_anchor:
+      merge_decisions: []
+      scaffold_to_remove: []
     discourse_plan:
     prose:
 review:
@@ -76,6 +82,9 @@ review:
   reader_effort:
   information_resolution:
   representation_redundancy:
+  authorial_synthesis:
+  terminology_consistency:
+  scaffold_leakage:
   discourse_reference_integrity:
   narrative_continuity:
   repetition:
