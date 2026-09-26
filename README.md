@@ -2,10 +2,12 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.5 pipeline is:
+The v0.6 pipeline is:
 
 ```text
-Research State
+Research Sources
+  -> Source Coverage
+  -> Research State + Technical State
   -> Candidate Framing
        <-> Literature Challenge
   -> Claim Graph
@@ -19,6 +21,7 @@ Research State
      Narrative
        -> Reader Path
        -> Section / Rhetorical Modules
+       -> Section Contract + Dependency Check
        -> Semantic Draft
        +  Discourse References from real papers
        -> Reader-facing Discourse Composition
@@ -42,8 +45,10 @@ Original Idea
 -> Technical Mechanism
 ```
 
-The v0.5 pipeline adds venue-aware presentation to the literature-grounded paper-construction core:
+The v0.6 pipeline adds technical-completeness gates to the literature-grounded, venue-aware paper-construction core:
 
+- **Technical State**: method-defining tokens, interfaces, action/state semantics, loss masks, sampling rules, and protocol exceptions survive story compression.
+- **Section Contract**: every section declares what must be established, defined before use, inherited, or safely deferred.
 - **Paper Core**: every major section tells the same story at a different level of detail.
 - **Reader Path**: internal framing is compressed into the shortest conceptual path a reader needs.
 - **Experimental Obligations**: central claims determine the evidence, controls, metrics, baselines, and falsifiers required from experiments.
@@ -74,7 +79,8 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 11. **Semantic drafting, discourse composition, and naturalization are separate.** Surface realization may reorganize prose but may not invent facts or strengthen claims.
 12. **Venue rules are year-specific and official-source-first.** An older venue profile may guide planning but cannot define a later year's submission requirements.
 13. **Presentation follows scientific priority.** Page pressure should move or redesign information before it weakens claims, controls, or limitations.
-14. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
+14. **Technical prerequisites are not implementation trivia.** If a central equation, algorithm, or result depends on an interface, token, transition, or state definition, that prerequisite must remain reader-visible.
+15. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
@@ -157,4 +163,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.5: literature-grounded paper construction, discourse realization, and venue-aware presentation with rendered-PDF review.
+MVP v0.6: literature-grounded paper construction with parallel Technical State, section-level prerequisite contracts, discourse realization, venue-aware presentation, and rendered-PDF review.
