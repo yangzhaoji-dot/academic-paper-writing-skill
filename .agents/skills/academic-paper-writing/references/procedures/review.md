@@ -98,7 +98,23 @@ For each section:
 
 If a technically necessary definition is missing, repair Technical State, Section Contract, Module Plan, or Semantic Draft before rewriting prose.
 
-## Pass 7 — section calibration
+## Pass 7 — convention integrity
+
+Check the active Convention Profile.
+
+Flag:
+
+- a soft academic tendency represented as a hard rule;
+- a venue rule inferred only from accepted-paper frequency;
+- a formula exposition that hides the baseline object or exact update when the paper's method depends on them;
+- a method-specific metric first appearing in a result table;
+- critical evidence moved to appendix only to mimic a reference paper;
+- a representation choice that conflicts with both the scientific role and the convention prior without justification;
+- contribution-count or section-count rules imposed mechanically.
+
+If this pass fails, repair Convention Mining or Architecture. Do not rewrite the science to satisfy convention.
+
+## Pass 8 — section calibration
 
 For each substantial section, check:
 
@@ -118,7 +134,7 @@ Flag:
 
 If this pass fails, repair Section Calibration or Representation Allocation before sentence-level rewriting.
 
-## Pass 8 — reader effort
+## Pass 9 — reader effort
 
 For each paragraph, ask:
 
@@ -132,7 +148,7 @@ For each paragraph, ask:
 
 If the scientific logic is correct but reader effort is high, repair the Reader Path before polishing sentences.
 
-## Pass 9 — authorial synthesis
+## Pass 10 — authorial synthesis
 
 Check whether the manuscript surface is still mirroring internal planning structure.
 
@@ -147,7 +163,7 @@ Flag:
 
 If the science is complete but the paper reads like an explanation of its own construction process, repair [Authorial synthesis](authorial-synthesis.md) before discourse or sentence-level rewriting.
 
-## Pass 10 — narrative continuity
+## Pass 11 — narrative continuity
 
 Ask for each paragraph:
 
@@ -157,7 +173,7 @@ Ask for each paragraph:
 
 Remove paragraphs that merely sound academic but do not advance the narrative.
 
-## Pass 11 — discourse-reference integrity
+## Pass 12 — discourse-reference integrity
 
 When real-paper discourse references were used, check:
 
@@ -170,11 +186,11 @@ When real-paper discourse references were used, check:
 
 A smoother draft is not an improvement if it becomes derivative.
 
-## Pass 12 — semantic repetition
+## Pass 13 — semantic repetition
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 13 — venue and presentation integrity
+## Pass 14 — venue and presentation integrity
 
 Check:
 
@@ -196,7 +212,7 @@ Flag:
 - page overflow repaired by deleting limitations or controls;
 - stale conference rules.
 
-## Pass 14 — final manuscript calibration
+## Pass 15 — final manuscript calibration
 
 After rendering the complete paper, compare it with 3–5 nearby real papers using [Final manuscript calibration](manuscript-calibration.md).
 
@@ -216,7 +232,7 @@ Repair only deviations that plausibly increase reader cost or weaken presentatio
 
 If the official target-year template is not actually used, the manuscript remains `preview_only`.
 
-## Pass 15 — naturalness
+## Pass 16 — naturalness
 
 Inspect:
 
@@ -256,5 +272,6 @@ Typical routing:
 - poor page allocation -> Presentation Plan;
 - unreadable figure/table -> Visual or Table Design;
 - local rendered-layout defect -> Typesetting;
+- convention profile missing / stale / over-hardcoded -> Convention Mining;
 - whole-paper density / visual hierarchy mismatch -> Final Manuscript Calibration;
 - awkward language only -> Naturalization.
