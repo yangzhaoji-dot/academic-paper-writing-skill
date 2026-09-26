@@ -107,7 +107,29 @@ A smoother draft is not an improvement if it becomes derivative.
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 10 — naturalness
+## Pass 10 — venue and presentation integrity
+
+Check:
+
+- target conference and year were resolved explicitly;
+- hard formatting rules come from official target-year sources;
+- an older Venue Profile is not being treated as current;
+- main-page allocation reflects scientific importance;
+- core figures, tables, and equations remain legible;
+- appendix moves do not hide information required to understand or evaluate the central claim;
+- mandatory checklist / statements / anonymity rules are satisfied;
+- the rendered PDF, not only the source, has been inspected.
+
+Flag:
+
+- font or margin hacks used to gain space;
+- wide tables shrunk until unreadable rather than redesigned;
+- figures whose labels cannot be read at final size;
+- main claims pushed into appendix solely to fit a conventional section;
+- page overflow repaired by deleting limitations or controls;
+- stale conference rules.
+
+## Pass 11 — naturalness
 
 Inspect:
 
@@ -134,4 +156,8 @@ Typical routing:
 - hard-to-follow explanation -> Reader Path;
 - missing method motivation -> Semantic Draft;
 - derivative or generic paragraph flow -> Discourse Reference / Discourse Composition;
+- venue violation -> Venue Profile / official template;
+- poor page allocation -> Presentation Plan;
+- unreadable figure/table -> Visual or Table Design;
+- local rendered-layout defect -> Typesetting;
 - awkward language only -> Naturalization.
