@@ -23,6 +23,7 @@ For substantial paper work, treat multi-pass outputs as explicit handoff state:
 
 - Scientific Spec;
 - Citation Map;
+- Convention Profile;
 - Frozen Paper Spec;
 - cross-pass issues.
 
@@ -44,6 +45,7 @@ For long iterative projects, Codex may persist working state under `.paper-writi
 .paper-writing/
   scientific-spec.md
   citation-map.md
+  convention-profile.md
   frozen-paper-spec.md
   cross-pass-issues.md
   research-state.md
@@ -68,13 +70,27 @@ The same logical state may be represented as JSON, Markdown, database records, o
 An API implementation may provide separate retrieval services for:
 
 - scientific literature evidence;
-- full-text / section text used for discourse abstraction.
+- full-text / section text used for discourse abstraction;
+- accepted-paper / venue material used for Convention Mining.
 
 Keep these roles distinct even if the same paper is returned by both services.
 
 For substantial paper construction, API implementations should normally run the pass sequence as separate calls with serialized handoffs. A pass should receive only the frozen upstream state it needs plus source material relevant to its responsibility.
 
 Stage separation must not duplicate prompt logic. The canonical methodology and ownership rules remain in this skill directory.
+
+## Convention-profile portability
+
+Convention Mining conceptually requires:
+
+```text
+resolve_conventions(venue, year, paper_type, area)
+-> official hard rules + soft distributional priors
+```
+
+A runtime may implement this with web search, a local paper corpus, user-supplied PDFs, or cached profiles.
+
+If nearby-paper retrieval is unavailable, use the skill's default academic priors and mark them as fallback. Never present fallback priors as target-venue measurements.
 
 ## Venue/template portability
 
