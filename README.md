@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.10 user-facing execution surface remains compact, but substantial paper work is now multi-pass and convention-aware:
+The v0.11 user-facing execution surface remains compact, but substantial paper work is now multi-pass, convention-aware, and layout-contract aware:
 
 ```text
 1. Understand
@@ -24,9 +24,9 @@ The v0.10 user-facing execution surface remains compact, but substantial paper w
    -> Discourse Realization
 
 5. Present
-   -> Venue-aware Layout
+   -> Layout Contracts / Page Composition
    -> Official Template / LaTeX / PDF
-   -> Rendered Review
+   -> Rendered Layout Verifier
    -> Final Manuscript Calibration
 ```
 
@@ -72,7 +72,7 @@ Research Sources                     Convention Sources
 
 The existing procedures remain the toolbox used inside these calls.
 
-Key v0.10 rules:
+Key v0.11 rules:
 
 - **One pass, one decision responsibility.** Scientific formalization, literature verification, packaging, writing, and review do not share one call by default.
 - **Frozen handoffs.** Scientific Spec, Citation Map, Convention Profile, and Frozen Paper Spec are explicit interfaces between calls.
@@ -80,6 +80,8 @@ Key v0.10 rules:
 - **No silent downstream mutation.** A writer that discovers a missing equation or citation raises an issue to the owning pass instead of patching the scientific story locally.
 - **Fresh independent review.** The audit call judges the manuscript that exists and should not inherit the writer's private planning rationale.
 - **Targeted invalidation.** A changed upstream decision reruns only downstream outputs that depend on it.
+- **Semantic layout before physical floats.** High-impact figures/tables carry Layout Contracts that specify owner section, prerequisites, first textual reference, forbidden regions, reading-order dependencies, and fallback placement.
+- **Rendered layout is audited semantically.** A PDF can fail even with no overfull boxes if a float drifts across a section boundary or creates a reading-order inversion.
 
 The convention layer captures four explicit prior families:
 
@@ -87,6 +89,12 @@ The convention layer captures four explicit prior families:
 - **Formula prior**: notation, baseline-before-delta, exact-update visibility, correction terms, limiting cases, equation density.
 - **Information-presentation prior**: which scientific objects are best carried by prose, equation, figure, table, algorithm, or plot.
 - **Academic/reviewer prior**: closest-work comparison, compute/call fairness, uncertainty reporting, metric-definition order, contribution structure, and other strong but non-universal expectations.
+
+The layout layer adds an explicit compiler state between representation planning and LaTeX:
+
+- **Layout Contract**: who owns a float, what must be read before it, where its first reference lives, where it may not appear, and what reading-order constraints must hold.
+- **Page Composition**: converts Layout Contracts into float-placement constraints.
+- **Rendered Layout Verifier**: checks semantic float drift, section-boundary integrity, two-column reading order, heading integrity, and attention competition.
 
 The previous calibration and synthesis mechanisms remain active inside the new execution model:
 
@@ -135,7 +143,8 @@ The reader-facing additions adapt high-level principles from [wmd3i/Some-tips-fo
 20. **Freeze upstream decisions before writing.** Section writers consume Paper Spec; they do not redefine it.
 21. **Independent audit is issue-producing, not self-justifying.** Review from fresh context and route defects to their owning pass.
 22. **Conventions are evidence-weighted priors, not laws.** Official venue rules may be hard; accepted-paper patterns and reviewer expectations remain soft and contextual.
-23. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
+23. **Semantic placement is part of correctness.** A figure/table that appears before its prerequisites or outside its owner section is a layout defect even if LaTeX permits it.
+24. **The core workflow is runtime-independent.** Retrieval, rendering, and scripts are optional backends, not prerequisites.
 
 ## Current MVP
 
@@ -218,4 +227,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.10: multi-pass paper construction with frozen Scientific Spec / Citation Map / Convention Profile / Paper Spec handoffs, convention-aware formal exposition and architecture, section-level calibration and Authorial Synthesis, independent manuscript audit, and venue-aware final calibration.
+MVP v0.11: multi-pass paper construction with frozen Scientific Spec / Citation Map / Convention Profile / Layout Contracts / Paper Spec handoffs, convention-aware architecture, semantic page-flow constraints, rendered layout verification, independent manuscript audit, and venue-aware final calibration.
