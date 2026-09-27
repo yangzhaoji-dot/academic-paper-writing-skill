@@ -1,6 +1,6 @@
 ---
 name: academic-paper-writing
-description: Construct, draft, revise, typeset, or review academic research papers from research ideas, repositories, evidence, experiments, notes, verified literature, venue requirements, learned paper-convention priors, and explicit semantic layout contracts for figures/tables/algorithms. For substantial full-paper work, use multi-pass orchestration with separate Scientific Audit, Literature & Citation Audit, Paper Packaging, Formal Method, Paper Architecture, section-writing, and Independent Audit calls connected by frozen Scientific Spec, Citation Map, and Paper Spec handoffs. For narrow edits, use the smallest relevant procedure directly. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
+description: Construct, draft, revise, typeset, or review academic research papers from research ideas, repositories, evidence, experiments, notes, verified literature, venue requirements, learned paper-convention priors, manuscript maturity, main-result spines, editorial distillation, reverse outlining, and semantic layout contracts. For substantial full-paper work, use multi-pass orchestration with separate Scientific Audit, Literature & Citation Audit, Paper Packaging, Formal Method, Paper Architecture, section-writing, and Independent Audit calls connected by frozen Scientific Spec, Citation Map, and Paper Spec handoffs. For narrow edits, use the smallest relevant procedure directly. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
 ---
 
 # Academic Paper Writing
@@ -44,7 +44,7 @@ The user-facing workflow remains:
 1. **Understand** — ground Research State and Technical State from complete source coverage.
 2. **Position** — use literature, framing, claims, and novelty checks to stabilize the Paper Core.
 3. **Design Evidence** — derive claim-driven experimental obligations and ground their operationalization in literature.
-4. **Write Sections** — plan each section, satisfy technical prerequisites, calibrate information resolution and representation responsibilities, draft semantically, synthesize the internal structure into an author-shaped exposition, and realize reader-facing discourse.
+4. **Write Sections** — plan each section, satisfy technical prerequisites, draft from the Main Result Spine, then run Editorial Distillation and Reverse Outline before final prose realization.
 5. **Present** — resolve venue/year, use the official template when available, allocate evidence/visual hierarchy, typeset, review the rendered PDF, and calibrate the final manuscript against nearby real papers.
 
 The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md). In multi-pass mode, persist the key handoffs:
@@ -75,11 +75,13 @@ Do not materialize every schema on every run. Framing, Claim Graph, Reader Path,
 
 The stable high-value states are usually:
 
+- Manuscript Maturity;
 - Research State;
 - Technical State;
 - Literature state when external positioning matters;
 - Convention Profile when venue / paper-type presentation priors matter;
 - Paper Core;
+- Main Result Spine;
 - Section Contracts for technically dense sections;
 - Paper / Presentation state for iterative full-paper work.
 
@@ -92,6 +94,8 @@ Use the schemas in `schemas/` as logical representations, not mandatory serializ
 - [Scientific Spec](schemas/scientific-spec.md)
 - [Citation Map](schemas/citation-map.md)
 - [Convention Profile](schemas/convention-profile.md)
+- [Manuscript Maturity](schemas/manuscript-maturity.md)
+- [Main Result Spine](schemas/main-result-spine.md)
 - [Layout Contract](schemas/layout-contract.md)
 - [Frozen Paper Spec](schemas/paper-spec.md)
 - [Research State](schemas/research-state.md)
@@ -134,7 +138,10 @@ Read only the procedure files needed for the current request:
 - [Technical grounding](references/procedures/technical-grounding.md)
 - [Section Contract and prerequisite check](references/procedures/section-contract.md)
 - [Section calibration](references/procedures/section-calibration.md)
+- [Main Result Spine](references/procedures/main-result-spine.md)
 - [Authorial synthesis](references/procedures/authorial-synthesis.md)
+- [Editorial Distillation](references/procedures/editorial-distillation.md)
+- [Reverse Outline](references/procedures/reverse-outline.md)
 - [Final manuscript calibration](references/procedures/manuscript-calibration.md)
 - [Problem construction and claim framing](references/procedures/framing.md)
 - [Paper Core](references/procedures/paper-core.md)
