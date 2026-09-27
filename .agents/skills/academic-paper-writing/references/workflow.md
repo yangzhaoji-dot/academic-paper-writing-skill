@@ -212,7 +212,13 @@ The contract records:
 
 Run [Section calibration](procedures/section-calibration.md) for substantial sections to check completeness, information resolution, representation redundancy, visual obligations, and real-paper discourse calibration.
 
+For any high-impact figure, table, algorithm, or equation block whose placement affects interpretation, create a [Layout Contract](../schemas/layout-contract.md) using [Layout Contract Construction](procedures/layout-contract.md). The contract records semantic owner, prerequisites, textual anchor, forbidden regions, physical preferences, and reading-order dependencies before typesetting.
+
 A Method contract must explicitly cover decision/action spaces, representation, interfaces, state transitions, loss masks, sampling semantics, central variable meanings, and protocol exceptions whenever they are part of the method.
+
+## Layout freeze before writing
+
+Freeze high-impact Layout Contracts together with the Paper Architecture. Section writers consume the contracts and provide the required textual anchors; they do not decide float ownership during prose realization.
 
 ## Phase III — Writing with discourse grounding
 
