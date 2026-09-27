@@ -68,8 +68,31 @@ Default intervention becomes conservative:
 - prioritize editorial distillation, consistency, venue compliance, exact-candidate verification, and rendered presentation;
 - reopen science only for a genuine blocker.
 
-## Invariant
+## Invariants
 
 Maturity controls presentation permission, not scientific truth.
 
 A later-looking manuscript surface must never be used to conceal an earlier research state.
+
+### Invisible-maturity invariant
+
+Manuscript Maturity is compiler state. Its labels must not appear in reader-facing prose merely because the compiler uses them.
+
+Do not render internal lifecycle language such as:
+
+- pre-results;
+- evidence-ready;
+- current manuscript stage;
+- empirical claims withheld;
+- pending because experiments have not run.
+
+Instead, let maturity control what surfaces exist:
+
+~~~text
+pre_results
+-> protocol may exist
+-> unobserved result tables do not exist
+-> empirical claims do not exist
+~~~
+
+If the reader must understand an actual scientific limitation caused by unavailable evidence, state the limitation directly without naming the internal maturity state.
