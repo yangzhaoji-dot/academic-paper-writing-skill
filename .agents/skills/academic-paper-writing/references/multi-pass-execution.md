@@ -38,7 +38,7 @@ Research Sources                     Convention Sources
                                                    |
                                          Pass 5: Paper Architecture
                                                    |
-                                            Frozen Paper Spec
+                                      Layout Contracts + Frozen Spec
                                                    |
                                          Section Writer Calls
                                                    |
@@ -46,7 +46,11 @@ Research Sources                     Convention Sources
                                                    |
                                             Targeted Repair
                                                    |
+                                         Page Composition
+                                                   |
                                            Typeset / Render
+                                                   |
+                                    Rendered Layout Verifier
                                                    |
                                      Final Manuscript Calibration
 ```
@@ -57,7 +61,7 @@ Pass 3 requires the current scientific and literature outputs. Convention Mining
 
 Pass 4 and Pass 5 consume the packaging decision but have different responsibilities: Pass 4 owns mathematical completeness; Pass 5 owns manuscript information architecture. Both may consume the Convention Profile for exposition and presentation priors only.
 
-The Frozen Paper Spec is assembled only after Pass 1–5 are coherent enough to write from.
+The Frozen Paper Spec is assembled only after Pass 1–5 are coherent enough to write from. High-impact figures/tables/algorithms receive Layout Contracts at the same freeze boundary.
 
 ## Frozen-interface rule
 
