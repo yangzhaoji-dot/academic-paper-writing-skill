@@ -24,6 +24,7 @@ For substantial paper work, treat multi-pass outputs as explicit handoff state:
 - Scientific Spec;
 - Citation Map;
 - Convention Profile;
+- Layout Contracts;
 - Frozen Paper Spec;
 - cross-pass issues.
 
@@ -46,6 +47,7 @@ For long iterative projects, Codex may persist working state under `.paper-writi
   scientific-spec.md
   citation-map.md
   convention-profile.md
+  layout-contracts.md
   frozen-paper-spec.md
   cross-pass-issues.md
   research-state.md
@@ -105,7 +107,7 @@ A runtime may retrieve official instructions through web access, a local cached 
 
 If the target-year profile is unavailable, the runtime may use the latest verified profile only for provisional planning and must mark the result as unverified. It must not silently substitute an older template for final submission.
 
-Rendered-PDF review may be performed by any runtime capable of compiling or viewing the document. If rendering is unavailable, report that the visual review remains pending rather than treating source validation as equivalent.
+Rendered-layout verification may be performed by any runtime capable of compiling and viewing the document. If rendering is unavailable, report Layout Contract verification as pending rather than treating source validation as equivalent.
 
 ## Portability rule
 
