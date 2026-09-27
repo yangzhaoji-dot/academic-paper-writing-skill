@@ -16,6 +16,8 @@ Use:
 - Frozen Paper Spec;
 - Scientific Spec;
 - Citation Map;
+- Main Result Spine;
+- Manuscript Maturity;
 - relevant research sources;
 - venue profile;
 - optionally 3–5 manuscript references.
@@ -37,7 +39,19 @@ Check whether the manuscript actually contains:
 
 Do not assume presence because these existed in the Paper Spec.
 
-### 2. Packaging visibility
+### 2. Main-result visibility and selectivity
+
+Without reading internal planning, answer:
+
+- What is the single central question?
+- What is the one-sentence answer?
+- Which method objects are core versus supporting?
+- Does any supporting machinery visually/rhetorically compete with the core?
+- Could any paragraph/subsection/equation disappear from the main body without harming first-pass understanding?
+
+Flag a manuscript that is scientifically complete but presents all technical objects at equal resolution.
+
+### 3. Packaging visibility
 
 Without reading internal planning, answer:
 
@@ -50,7 +64,7 @@ Without reading internal planning, answer:
 
 If these answers are unclear, report a packaging/manuscript issue.
 
-### 3. Citation integrity
+### 4. Citation integrity
 
 Check:
 
@@ -59,7 +73,7 @@ Check:
 - no adaptation is mislabeled as a full prior method;
 - no stale or invented bibliographic entry entered through prose writing.
 
-### 4. Method audit
+### 5. Method audit
 
 Check:
 
@@ -70,10 +84,13 @@ Check:
 - sampling correction present;
 - no required technical prerequisite moved to appendix.
 
-### 5. Experiment audit
+### 6. Experiment and maturity audit
 
 Check:
 
+- manuscript surfaces match Manuscript Maturity;
+- at pre_results, no fake final-result table is filled with pending/TBD cells;
+- at pre_results, planned evidence is not described as an observed finding;
 - metrics defined;
 - main comparison matches evidence obligation;
 - compute / rollout / Harness-call confounds controlled when required;
@@ -81,16 +98,18 @@ Check:
 - main result visually and rhetorically prominent;
 - interpretation does not exceed the comparison.
 
-### 6. Authorial / discourse audit
+### 7. Editorial / discourse audit
 
 Check:
 
+- every substantial section has survived Editorial Distillation;
+- Reverse Outline reveals one cumulative argument rather than duplicated paragraph functions;
 - no workflow scaffold leakage;
 - subsection structure is not one-to-one with internal nodes;
 - terminology is stable;
 - prose reads as scientific argument rather than an explanation of paper organization.
 
-### 7. Venue / rendered-manuscript audit
+### 8. Venue / rendered-manuscript audit
 
 When PDF exists, additionally inspect:
 
