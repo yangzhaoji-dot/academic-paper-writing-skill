@@ -42,6 +42,7 @@ def main() -> None:
         "references/procedures/section-calibration.md",
         "references/procedures/main-result-spine.md",
         "references/procedures/editorial-distillation.md",
+        "references/procedures/self-containment-gate.md",
         "references/procedures/reverse-outline.md",
         "references/procedures/authorial-synthesis.md",
         "references/procedures/manuscript-calibration.md",
