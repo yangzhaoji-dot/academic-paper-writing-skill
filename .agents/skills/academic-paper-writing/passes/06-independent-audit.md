@@ -75,6 +75,8 @@ Check:
 
 ### 5. Method audit
 
+Run the Self-Containment Gate on every core main-body equation.
+
 Check:
 
 - baseline before delta;
@@ -82,7 +84,9 @@ Check:
 - new advantage/estimator mapped to optimized units;
 - final update objective present;
 - sampling correction present;
-- no required technical prerequisite moved to appendix.
+- no required technical prerequisite moved to appendix;
+- no core loss/estimator term is defined only in supporting material;
+- a reader can reconstruct what is optimized and which policy region receives each signal from the main paper.
 
 ### 6. Experiment and maturity audit
 
@@ -109,13 +113,22 @@ Check:
 - terminology is stable;
 - prose reads as scientific argument rather than an explanation of paper organization.
 
-### 8. Venue / rendered-manuscript audit
+### 8. Invisible-maturity audit
+
+Search reader-facing prose for compiler-state leakage such as "pre-results", "evidence-ready", "current stage", "claims withheld", or equivalent lifecycle commentary.
+
+Maturity may remove surfaces but may not narrate itself to the reader.
+
+### 9. Venue / rendered-manuscript audit
 
 When PDF exists, additionally inspect:
 
 - official template;
 - float ownership / no table before its section;
 - page density;
+- composition underfill / avoidable blank regions;
+- heading bursts / hierarchy-transition overload;
+- full-width block break cost;
 - equation/table readability;
 - main-body vs appendix boundary.
 
