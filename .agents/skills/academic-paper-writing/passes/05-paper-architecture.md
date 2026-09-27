@@ -83,6 +83,19 @@ Plan visuals by scientific responsibility:
 
 Do not make sampling mechanics the visual center if the contribution is a credit estimator.
 
+For every high-impact visual/table/algorithm, also construct a [Layout Contract](../schemas/layout-contract.md) using [Layout Contract Construction](../references/procedures/layout-contract.md).
+
+At minimum record:
+
+- owner section;
+- prerequisites that must appear first;
+- first textual reference / anchor;
+- forbidden regions;
+- single- vs double-column preference;
+- reading-order dependencies;
+- heading-integrity requirement;
+- repair owner if the final float drifts.
+
 ### 5. Experiment hierarchy
 
 Separate:
@@ -130,7 +143,8 @@ The architecture is ready to freeze when:
 - the central method has enough main-body space;
 - experiments have a clear evidence hierarchy;
 - page budget follows scientific need;
-- appendix moves do not break reviewer understanding.
+- appendix moves do not break reviewer understanding;
+- high-impact figures/tables have frozen Layout Contracts.
 
 ## Output
 
