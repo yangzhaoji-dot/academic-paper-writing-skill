@@ -2,6 +2,9 @@
 
 ```yaml
 execution_mode: narrow_single_call | multi_pass
+manuscript_maturity:
+  stage: research_spec | pre_results | evidence_ready | submission
+  evidence_state: {}
 
 passes:
   scientific_audit:
@@ -22,6 +25,7 @@ passes:
 scientific_spec: {}
 citation_map: {}
 convention_profile: {}
+main_result_spine: {}
 layout_contracts: []
 frozen_paper_spec: {}
 
@@ -56,6 +60,11 @@ narrative:
 reader_path:
 section_contracts:
   introduction: {}
+editorial_distillation:
+  decisions: []
+reverse_outline:
+  sections: {}
+  manuscript: {}
   method: {}
   experiments: {}
   related_work: {}
