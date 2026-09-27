@@ -1,6 +1,6 @@
 ---
 name: academic-paper-writing
-description: Construct, draft, revise, typeset, or review academic research papers from research ideas, repositories, evidence, experiments, notes, verified literature, venue requirements, and learned paper-convention priors. For substantial full-paper work, use multi-pass orchestration with separate Scientific Audit, Literature & Citation Audit, Paper Packaging, Formal Method, Paper Architecture, section-writing, and Independent Audit calls connected by frozen Scientific Spec, Citation Map, and Paper Spec handoffs. For narrow edits, use the smallest relevant procedure directly. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
+description: Construct, draft, revise, typeset, or review academic research papers from research ideas, repositories, evidence, experiments, notes, verified literature, venue requirements, learned paper-convention priors, and explicit semantic layout contracts for figures/tables/algorithms. For substantial full-paper work, use multi-pass orchestration with separate Scientific Audit, Literature & Citation Audit, Paper Packaging, Formal Method, Paper Architecture, section-writing, and Independent Audit calls connected by frozen Scientific Spec, Citation Map, and Paper Spec handoffs. For narrow edits, use the smallest relevant procedure directly. Use for paper introductions, section planning, research framing, contribution positioning, literature-grounded novelty checks, prose naturalization, experiment-story alignment, and full-paper consistency review; do not invent missing research facts or citations.
 ---
 
 # Academic Paper Writing
@@ -92,6 +92,7 @@ Use the schemas in `schemas/` as logical representations, not mandatory serializ
 - [Scientific Spec](schemas/scientific-spec.md)
 - [Citation Map](schemas/citation-map.md)
 - [Convention Profile](schemas/convention-profile.md)
+- [Layout Contract](schemas/layout-contract.md)
 - [Frozen Paper Spec](schemas/paper-spec.md)
 - [Research State](schemas/research-state.md)
 - [Technical State](schemas/technical-state.md)
@@ -140,6 +141,8 @@ Read only the procedure files needed for the current request:
 - [Experimental obligations](references/procedures/experimental-obligations.md)
 - [Literature grounding](references/procedures/literature-grounding.md)
 - [Discourse grounding](references/procedures/discourse-grounding.md)
+- [Layout Contract construction](references/procedures/layout-contract.md)
+- [Rendered Layout Verifier](references/procedures/rendered-layout-verifier.md)
 - [Venue-aware presentation](references/procedures/venue-presentation.md)
 - [Narrative planning](references/procedures/narrative.md)
 - [Reader Path](references/procedures/reader-path.md)
