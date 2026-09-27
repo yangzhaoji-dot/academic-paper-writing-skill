@@ -180,7 +180,11 @@ Flag:
 
 If the science is complete but the paper reads like an explanation of its own construction process, repair [Authorial synthesis](authorial-synthesis.md) before discourse or sentence-level rewriting.
 
-## Pass 11 — reverse outline and narrative continuity
+## Pass 11 — self-containment, reverse outline, and narrative continuity
+
+Before structural prose checks, verify every core main-body equation has all interpretation-critical dependencies defined in the main paper. Appendix-only derivations are acceptable; appendix-only core semantics are not.
+
+Then recover the paragraph functions from the prose that actually exists.
 
 For each section, recover the paragraph functions from the prose that actually exists.
 
@@ -218,7 +222,20 @@ A smoother draft is not an improvement if it becomes derivative.
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 14 — layout-contract integrity
+## Pass 14 — invisible-maturity integrity
+
+Check that Manuscript Maturity governs output without appearing as author-side lifecycle narration.
+
+Flag reader-facing occurrences such as:
+
+- pre-results manuscript;
+- current pre-results stage;
+- empirical claims intentionally withheld;
+- pending because experiments are not complete.
+
+Route these to Manuscript Maturity / Editorial Distillation.
+
+## Pass 15 — layout-contract and page-composition integrity
 
 For every high-impact figure/table/algorithm with a Layout Contract, check the rendered PDF against:
 
@@ -244,7 +261,7 @@ If the contract is correct but the PDF violates it, repair Page Composition / Ty
 
 If the contract itself causes a bad reader path, repair Paper Architecture.
 
-## Pass 15 — venue and presentation integrity
+## Pass 16 — venue and presentation integrity
 
 Check:
 
@@ -266,7 +283,7 @@ Flag:
 - page overflow repaired by deleting limitations or controls;
 - stale conference rules.
 
-## Pass 16 — final manuscript calibration
+## Pass 17 — final manuscript calibration
 
 After rendering the complete paper, compare it with 3–5 nearby real papers using [Final manuscript calibration](manuscript-calibration.md).
 
@@ -286,7 +303,7 @@ Repair only deviations that plausibly increase reader cost or weaken presentatio
 
 If the official target-year template is not actually used, the manuscript remains `preview_only`.
 
-## Pass 17 — naturalness
+## Pass 18 — naturalness
 
 Inspect:
 
@@ -332,5 +349,8 @@ Typical routing:
 - convention profile missing / stale / over-hardcoded -> Convention Mining;
 - bad semantic placement rule -> Layout Contract / Paper Architecture;
 - rendered semantic float drift -> Page Composition / Typesetting;
+- composition underfill / hierarchy-transition overload -> Page Composition;
+- core equation with appendix-only dependency -> Editorial Distillation / Architecture;
+- manuscript-maturity label leaked into prose -> Manuscript Maturity / Editorial Distillation;
 - whole-paper density / visual hierarchy mismatch -> Final Manuscript Calibration;
 - awkward language only -> Naturalization.
