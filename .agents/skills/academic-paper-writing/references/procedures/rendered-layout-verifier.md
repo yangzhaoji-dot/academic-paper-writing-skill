@@ -89,7 +89,32 @@ Check that each major heading visibly starts its section.
 
 Flag heading_occluded_by_float when a float from another section visually consumes the opening.
 
-### 8. Physical integrity
+### 8. Page-composition quality
+
+Semantic placement can be correct while the page is still poorly composed.
+
+Inspect every rendered page for:
+
+- **composition underfill** — a large avoidable blank region caused by an over-constrained float or forced column break;
+- **heading burst** — too many section/subsection transitions in a small page region, making the page read like an outline rather than a continuous argument;
+- **hierarchy-transition density** — repeated major hierarchy changes on one page (e.g. Experiments -> Discussion -> Conclusion -> Appendix);
+- **full-width-block page-break cost** — a figure/table satisfies its semantic contract but forces premature column termination or severe whitespace;
+- **column imbalance** — one column terminates substantially earlier without semantic reason;
+- **visual rhythm** — consecutive pages alternate between extreme density and sparse unused space because of compositor decisions.
+
+Flag these separately from semantic float errors:
+
+~~~text
+composition_underfill
+heading_burst
+hierarchy_transition_overload
+full_width_block_break_cost
+column_imbalance
+~~~
+
+Do not optimize page fill by weakening scientific hierarchy. First reconsider float width, placement mode, local section boundary, or whether the object truly needs full-width treatment.
+
+### 9. Physical integrity
 
 Also check:
 
@@ -153,4 +178,5 @@ Rendered layout passes when:
 - section boundaries are visually coherent;
 - reading-order dependencies are respected;
 - no major attention competition remains;
+- no major page-composition defect remains;
 - physical overflow / readability defects are repaired.
