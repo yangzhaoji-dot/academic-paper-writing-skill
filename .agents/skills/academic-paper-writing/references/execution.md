@@ -152,6 +152,8 @@ Purpose: fit the paper to a venue without changing scientific meaning.
 
 Before final presentation, **Pass 06 — Independent Paper Audit** reviews the drafted manuscript from a fresh context. Blocking issues are routed back to the owning upstream pass before final typesetting.
 
+During Present, compile Layout Contracts into page-composition constraints and run the Rendered Layout Verifier on the actual PDF before final manuscript calibration.
+
 Internally use, as needed:
 
 - Venue Profile;
@@ -163,6 +165,9 @@ Internally use, as needed:
 - visual/table/equation planning;
 - appendix moves;
 - official-template gate;
+- Layout Contracts;
+- page composition;
+- rendered-layout verification;
 - rendered-PDF review;
 - Final Manuscript Calibration.
 
