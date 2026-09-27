@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.11 user-facing execution surface remains compact, but substantial paper work is now multi-pass, convention-aware, and layout-contract aware:
+The v0.12 user-facing execution surface remains compact, but substantial paper work is now maturity-aware, selective, convention-aware, and layout-contract aware:
 
 ```text
 1. Understand
@@ -17,11 +17,11 @@ The v0.11 user-facing execution surface remains compact, but substantial paper w
    -> Baselines / Metrics / Controls
 
 4. Write Sections
-   -> Section Planning
-   -> Section Calibration
-   -> Semantic Draft
-   -> Authorial Synthesis
-   -> Discourse Realization
+   -> Main Result Spine
+   -> Section Planning / Writer
+   -> Editorial Distillation
+   -> Reverse Outline
+   -> Final Prose Realization
 
 5. Present
    -> Layout Contracts / Page Composition
@@ -44,7 +44,7 @@ Original Idea
 -> Technical Mechanism
 ```
 
-Internally, full-paper work is no longer one large generation. v0.11 keeps a frozen **Paper Convention Profile** and adds **Layout Contracts** that carry semantic page-flow constraints alongside the scientific and literature state:
+Internally, full-paper work is no longer one large generation. v0.12 keeps the v0.11 convention/layout machinery and adds **Manuscript Maturity**, a **Main Result Spine**, **Editorial Distillation**, and **Reverse Outline** that carry semantic page-flow constraints alongside the scientific and literature state:
 
 ```text
 Research Sources                     Convention Sources
@@ -72,7 +72,7 @@ Research Sources                     Convention Sources
 
 The existing procedures remain the toolbox used inside these calls.
 
-Key v0.11 rules:
+Key v0.12 rules:
 
 - **One pass, one decision responsibility.** Scientific formalization, literature verification, packaging, writing, and review do not share one call by default.
 - **Frozen handoffs.** Scientific Spec, Citation Map, Convention Profile, and Frozen Paper Spec are explicit interfaces between calls.
@@ -80,6 +80,10 @@ Key v0.11 rules:
 - **No silent downstream mutation.** A writer that discovers a missing equation or citation raises an issue to the owning pass instead of patching the scientific story locally.
 - **Fresh independent review.** The audit call judges the manuscript that exists and should not inherit the writer's private planning rationale.
 - **Targeted invalidation.** A changed upstream decision reruns only downstream outputs that depend on it.
+- **Maturity before manuscript surface.** Pre-results drafts may define protocols and evidence slots but may not impersonate finished Results with pending/TBD tables.
+- **One central answer before section allocation.** The Main Result Spine ranks core, prerequisite, supporting, appendix, and omit-level material before Architecture spends page budget.
+- **Complete drafts are not automatically accepted.** Editorial Distillation explicitly chooses KEEP / COMPRESS / MERGE / RELOCATE / APPENDIX / DELETE.
+- **Verify the prose backwards.** Reverse Outline reconstructs paragraph functions from the final draft and catches duplicated or orphaned functions.
 - **Semantic layout before physical floats.** High-impact figures/tables carry Layout Contracts that specify owner section, prerequisites, first textual reference, forbidden regions, reading-order dependencies, and fallback placement.
 - **Rendered layout is audited semantically.** A PDF can fail even with no overfull boxes if a float drifts across a section boundary or creates a reading-order inversion.
 
@@ -227,4 +231,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.11: multi-pass paper construction with frozen Scientific Spec / Citation Map / Convention Profile / Layout Contracts / Paper Spec handoffs, convention-aware architecture, semantic page-flow constraints, rendered layout verification, independent manuscript audit, and venue-aware final calibration.
+MVP v0.12: maturity-aware paper construction with Scientific Spec / Citation Map / Convention Profile / Main Result Spine / Layout Contracts / Paper Spec handoffs, editorial distillation, reverse outlining, semantic page-flow verification, independent manuscript audit, and exact final-artifact calibration.
