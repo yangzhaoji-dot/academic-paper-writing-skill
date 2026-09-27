@@ -16,6 +16,8 @@ Use:
 - Citation Map;
 - Packaging Spec;
 - Formal Method;
+- Main Result Spine;
+- Manuscript Maturity;
 - Experimental Obligations;
 - Convention Profile;
 - venue profile;
@@ -37,6 +39,10 @@ Apply soft Convention Profile priors as **calibration**, not law. In particular 
 
 If the current paper has a scientifically justified reason to deviate, preserve the deviation and record it.
 
+Before assigning section space, build or load the [Main Result Spine](../schemas/main-result-spine.md) using [Main Result Spine](../references/procedures/main-result-spine.md).
+
+The spine determines presentation priority. Scientific completeness remains upstream in Formal Method; Architecture decides how much of that science the first-pass reader needs to see.
+
 ## Architecture decisions
 
 ### 1. Section structure
@@ -54,11 +60,21 @@ For a methods paper, explicitly consider whether readers need:
 
 Do not omit Preliminaries simply because the proposed method can be described informally.
 
-### 2. Required-content placement
+### 2. Required-content placement and resolution
 
 Every required equation, definition, citation group, metric, contribution, and assumption must have a section location.
 
-No required object may remain "implicitly known."
+Also classify each substantial object as:
+
+- core;
+- prerequisite;
+- supporting;
+- appendix candidate;
+- omit-from-manuscript.
+
+Assign main-body resolution separately from scientific necessity.
+
+No required object may remain "implicitly known", but not every scientifically valid object requires full main-body exposition.
 
 ### 3. Section contracts
 
@@ -96,7 +112,15 @@ At minimum record:
 - heading-integrity requirement;
 - repair owner if the final float drifts.
 
-### 5. Experiment hierarchy
+### 5. Maturity-aware experiment surfaces
+
+Apply Manuscript Maturity before planning result surfaces.
+
+At `pre_results`, plan protocols, metrics, baselines, and evidence slots, but do not create full pending/TBD result tables or prose that simulates observed findings.
+
+At `evidence_ready` or later, verified result artifacts may become main tables/plots and empirical claims.
+
+### 6. Experiment hierarchy
 
 Separate:
 
@@ -108,13 +132,13 @@ Separate:
 
 Baseline naming must follow Citation Map distinctions.
 
-### 6. Page budget
+### 7. Page budget
 
 Only after required content is placed, assign page targets.
 
 Do not optimize a methods paper toward an arbitrary short preview if the venue permits more room and the missing content affects reviewer judgment.
 
-### 7. Appendix boundary
+### 8. Appendix boundary
 
 Move reproducibility detail, extended derivations, prompts, adapters, and secondary sweeps only after confirming the main paper retains what is necessary to evaluate the claim.
 
