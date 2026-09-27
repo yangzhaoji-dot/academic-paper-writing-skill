@@ -2,7 +2,7 @@
 
 A portable Agent Skill for constructing academic papers from research facts rather than generating prose in one shot.
 
-The v0.12 user-facing execution surface remains compact, but substantial paper work is now maturity-aware, selective, convention-aware, and layout-contract aware:
+The v0.12.1 user-facing execution surface remains compact, but substantial paper work is now maturity-aware, selective, self-containment checked, convention-aware, and layout-contract aware:
 
 ```text
 1. Understand
@@ -20,6 +20,7 @@ The v0.12 user-facing execution surface remains compact, but substantial paper w
    -> Main Result Spine
    -> Section Planning / Writer
    -> Editorial Distillation
+   -> Self-Containment Gate
    -> Reverse Outline
    -> Final Prose Realization
 
@@ -72,7 +73,7 @@ Research Sources                     Convention Sources
 
 The existing procedures remain the toolbox used inside these calls.
 
-Key v0.12 rules:
+Key v0.12.1 rules:
 
 - **One pass, one decision responsibility.** Scientific formalization, literature verification, packaging, writing, and review do not share one call by default.
 - **Frozen handoffs.** Scientific Spec, Citation Map, Convention Profile, and Frozen Paper Spec are explicit interfaces between calls.
@@ -81,11 +82,13 @@ Key v0.12 rules:
 - **Fresh independent review.** The audit call judges the manuscript that exists and should not inherit the writer's private planning rationale.
 - **Targeted invalidation.** A changed upstream decision reruns only downstream outputs that depend on it.
 - **Maturity before manuscript surface.** Pre-results drafts may define protocols and evidence slots but may not impersonate finished Results with pending/TBD tables.
+- **Maturity is invisible compiler state.** Lifecycle labels control which surfaces exist but never appear merely to explain the draft stage.
+- **Distillation cannot break method closure.** Core equations must remain self-contained in the main paper; appendices may hold derivations, not the only semantics of core loss terms.
 - **One central answer before section allocation.** The Main Result Spine ranks core, prerequisite, supporting, appendix, and omit-level material before Architecture spends page budget.
 - **Complete drafts are not automatically accepted.** Editorial Distillation explicitly chooses KEEP / COMPRESS / MERGE / RELOCATE / APPENDIX / DELETE.
 - **Verify the prose backwards.** Reverse Outline reconstructs paragraph functions from the final draft and catches duplicated or orphaned functions.
 - **Semantic layout before physical floats.** High-impact figures/tables carry Layout Contracts that specify owner section, prerequisites, first textual reference, forbidden regions, reading-order dependencies, and fallback placement.
-- **Rendered layout is audited semantically.** A PDF can fail even with no overfull boxes if a float drifts across a section boundary or creates a reading-order inversion.
+- **Rendered layout is audited semantically and compositionally.** A PDF can fail even with no overfull boxes if a float drifts across a section boundary, creates a reading-order inversion, or forces severe whitespace / hierarchy-transition overload.
 
 The convention layer captures four explicit prior families:
 
@@ -231,4 +234,4 @@ The validator checks front matter, required files, and local Markdown links in t
 
 ## Status
 
-MVP v0.12: maturity-aware paper construction with Scientific Spec / Citation Map / Convention Profile / Main Result Spine / Layout Contracts / Paper Spec handoffs, editorial distillation, reverse outlining, semantic page-flow verification, independent manuscript audit, and exact final-artifact calibration.
+MVP v0.12.1: maturity-aware paper construction with Scientific Spec / Citation Map / Convention Profile / Main Result Spine / Layout Contracts / Paper Spec handoffs, editorial distillation, reverse outlining, semantic page-flow verification, independent manuscript audit, and exact final-artifact calibration.
