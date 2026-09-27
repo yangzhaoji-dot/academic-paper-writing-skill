@@ -25,6 +25,7 @@ Provide only what the section needs:
 - required equations / metrics / visuals;
 - section-matched Discourse References;
 - the section-relevant subset of the Convention Profile;
+- relevant Layout Contracts and textual anchors;
 - finalized previous-section prose when continuity requires it.
 
 Do not provide unnecessary upstream planning rationale.
@@ -39,7 +40,8 @@ Convention priors influence representation and exposition only. They do not auth
 - examples / concrete anchors supported by research facts;
 - sentence realization;
 - compression of repeated information;
-- subsection boundaries when allowed by Paper Architecture.
+- subsection boundaries when allowed by Paper Architecture;
+- local wording of the first textual reference for a contracted visual.
 
 ## Writer may not decide
 
@@ -52,7 +54,8 @@ Convention priors influence representation and exposition only. They do not auth
 - citation metadata;
 - evidence status;
 - venue page limit;
-- removal of main-body technical prerequisites.
+- removal of main-body technical prerequisites;
+- silent relocation of a contracted visual to another semantic section.
 
 ## Internal writing sequence
 
@@ -93,5 +96,6 @@ A section is writer-complete when:
 - no upstream decision was silently changed;
 - citations come from Citation Map;
 - required equations / definitions appear;
+- textual anchors required by Layout Contracts are present;
 - prose passes Authorial Synthesis;
 - unresolved issues are explicitly returned.
