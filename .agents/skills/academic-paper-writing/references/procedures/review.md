@@ -190,7 +190,33 @@ A smoother draft is not an improvement if it becomes derivative.
 
 Track repeated concepts, not only repeated words. A core claim may recur when its rhetorical role changes, but full re-explanation should be rare.
 
-## Pass 14 — venue and presentation integrity
+## Pass 14 — layout-contract integrity
+
+For every high-impact figure/table/algorithm with a Layout Contract, check the rendered PDF against:
+
+- owner section;
+- prerequisites;
+- first textual reference;
+- forbidden regions;
+- max page distance;
+- reading-order dependencies;
+- heading integrity;
+- attention competition.
+
+Flag:
+
+- semantic_float_drift;
+- float_precedes_anchor;
+- prerequisite_after_visual;
+- reading_order_inversion;
+- heading_occluded_by_float;
+- primary_attention_competition.
+
+If the contract is correct but the PDF violates it, repair Page Composition / Typesetting.
+
+If the contract itself causes a bad reader path, repair Paper Architecture.
+
+## Pass 15 — venue and presentation integrity
 
 Check:
 
@@ -212,7 +238,7 @@ Flag:
 - page overflow repaired by deleting limitations or controls;
 - stale conference rules.
 
-## Pass 15 — final manuscript calibration
+## Pass 16 — final manuscript calibration
 
 After rendering the complete paper, compare it with 3–5 nearby real papers using [Final manuscript calibration](manuscript-calibration.md).
 
@@ -232,7 +258,7 @@ Repair only deviations that plausibly increase reader cost or weaken presentatio
 
 If the official target-year template is not actually used, the manuscript remains `preview_only`.
 
-## Pass 16 — naturalness
+## Pass 17 — naturalness
 
 Inspect:
 
@@ -273,5 +299,7 @@ Typical routing:
 - unreadable figure/table -> Visual or Table Design;
 - local rendered-layout defect -> Typesetting;
 - convention profile missing / stale / over-hardcoded -> Convention Mining;
+- bad semantic placement rule -> Layout Contract / Paper Architecture;
+- rendered semantic float drift -> Page Composition / Typesetting;
 - whole-paper density / visual hierarchy mismatch -> Final Manuscript Calibration;
 - awkward language only -> Naturalization.
