@@ -8,6 +8,8 @@ status: draft | frozen | blocked
 scientific_spec_ref:
 citation_map_ref:
 convention_profile_ref:
+manuscript_maturity_ref:
+main_result_spine_ref:
 
 packaging:
   title:
@@ -36,6 +38,12 @@ formal_method:
   metric_definitions: []
   assumptions: []
 
+main_result_spine:
+  central_question:
+  one_sentence_answer:
+  boundary:
+  supporting_objects: []
+
 architecture:
   convention_profile_applied:
   sections:
@@ -60,6 +68,7 @@ writer_contract:
   immutable_fields:
     - packaging
     - formal_method
+    - main_result_spine
     - architecture
   writers_may:
     - choose paragraph boundaries
