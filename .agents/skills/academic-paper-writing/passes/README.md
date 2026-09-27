@@ -13,11 +13,14 @@ Convention Mining (parallel)
 03 Paper Packaging
 04 Formal Method
 05 Paper Architecture
--> Frozen Paper Spec
+-> Layout Contracts + Frozen Paper Spec
 -> Section Writer calls using section-writer.md
 06 Independent Audit
 -> targeted repair
--> Present / Render / Final Manuscript Calibration
+-> Page Composition
+-> Present / Render
+-> Rendered Layout Verifier
+-> Final Manuscript Calibration
 \`\`\`
 
 Pass 01, Pass 02, and Convention Mining may run independently. Convention Mining owns presentation conventions only and may not redefine scientific content.
