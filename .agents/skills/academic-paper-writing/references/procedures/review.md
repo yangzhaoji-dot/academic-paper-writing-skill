@@ -59,12 +59,14 @@ Check whether:
 - correlations are not rewritten as mechanisms;
 - results on one setting are not generalized without support.
 
-## Pass 4 — Paper Core consistency
+## Pass 4 — Paper Core and Main Result Spine consistency
 
 Check the abstract, introduction, method, experiments, and conclusion against the same Paper Core.
 
 Ask:
 
+- Can the central question and one-sentence answer be recovered from the manuscript?
+- Do core objects dominate supporting machinery?
 - Are they describing the same problem and key distinction?
 - Does the method solve the problem the introduction actually motivates?
 - Do the experiments test the thesis rather than a nearby easier claim?
@@ -114,7 +116,18 @@ Flag:
 
 If this pass fails, repair Convention Mining or Architecture. Do not rewrite the science to satisfy convention.
 
-## Pass 8 — section calibration
+## Pass 8 — manuscript maturity and section calibration
+
+First check Manuscript Maturity.
+
+At `pre_results`, flag:
+
+- full main-result tables made of pending/TBD placeholders;
+- empirical contribution statements without verified evidence;
+- abstract/conclusion language implying observed gains;
+- experiment prose that narrates future obligations as if they were results.
+
+Then for each substantial section, check:
 
 For each substantial section, check:
 
@@ -148,9 +161,13 @@ For each paragraph, ask:
 
 If the scientific logic is correct but reader effort is high, repair the Reader Path before polishing sentences.
 
-## Pass 10 — authorial synthesis
+## Pass 10 — editorial distillation and authorial synthesis
 
-Check whether the manuscript surface is still mirroring internal planning structure.
+Check whether every retained paragraph/subsection/equation still earns its main-body space.
+
+Apply the Editorial Distillation actions: KEEP, COMPRESS, MERGE, RELOCATE, APPENDIX, DELETE.
+
+Then check whether the manuscript surface is still mirroring internal planning structure.
 
 Flag:
 
@@ -163,7 +180,18 @@ Flag:
 
 If the science is complete but the paper reads like an explanation of its own construction process, repair [Authorial synthesis](authorial-synthesis.md) before discourse or sentence-level rewriting.
 
-## Pass 11 — narrative continuity
+## Pass 11 — reverse outline and narrative continuity
+
+For each section, recover the paragraph functions from the prose that actually exists.
+
+Flag:
+
+- duplicate_function;
+- orphan paragraphs;
+- circular reveal order;
+- topic-sentence skeletons that do not form a coherent section outline.
+
+Then ask for each paragraph:
 
 Ask for each paragraph:
 
@@ -288,7 +316,10 @@ Typical routing:
 - hard-to-follow explanation -> Reader Path;
 - overfull / prematurely detailed section -> Section Calibration;
 - redundant prose/table/figure explanation -> Representation Allocation;
-- workflow/scaffold leakage -> Authorial Synthesis;
+- workflow/scaffold leakage -> Editorial Distillation / Authorial Synthesis;
+- duplicated paragraph function -> Reverse Outline / Editorial Distillation;
+- pre-results manuscript pretending to contain results -> Manuscript Maturity / Architecture;
+- supporting machinery competing with the core -> Main Result Spine / Architecture;
 - over-fragmented subsection structure -> Authorial Synthesis;
 - terminology drift / synonym overload -> Authorial Synthesis;
 - missing concrete anchor in abstraction-heavy exposition -> Authorial Synthesis;
