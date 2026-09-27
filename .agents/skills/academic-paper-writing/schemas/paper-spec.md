@@ -49,6 +49,7 @@ architecture:
       page_target:
   main_figures: []
   main_tables: []
+  layout_contracts: []
   appendix_boundary: []
   venue:
     conference:
@@ -73,6 +74,7 @@ writer_contract:
     - change title/thesis silently
     - alter evidence status
     - promote a soft convention to a scientific requirement
+    - move an object across semantic section boundaries silently
 
 open_issues: []
 \`\`\`
