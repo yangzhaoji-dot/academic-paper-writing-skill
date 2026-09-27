@@ -19,6 +19,8 @@ Use section-specific grouping that preserves local continuity.
 Provide only what the section needs:
 
 - Frozen Paper Spec;
+- Main Result Spine;
+- Manuscript Maturity;
 - relevant Scientific Spec fields;
 - relevant Citation Map entries;
 - section contract / architecture entry;
@@ -98,4 +100,6 @@ A section is writer-complete when:
 - required equations / definitions appear;
 - textual anchors required by Layout Contracts are present;
 - prose passes Authorial Synthesis;
+- remaining units survive Editorial Distillation;
+- the Reverse Outline forms a cumulative section argument;
 - unresolved issues are explicitly returned.
