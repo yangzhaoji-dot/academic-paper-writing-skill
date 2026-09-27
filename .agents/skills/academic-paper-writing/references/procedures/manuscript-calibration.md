@@ -13,6 +13,7 @@ Use:
 - verified Venue Profile;
 - Presentation Reference;
 - Convention Profile;
+- Layout Contracts;
 - Section Contracts;
 - Paper Core;
 - 3–5 real reference papers from the same venue and, when possible, the same research family.
@@ -85,7 +86,23 @@ Compare the full manuscript on dimensions such as:
 - appendix boundary;
 - whether the manuscript feels like one continuous argument rather than concatenated modules.
 
-## 2. Presentation calibration
+## 2. Layout-contract calibration
+
+Before distributional manuscript comparison, run the [Rendered Layout Verifier](rendered-layout-verifier.md).
+
+Check:
+
+- semantic owner section;
+- prerequisite-before-visual ordering;
+- first textual reference;
+- cross-section float drift;
+- two-column reading order;
+- primary-attention competition;
+- heading integrity.
+
+A manuscript cannot pass final calibration with a blocking Layout Contract violation even if its overall page density resembles nearby papers.
+
+## 3. Presentation calibration
 
 Compare rendered-page behavior, not only source structure.
 
@@ -123,7 +140,7 @@ Inspect:
 - appendix transitions;
 - consistency of typography and numbering.
 
-## 3. Convention-prior calibration
+## 4. Convention-prior calibration
 
 Check the rendered manuscript against the Convention Profile on:
 
@@ -138,7 +155,7 @@ Check the rendered manuscript against the Convention Profile on:
 
 A convention mismatch is not automatically a defect. Classify it as justified, acceptable, reader-cost increasing, or uncertain.
 
-## 4. Deviation logic
+## 5. Deviation logic
 
 Do not optimize toward an average paper mechanically.
 
@@ -159,7 +176,7 @@ Examples of clear repair candidates:
 - a main result table uses unreadably small text;
 - an official venue template is not actually used.
 
-## 5. Preview mode
+## 6. Preview mode
 
 Support two manuscript modes:
 
@@ -182,7 +199,7 @@ For \`real\`:
 - no synthetic markers;
 - every result must trace to verified experiment data.
 
-## 6. Official-template gate
+## 7. Official-template gate
 
 Before calling a manuscript venue-compliant:
 
@@ -201,7 +218,7 @@ presentation_status = preview_only
 
 Do not describe a manually approximated two-column layout as venue-compliant.
 
-## 7. Repair policy
+## 8. Repair policy
 
 Repair the smallest responsible layer:
 
@@ -209,7 +226,8 @@ Repair the smallest responsible layer:
 - redundant Method -> representation allocation;
 - weak main-result prominence -> evidence visual hierarchy;
 - unreadable table -> table design;
-- float drift -> local typesetting;
+- physical float drift -> local typesetting;
+- semantic float drift -> Layout Contract / Page Composition;
 - wrong venue formatting -> official-template realization;
 - whole-paper imbalance -> page allocation;
 - manuscript reads like stitched modules -> section transitions / discourse composition.
@@ -222,6 +240,7 @@ Final calibration passes when:
 
 - no hard venue violation remains;
 - technical prerequisites remain intact;
+- no blocking Layout Contract violation remains;
 - no section is obviously over- or under-resolved;
 - decisive evidence is visually prominent;
 - prose/figure/table responsibilities are non-redundant;
