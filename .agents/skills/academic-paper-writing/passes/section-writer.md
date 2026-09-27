@@ -67,6 +67,9 @@ Section Contract
 -> Semantic Draft
 -> Authorial Synthesis
 -> Discourse Realization
+-> Editorial Distillation
+-> Self-Containment Gate
+-> Reverse Outline
 -> Naturalization
 \`\`\`
 
@@ -101,5 +104,6 @@ A section is writer-complete when:
 - textual anchors required by Layout Contracts are present;
 - prose passes Authorial Synthesis;
 - remaining units survive Editorial Distillation;
+- core equations pass the Self-Containment Gate;
 - the Reverse Outline forms a cumulative section argument;
 - unresolved issues are explicitly returned.
