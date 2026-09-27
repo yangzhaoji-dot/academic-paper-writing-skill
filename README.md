@@ -44,7 +44,7 @@ Original Idea
 -> Technical Mechanism
 ```
 
-Internally, full-paper work is no longer one large generation. v0.10 adds a frozen **Paper Convention Profile** alongside scientific and literature state:
+Internally, full-paper work is no longer one large generation. v0.11 keeps a frozen **Paper Convention Profile** and adds **Layout Contracts** that carry semantic page-flow constraints alongside the scientific and literature state:
 
 ```text
 Research Sources                     Convention Sources
