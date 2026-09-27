@@ -22,6 +22,7 @@ passes:
 scientific_spec: {}
 citation_map: {}
 convention_profile: {}
+layout_contracts: []
 frozen_paper_spec: {}
 
 research_state: {}
@@ -79,6 +80,7 @@ presentation:
   appendix_moves: []
   evidence_visual_hierarchy: {}
   rendered_pdf_review: {}
+  rendered_layout_verification: {}
   manuscript_calibration: {}
 sections:
   introduction:
@@ -121,6 +123,7 @@ review:
   venue_compliance:
   presentation_quality:
   convention_alignment:
+  layout_contract_integrity:
   naturalness:
 ```
 
