@@ -32,6 +32,19 @@ reference_set:
   coverage_limitations: []
 
 layout_prior:
+  macro_layout:
+    section_balance_tendencies: []
+    page_budget_tendencies: []
+    confidence:
+  semantic_float_rules:
+    tendencies: []
+    confidence:
+  local_page_flow:
+    tendencies: []
+    confidence:
+  physical_constraints:
+    tendencies: []
+    confidence:
   first_page:
     tendencies: []
     confidence: high | medium | low
