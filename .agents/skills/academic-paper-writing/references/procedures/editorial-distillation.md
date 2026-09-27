@@ -95,6 +95,12 @@ Replace it with reader-facing scientific content, or delete it when it carries n
 
 At `pre_results`, remove fake final-result surfaces. Keep experimental protocol and planned comparisons, but do not build tables full of TBD/pending cells.
 
+## Post-distillation gate
+
+After unit decisions are applied, run [Self-Containment Gate](self-containment-gate.md) before Reverse Outline.
+
+A successful distillation may reduce exposition but may not make the core method depend on appendix-only definitions.
+
 ## Safety invariant
 
 Distillation may reduce surface area but may not:
@@ -103,7 +109,8 @@ Distillation may reduce surface area but may not:
 - weaken reproducibility beyond the chosen main-body/appendix split;
 - invent evidence;
 - strengthen claims;
-- hide a material limitation.
+- hide a material limitation;
+- leave a core objective with undefined or appendix-only dependencies.
 
 If removing content would violate the Section Contract, repair the architecture/resolution decision rather than forcing deletion.
 
