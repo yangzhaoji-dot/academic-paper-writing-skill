@@ -11,6 +11,7 @@ Use three distinct inputs:
 1. **Venue Profile** — verified hard constraints from the target conference and year.
 2. **Presentation Reference** — soft layout patterns abstracted from several recent papers in the same venue or closely related venues.
 3. **Paper State** — section importance, Reader Path, equations, figures, tables, experiments, appendix candidates, and page budget.
+4. **Layout Contracts** — semantic ownership, prerequisites, anchors, forbidden regions, and reading-order constraints for high-impact objects.
 
 Hard venue rules always dominate soft presentation references.
 
@@ -202,6 +203,23 @@ The allocation should change with:
 - whether the venue expects a mandatory checklist or impact / ethics statement;
 - whether appendices are part of the same PDF.
 
+## Stage 3.5 — Page composition from Layout Contracts
+
+Before LaTeX float placement, compile Layout Contracts into page-composition constraints.
+
+For each contracted object:
+
+- place the float declaration after the intended semantic anchor when possible;
+- preserve owner-section boundaries;
+- honor single- vs double-column preference;
+- avoid placing a primary visual beside another primary-attention paragraph/object;
+- preserve heading integrity;
+- keep the object within its allowed page distance from the first textual reference.
+
+If constraints conflict, prefer semantic reading order over cosmetic compactness.
+
+Do not rely on default LaTeX float behavior for objects with blocking Layout Contracts.
+
 ## Stage 4 — LaTeX realization
 
 Use the official template and style files whenever available.
@@ -224,6 +242,10 @@ Do:
 
 ## Stage 5 — Rendered PDF review
 
+Run [Rendered Layout Verifier](rendered-layout-verifier.md) before general visual calibration.
+
+
+
 A source-level check is insufficient. Inspect the rendered PDF.
 
 Review at least:
@@ -241,6 +263,15 @@ Review at least:
 - whether the main result / core method is visually buried;
 - consistency of typography, references, and numbering.
 
+In addition to physical defects, check for semantic placement violations:
+
+- float appears before its owner section;
+- float precedes required prerequisites;
+- first textual reference appears after the float when disallowed;
+- a float crosses Abstract / Introduction or Method / Experiments boundaries;
+- two primary objects compete in the same visual band;
+- a prior-section float obscures a new section heading.
+
 Repair the earliest responsible layer:
 
 - too much material -> content allocation;
@@ -248,6 +279,8 @@ Repair the earliest responsible layer:
 - overwide table -> information/table design;
 - equation overflow -> mathematical exposition / equation layout;
 - bad page break -> local typesetting;
+- semantic float drift -> Page Composition / Typesetting;
+- bad layout contract -> Paper Architecture;
 - venue violation -> Venue Profile / official template.
 
 ## Presentation reference
@@ -286,6 +319,8 @@ Maintain:
 - a verified [Venue Profile](../../schemas/venue-profile.md);
 - optional [Presentation Reference](../../schemas/presentation-reference.md);
 - a paper-specific page / figure / table / appendix plan;
+- frozen Layout Contracts;
+- a rendered-layout verification record;
 - a rendered-PDF review record.
 
 This layer must never strengthen scientific claims merely to fit page constraints.
