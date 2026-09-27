@@ -44,7 +44,7 @@ The user-facing workflow remains:
 1. **Understand** — ground Research State and Technical State from complete source coverage.
 2. **Position** — use literature, framing, claims, and novelty checks to stabilize the Paper Core.
 3. **Design Evidence** — derive claim-driven experimental obligations and ground their operationalization in literature.
-4. **Write Sections** — plan each section, satisfy technical prerequisites, draft from the Main Result Spine, then run Editorial Distillation and Reverse Outline before final prose realization.
+4. **Write Sections** — plan each section, satisfy technical prerequisites, draft from the Main Result Spine, then run Editorial Distillation, the Self-Containment Gate, and Reverse Outline before final prose realization.
 5. **Present** — resolve venue/year, use the official template when available, allocate evidence/visual hierarchy, typeset, review the rendered PDF, and calibrate the final manuscript against nearby real papers.
 
 The detailed end-to-end methodology remains in [references/workflow.md](references/workflow.md). In multi-pass mode, persist the key handoffs:
@@ -141,6 +141,7 @@ Read only the procedure files needed for the current request:
 - [Main Result Spine](references/procedures/main-result-spine.md)
 - [Authorial synthesis](references/procedures/authorial-synthesis.md)
 - [Editorial Distillation](references/procedures/editorial-distillation.md)
+- [Self-Containment Gate](references/procedures/self-containment-gate.md)
 - [Reverse Outline](references/procedures/reverse-outline.md)
 - [Final manuscript calibration](references/procedures/manuscript-calibration.md)
 - [Problem construction and claim framing](references/procedures/framing.md)
