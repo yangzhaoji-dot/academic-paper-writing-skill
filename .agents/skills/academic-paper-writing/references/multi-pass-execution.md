@@ -36,11 +36,17 @@ Research Sources                     Convention Sources
                                                    |
                                          Pass 4: Formal Method
                                                    |
+                                          Main Result Spine
+                                                   |
                                          Pass 5: Paper Architecture
                                                    |
                                       Layout Contracts + Frozen Spec
                                                    |
                                          Section Writer Calls
+                                                   |
+                                      Editorial Distillation
+                                                   |
+                                         Reverse Outline
                                                    |
                                        Pass 6: Independent Audit
                                                    |
@@ -59,7 +65,7 @@ Pass 1, Pass 2, and Convention Mining may run independently when source access a
 
 Pass 3 requires the current scientific and literature outputs. Convention Mining may already inform packaging presentation choices, but it may not define the scientific thesis or novelty boundary.
 
-Pass 4 and Pass 5 consume the packaging decision but have different responsibilities: Pass 4 owns mathematical completeness; Pass 5 owns manuscript information architecture. Both may consume the Convention Profile for exposition and presentation priors only.
+Pass 4 and Pass 5 consume the packaging decision but have different responsibilities: Pass 4 owns mathematical completeness; an internal Main Result Spine step ranks scientific objects by narrative centrality; Pass 5 owns manuscript information architecture and resolution. Both may consume the Convention Profile for exposition and presentation priors only.
 
 The Frozen Paper Spec is assembled only after Pass 1–5 are coherent enough to write from. High-impact figures/tables/algorithms receive Layout Contracts at the same freeze boundary.
 
