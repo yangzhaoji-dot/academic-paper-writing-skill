@@ -23,7 +23,8 @@ Use, as needed:
 - prior sections;
 - section-matched Discourse References;
 - section-matched real-paper references;
-- section-relevant Convention Profile priors.
+- section-relevant Convention Profile priors;
+- relevant Layout Contracts.
 
 ## 1. Completeness
 
@@ -130,6 +131,17 @@ Examples:
 - training dynamics claim -> plot.
 
 Do not create a visual solely because the section "needs a figure."
+
+For high-impact visuals/tables, connect the visual obligation to a Layout Contract. Confirm:
+
+- owner section;
+- prerequisite concepts;
+- intended first textual reference;
+- whether the visual may precede that reference;
+- forbidden section boundaries;
+- reading-order dependencies.
+
+A semantic visual obligation is incomplete until its reader-order contract is known.
 
 ## 5. Convention calibration
 
